@@ -17,7 +17,7 @@ primary key(id_cargo)
 create table Cliente(
 id_cli integer,
 nome_cli varchar(40),
-idade_cli integer,
+data_nasc_cli date,
 cpf_cli varchar(11),
 login_id integer,
 primary key(id_cli)
@@ -59,13 +59,14 @@ primary key(id_serv)
 );
 
 create table Atendimento(
+id_atend integer,
 id_func integer,
 id_cli integer,
 data date,
 horario time,
 id_servico integer,
 total float,
-primary key(id_func, id_cli, data, horario),
+primary key(id_atend),
 foreign key(id_func) refences Funcionario,
 foreign key(id_cli) refences Cliente,
 foreign key(id_serv) refences Servico
