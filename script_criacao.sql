@@ -1,6 +1,13 @@
 create database salaozao
 use salaozao
 
+create table Login(
+id_login integer,
+user varchar(40),
+senha varchar(20),
+primary key(id_login)
+);
+
 create table Cargo(
 id_cargo integer,
 descricao varchar(40),
@@ -12,7 +19,16 @@ id_cli integer,
 nome_cli varchar(40),
 idade_cli integer,
 cpf_cli varchar(11),
+login_id integer,
 primary key(id_cli)
+);
+
+create table Cliente_Login(
+id_cli integer,
+id_login integer,
+primary key(id_cli,id_login),
+foreign key(id_cli) references Cliente,
+foreign key(id_login) references Login
 );
 
 create table Funcionario(
@@ -21,23 +37,34 @@ nome_func varchar(40),
 idade_func integer,
 cpf_func varchar(11),
 pis_func varchar(40),
-salario_func,
+salario_func float,
 cargo_id integer,
+login_id integer,
 primary key(id_func)
+);
+
+create table Funcionario_Login(
+id_func integer,
+id_login integer,
+primary key(id_func, id_login),
+foreign key (id_func) references Funcionario,
+foreign key (id_login) references Login
 );
 
 create table Servico(
 id_serv integer,
 descricao varchar(40),
+valor floar,
 primary key(id_serv)
 );
 
 create table Atendimento(
 id_func integer,
 id_cli integer,
-data varchar(10),
-horario varchar(10),
+data date,
+horario time,
 id_servico integer,
+total float,
 primary key(id_func, id_cli, data, horario),
 foreign key(id_func) refences Funcionario,
 foreign key(id_cli) refences Cliente,
