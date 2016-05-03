@@ -71,3 +71,11 @@ foreign key(id_func) refences Funcionario,
 foreign key(id_cli) refences Cliente,
 foreign key(id_serv) refences Servico
 );
+
+create table Servico_Atendimento(
+id_atend integer,
+id_serv integer,
+primary key(id_atend,id_serv),
+foreign key(id_atend) references Atendimento,
+foreign key(id_serv) references Servico
+);
