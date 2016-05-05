@@ -64,17 +64,16 @@ id_func integer,
 id_cli integer,
 data date,
 horario time,
-id_serv integer,
 total float,
 primary key(id_atend),
 foreign key(id_func) refences Funcionario(id_func),
-foreign key(id_cli) refences Cliente(id_cli),
-foreign key(id_serv) refences Servico(id_serv)
+foreign key(id_cli) refences Cliente(id_cli)
 );
 
 create table Servico_Atendimento(
 id_atend integer,
 id_serv integer,
+quantidade integer,
 primary key(id_atend,id_serv),
 foreign key(id_atend) references Atendimento(id_atend),
 foreign key(id_serv) references Servico(id_serv)
