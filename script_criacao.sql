@@ -1,5 +1,5 @@
-create database salaozao
-use salaozao
+create database salaozao;
+use salaozao;
 
 create table Login(
 id_login integer,
@@ -27,8 +27,8 @@ create table Cliente_Login(
 id_cli integer,
 id_login integer,
 primary key(id_cli,id_login),
-foreign key(id_cli) references Cliente,
-foreign key(id_login) references Login
+foreign key(id_cli) references Cliente(id_cli),
+foreign key(id_login) references Login(id_login)
 );
 
 create table Funcionario(
@@ -47,8 +47,8 @@ create table Funcionario_Login(
 id_func integer,
 id_login integer,
 primary key(id_func, id_login),
-foreign key (id_func) references Funcionario,
-foreign key (id_login) references Login
+foreign key (id_func) references Funcionario(id_func),
+foreign key (id_login) references Login(id_login)
 );
 
 create table Servico(
@@ -64,18 +64,18 @@ id_func integer,
 id_cli integer,
 data date,
 horario time,
-id_servico integer,
+id_serv integer,
 total float,
 primary key(id_atend),
-foreign key(id_func) refences Funcionario,
-foreign key(id_cli) refences Cliente,
-foreign key(id_serv) refences Servico
+foreign key(id_func) refences Funcionario(id_func),
+foreign key(id_cli) refences Cliente(id_cli),
+foreign key(id_serv) refences Servico(id_serv)
 );
 
 create table Servico_Atendimento(
 id_atend integer,
 id_serv integer,
 primary key(id_atend,id_serv),
-foreign key(id_atend) references Atendimento,
-foreign key(id_serv) references Servico
+foreign key(id_atend) references Atendimento(id_atend),
+foreign key(id_serv) references Servico(id_serv)
 );
