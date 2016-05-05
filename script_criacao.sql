@@ -54,7 +54,7 @@ foreign key (id_login) references Login(id_login)
 create table Servico(
 id_serv integer,
 descricao varchar(40),
-valor floar,
+valor float,
 primary key(id_serv)
 );
 
@@ -66,8 +66,8 @@ data date,
 horario time,
 total float,
 primary key(id_atend),
-foreign key(id_func) refences Funcionario(id_func),
-foreign key(id_cli) refences Cliente(id_cli)
+foreign key(id_func) references Funcionario(id_func),
+foreign key(id_cli) references Cliente(id_cli)
 );
 
 create table Servico_Atendimento(
