@@ -27,30 +27,213 @@ public class PanelCadCli extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFileChooser1 = new javax.swing.JFileChooser();
         jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
 
-        jLabel1.setText("CADCLI");
+        setBackground(java.awt.Color.white);
+        setLayout(null);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(187, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(163, 163, 163))
+        jLabel1.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
+        jLabel1.setText("CADASTRAR CLIENTE");
+        add(jLabel1);
+        jLabel1.setBounds(102, 12, 160, 20);
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        add(jTextField1);
+        jTextField1.setBounds(150, 130, 90, 32);
+        add(jTextField2);
+        jTextField2.setBounds(100, 90, 40, 32);
+
+        jPanel1.setBackground(java.awt.Color.lightGray);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(294, 294, 294)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
         );
+
+        add(jPanel1);
+        jPanel1.setBounds(300, 50, 110, 150);
+        add(jTextField4);
+        jTextField4.setBounds(100, 130, 40, 32);
+
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+        add(jTextField5);
+        jTextField5.setBounds(150, 90, 40, 32);
+        add(jTextField6);
+        jTextField6.setBounds(200, 90, 40, 32);
+
+        jLabel2.setText("/");
+        add(jLabel2);
+        jLabel2.setBounds(170, 180, 10, 20);
+
+        jLabel3.setText(".");
+        add(jLabel3);
+        jLabel3.setBounds(190, 100, 10, 20);
+        add(jTextField3);
+        jTextField3.setBounds(100, 50, 140, 32);
+
+        jLabel5.setText("Data Nasc");
+        add(jLabel5);
+        jLabel5.setBounds(10, 180, 80, 20);
+        add(jTextField7);
+        jTextField7.setBounds(250, 90, 30, 32);
+        add(jTextField8);
+        jTextField8.setBounds(100, 170, 30, 32);
+        add(jTextField9);
+        jTextField9.setBounds(140, 170, 30, 32);
+
+        jLabel6.setText("-");
+        add(jLabel6);
+        jLabel6.setBounds(240, 100, 10, 20);
+
+        jLabel7.setText("/");
+        add(jLabel7);
+        jLabel7.setBounds(130, 180, 10, 20);
+
+        jLabel8.setText("Nome");
+        add(jLabel8);
+        jLabel8.setBounds(10, 60, 45, 20);
+
+        jLabel9.setText("CPF");
+        add(jLabel9);
+        jLabel9.setBounds(10, 100, 45, 20);
+
+        jLabel10.setText("Celular");
+        add(jLabel10);
+        jLabel10.setBounds(10, 140, 45, 20);
+        add(jTextField10);
+        jTextField10.setBounds(180, 170, 50, 32);
+
+        jLabel11.setText("Usuário");
+        add(jLabel11);
+        jLabel11.setBounds(10, 220, 60, 20);
+
+        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField11ActionPerformed(evt);
+            }
+        });
+        add(jTextField11);
+        jTextField11.setBounds(100, 210, 110, 32);
+
+        jLabel12.setText("Senha");
+        add(jLabel12);
+        jLabel12.setBounds(10, 260, 45, 20);
+        add(jTextField12);
+        jTextField12.setBounds(100, 250, 110, 32);
+
+        jButton3.setText("Cancelar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        add(jButton3);
+        jButton3.setBounds(340, 210, 110, 70);
+
+        jButton4.setText("Cadastrar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        add(jButton4);
+        jButton4.setBounds(220, 210, 110, 70);
+
+        jLabel13.setText(".");
+        add(jLabel13);
+        jLabel13.setBounds(140, 100, 10, 20);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField11ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
