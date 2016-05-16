@@ -18,7 +18,7 @@ public class Funcionario {
     String nome_func;
     String cpf_func;
     String pis_func;
-    int salario_func;
+    float salario_func;
     int cargo_id;
     int login_id;
 
@@ -32,11 +32,12 @@ public class Funcionario {
             this.id_func = rs.getInt("id_func");
             this.idade_func = rs.getInt("idade_func");
             this.nome_func = rs.getString("nome_func");
-            this.cpf_func = cpf_func;
-            this.pis_func = pis_func;
-            this.salario_func = salario_func;
-            this.cargo_id = cargo_id;
-            this.login_id = login_id;
+            this.cpf_func = rs.getString("cpf_func");
+            this.pis_func = rs.getString("pis_func");
+            this.salario_func = rs.getFloat("salario_func");
+            this.cargo_id = rs.getInt("cargo_id");
+            this.login_id = rs.getInt("login_id");
         }
+        conexao.close();
     }
 }
