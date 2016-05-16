@@ -20,6 +20,7 @@ nome_cli varchar(40),
 data_nasc_cli date,
 cpf_cli varchar(11),
 login_id integer,
+celular varchar(12),
 primary key(id_cli)
 );
 
