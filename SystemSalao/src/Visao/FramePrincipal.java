@@ -113,7 +113,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         c.removeAll();
         c.repaint();
         panelCadFunc.setBounds(5,5,500,500);
-        panelCadFunc.setBackground(Color.BLUE);
+        //panelCadFunc.setBackground(Color.BLUE);
         // obter dimensões do pai  
         int larguraPai   = FramePrincipal.this.getWidth();  
         int alturaPai    = FramePrincipal.this.getHeight();  
@@ -154,7 +154,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         c.removeAll();
         c.repaint();
         panelAgenda.setBounds(5,5,500,500);
-        panelAgenda.setBackground(Color.GREEN);
+        //panelAgenda.setBackground(Color.GREEN);
         // obter dimensões do pai  
         int larguraPai   = FramePrincipal.this.getWidth();  
         int alturaPai    = FramePrincipal.this.getHeight();  
