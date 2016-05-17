@@ -18,6 +18,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         JPanel panelCadCli = new PanelCadCli();
         JPanel panelCadFunc = new PanelCadFunc();
         JPanel panelAgenda = new PanelAgenda();
+        JPanel panelAgendaDois = new PanelAgendaDois();
         JPanel panelCaixa = new PanelCaixa();
         Container c=getContentPane();
     /**
@@ -153,7 +154,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         c.removeAll();
         c.repaint();
-        panelAgenda.setBounds(5,5,500,500);
+        panelAgenda.setBounds(5,5,600,600);
         //panelAgenda.setBackground(Color.GREEN);
         // obter dimensões do pai  
         int larguraPai   = FramePrincipal.this.getWidth();  
@@ -166,7 +167,13 @@ public class FramePrincipal extends javax.swing.JFrame {
         int novoY        = (alturaPai - alturaFilho) / 2;  
         // centralizar filho  
         panelAgenda.setLocation(novoX, novoY);
-        panelAgenda.setVisible(true);
+        panelAgenda.setVisible(true);        
+        
+        //        
+        panelAgenda.add(panelAgendaDois);
+        panelAgendaDois.setLocation(novoX, novoY);
+        panelAgendaDois.setVisible(true);
+        panelAgendaDois.setBounds(5,290,330,235);
         c.add(panelAgenda);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
