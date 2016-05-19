@@ -96,6 +96,7 @@ public class FrameLogin extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         FramePrincipal fp1 = new FramePrincipal();
+        fp1.setExtendedState(fp1.MAXIMIZED_BOTH);
         fp1.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

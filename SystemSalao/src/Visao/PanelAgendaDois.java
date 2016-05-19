@@ -5,6 +5,8 @@
  */
 package Visao;
 
+import java.util.Date;
+
 /**
  *
  * @author a1602020
@@ -28,445 +30,39 @@ public class PanelAgendaDois extends javax.swing.JPanel {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
-        jButton36 = new javax.swing.JButton();
-        jButton37 = new javax.swing.JButton();
-        jButton38 = new javax.swing.JButton();
-        jButton39 = new javax.swing.JButton();
-        jButton40 = new javax.swing.JButton();
-        jButton41 = new javax.swing.JButton();
-        jButton42 = new javax.swing.JButton();
-        jButton43 = new javax.swing.JButton();
-        jButton44 = new javax.swing.JButton();
-        jButton45 = new javax.swing.JButton();
-        jButton46 = new javax.swing.JButton();
-        jButton47 = new javax.swing.JButton();
-        jButton48 = new javax.swing.JButton();
-        jButton49 = new javax.swing.JButton();
-        jButton50 = new javax.swing.JButton();
-        jButton51 = new javax.swing.JButton();
-        jButton52 = new javax.swing.JButton();
-        jButton53 = new javax.swing.JButton();
-        jButton54 = new javax.swing.JButton();
-        jButton55 = new javax.swing.JButton();
-        jButton56 = new javax.swing.JButton();
-        jButton57 = new javax.swing.JButton();
-        jButton58 = new javax.swing.JButton();
-        jButton59 = new javax.swing.JButton();
-        jButton60 = new javax.swing.JButton();
-        jButton61 = new javax.swing.JButton();
-        jButton62 = new javax.swing.JButton();
-        jButton63 = new javax.swing.JButton();
-        jButton64 = new javax.swing.JButton();
-        jButton65 = new javax.swing.JButton();
-        jButton66 = new javax.swing.JButton();
-        jButton67 = new javax.swing.JButton();
-        jButton68 = new javax.swing.JButton();
-        jButton69 = new javax.swing.JButton();
-        jButton70 = new javax.swing.JButton();
-        jButton71 = new javax.swing.JButton();
-        jButton72 = new javax.swing.JButton();
-        jButton73 = new javax.swing.JButton();
-        jButton74 = new javax.swing.JButton();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
 
-        setBackground(java.awt.Color.orange);
+        setBackground(java.awt.Color.white);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("2");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 12, 50, -1));
-
-        jButton2.setText("1");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 50, -1));
-
-        jButton8.setText("7");
-        add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 50, 50, -1));
-
-        jButton14.setText("8");
-        add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 50, 50, -1));
-
-        jButton15.setText("13");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Consultar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 88, 50, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
 
-        jButton21.setText("14");
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+        jCalendar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCalendar1MouseClicked(evt);
             }
         });
-        add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 88, 50, -1));
-
-        jButton31.setText("3");
-        jButton31.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton31ActionPerformed(evt);
-            }
-        });
-        add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 12, 50, -1));
-
-        jButton32.setText("9");
-        add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 50, 50, -1));
-
-        jButton33.setText("10");
-        add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 50, 50, -1));
-
-        jButton34.setText("15");
-        jButton34.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton34ActionPerformed(evt);
-            }
-        });
-        add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 88, 50, -1));
-
-        jButton36.setText("16");
-        add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 88, 50, -1));
-
-        jButton37.setText("4");
-        add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 12, 50, -1));
-
-        jButton38.setText("5");
-        add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 12, 50, -1));
-
-        jButton39.setText("11");
-        add(jButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 50, 50, -1));
-
-        jButton40.setText("12");
-        add(jButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 50, 50, -1));
-
-        jButton41.setText("17");
-        jButton41.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton41ActionPerformed(evt);
-            }
-        });
-        add(jButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 88, 50, -1));
-
-        jButton42.setText("18");
-        add(jButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 88, 50, -1));
-
-        jButton43.setText("6");
-        add(jButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 12, 50, -1));
-
-        jButton44.setText("27");
-        jButton44.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton44ActionPerformed(evt);
-            }
-        });
-        add(jButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 164, 50, -1));
-
-        jButton45.setText("28");
-        jButton45.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton45ActionPerformed(evt);
-            }
-        });
-        add(jButton45, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 164, 50, -1));
-
-        jButton46.setText("23");
-        add(jButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 126, 50, -1));
-
-        jButton47.setText("24");
-        add(jButton47, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 126, 50, -1));
-
-        jButton48.setText("19");
-        add(jButton48, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 126, 50, -1));
-
-        jButton49.setText("29");
-        jButton49.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton49ActionPerformed(evt);
-            }
-        });
-        add(jButton49, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 164, 50, -1));
-
-        jButton50.setText("31");
-        add(jButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 50, -1));
-
-        jButton51.setText("20");
-        add(jButton51, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 126, 50, -1));
-
-        jButton52.setText("25");
-        jButton52.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton52ActionPerformed(evt);
-            }
-        });
-        add(jButton52, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 164, 50, -1));
-
-        jButton53.setText("26");
-        add(jButton53, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 164, 50, -1));
-
-        jButton54.setText("21");
-        add(jButton54, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 126, 50, -1));
-
-        jButton55.setText("22");
-        add(jButton55, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 126, 50, -1));
-
-        jButton56.setText("27");
-        jButton56.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton56ActionPerformed(evt);
-            }
-        });
-        add(jButton56, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 164, 50, -1));
-
-        jButton57.setText("28");
-        jButton57.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton57ActionPerformed(evt);
-            }
-        });
-        add(jButton57, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 164, 50, -1));
-
-        jButton58.setText("29");
-        jButton58.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton58ActionPerformed(evt);
-            }
-        });
-        add(jButton58, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 164, 50, -1));
-
-        jButton59.setText("30");
-        add(jButton59, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 164, 50, -1));
-
-        jButton60.setText("25");
-        jButton60.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton60ActionPerformed(evt);
-            }
-        });
-        add(jButton60, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 164, 50, -1));
-
-        jButton61.setText("26");
-        add(jButton61, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 164, 50, -1));
-
-        jButton62.setText("27");
-        jButton62.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton62ActionPerformed(evt);
-            }
-        });
-        add(jButton62, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 164, 50, -1));
-
-        jButton63.setText("28");
-        jButton63.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton63ActionPerformed(evt);
-            }
-        });
-        add(jButton63, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 164, 50, -1));
-
-        jButton64.setText("29");
-        jButton64.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton64ActionPerformed(evt);
-            }
-        });
-        add(jButton64, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 164, 50, -1));
-
-        jButton65.setText("30");
-        add(jButton65, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 164, 50, -1));
-
-        jButton66.setText("25");
-        jButton66.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton66ActionPerformed(evt);
-            }
-        });
-        add(jButton66, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 164, 50, -1));
-
-        jButton67.setText("26");
-        add(jButton67, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 164, 50, -1));
-
-        jButton68.setText("27");
-        jButton68.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton68ActionPerformed(evt);
-            }
-        });
-        add(jButton68, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 164, 50, -1));
-
-        jButton69.setText("28");
-        jButton69.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton69ActionPerformed(evt);
-            }
-        });
-        add(jButton69, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 164, 50, -1));
-
-        jButton70.setText("29");
-        jButton70.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton70ActionPerformed(evt);
-            }
-        });
-        add(jButton70, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 164, 50, -1));
-
-        jButton71.setText("30");
-        add(jButton71, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 164, 50, -1));
-
-        jButton72.setText("25");
-        jButton72.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton72ActionPerformed(evt);
-            }
-        });
-        add(jButton72, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 164, 50, -1));
-
-        jButton73.setText("26");
-        add(jButton73, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 164, 50, -1));
-
-        jButton74.setText("30");
-        add(jButton74, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 164, 50, -1));
+        add(jCalendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
+    private void jCalendar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCalendar1MouseClicked
+        
+    }//GEN-LAST:event_jCalendar1MouseClicked
 
-    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton34ActionPerformed
-
-    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton41ActionPerformed
-
-    private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton44ActionPerformed
-
-    private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton49ActionPerformed
-
-    private void jButton52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton52ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton52ActionPerformed
-
-    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton31ActionPerformed
-
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton21ActionPerformed
-
-    private void jButton45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton45ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton45ActionPerformed
-
-    private void jButton56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton56ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton56ActionPerformed
-
-    private void jButton57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton57ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton57ActionPerformed
-
-    private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton58ActionPerformed
-
-    private void jButton60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton60ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton60ActionPerformed
-
-    private void jButton62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton62ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton62ActionPerformed
-
-    private void jButton63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton63ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton63ActionPerformed
-
-    private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton64ActionPerformed
-
-    private void jButton66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton66ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton66ActionPerformed
-
-    private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton68ActionPerformed
-
-    private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton69ActionPerformed
-
-    private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton70ActionPerformed
-
-    private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton72ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Date data = jCalendar1.getDate();
+        System.out.println(data);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton36;
-    private javax.swing.JButton jButton37;
-    private javax.swing.JButton jButton38;
-    private javax.swing.JButton jButton39;
-    private javax.swing.JButton jButton40;
-    private javax.swing.JButton jButton41;
-    private javax.swing.JButton jButton42;
-    private javax.swing.JButton jButton43;
-    private javax.swing.JButton jButton44;
-    private javax.swing.JButton jButton45;
-    private javax.swing.JButton jButton46;
-    private javax.swing.JButton jButton47;
-    private javax.swing.JButton jButton48;
-    private javax.swing.JButton jButton49;
-    private javax.swing.JButton jButton50;
-    private javax.swing.JButton jButton51;
-    private javax.swing.JButton jButton52;
-    private javax.swing.JButton jButton53;
-    private javax.swing.JButton jButton54;
-    private javax.swing.JButton jButton55;
-    private javax.swing.JButton jButton56;
-    private javax.swing.JButton jButton57;
-    private javax.swing.JButton jButton58;
-    private javax.swing.JButton jButton59;
-    private javax.swing.JButton jButton60;
-    private javax.swing.JButton jButton61;
-    private javax.swing.JButton jButton62;
-    private javax.swing.JButton jButton63;
-    private javax.swing.JButton jButton64;
-    private javax.swing.JButton jButton65;
-    private javax.swing.JButton jButton66;
-    private javax.swing.JButton jButton67;
-    private javax.swing.JButton jButton68;
-    private javax.swing.JButton jButton69;
-    private javax.swing.JButton jButton70;
-    private javax.swing.JButton jButton71;
-    private javax.swing.JButton jButton72;
-    private javax.swing.JButton jButton73;
-    private javax.swing.JButton jButton74;
-    private javax.swing.JButton jButton8;
+    private com.toedter.calendar.JCalendar jCalendar1;
     // End of variables declaration//GEN-END:variables
 }

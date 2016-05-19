@@ -70,9 +70,9 @@ public class PanelCadCli extends javax.swing.JPanel {
             }
         });
         add(jTextField1);
-        jTextField1.setBounds(150, 130, 90, 20);
+        jTextField1.setBounds(150, 130, 90, 32);
         add(jTextField2);
-        jTextField2.setBounds(100, 90, 40, 20);
+        jTextField2.setBounds(100, 90, 40, 32);
 
         jPanel1.setBackground(java.awt.Color.lightGray);
 
@@ -90,7 +90,7 @@ public class PanelCadCli extends javax.swing.JPanel {
         add(jPanel1);
         jPanel1.setBounds(300, 50, 110, 150);
         add(jTextField4);
-        jTextField4.setBounds(100, 130, 40, 20);
+        jTextField4.setBounds(100, 130, 40, 32);
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,55 +98,55 @@ public class PanelCadCli extends javax.swing.JPanel {
             }
         });
         add(jTextField5);
-        jTextField5.setBounds(150, 90, 40, 20);
+        jTextField5.setBounds(150, 90, 40, 32);
         add(jTextField6);
-        jTextField6.setBounds(200, 90, 40, 20);
+        jTextField6.setBounds(200, 90, 40, 32);
 
         jLabel2.setText("/");
         add(jLabel2);
-        jLabel2.setBounds(170, 180, 10, 14);
+        jLabel2.setBounds(170, 180, 10, 20);
 
         jLabel3.setText(".");
         add(jLabel3);
-        jLabel3.setBounds(190, 100, 10, 14);
+        jLabel3.setBounds(190, 100, 10, 20);
         add(jTextField3);
-        jTextField3.setBounds(100, 50, 140, 20);
+        jTextField3.setBounds(100, 50, 140, 32);
 
         jLabel5.setText("Data Nasc");
         add(jLabel5);
-        jLabel5.setBounds(10, 180, 80, 14);
+        jLabel5.setBounds(10, 180, 80, 20);
         add(jTextField7);
-        jTextField7.setBounds(250, 90, 30, 20);
+        jTextField7.setBounds(250, 90, 30, 32);
         add(jTextField8);
-        jTextField8.setBounds(100, 170, 30, 20);
+        jTextField8.setBounds(100, 170, 30, 32);
         add(jTextField9);
-        jTextField9.setBounds(140, 170, 30, 20);
+        jTextField9.setBounds(140, 170, 30, 32);
 
         jLabel6.setText("-");
         add(jLabel6);
-        jLabel6.setBounds(240, 100, 10, 14);
+        jLabel6.setBounds(240, 100, 10, 20);
 
         jLabel7.setText("/");
         add(jLabel7);
-        jLabel7.setBounds(130, 180, 10, 14);
+        jLabel7.setBounds(130, 180, 10, 20);
 
         jLabel8.setText("Nome");
         add(jLabel8);
-        jLabel8.setBounds(10, 60, 45, 14);
+        jLabel8.setBounds(10, 60, 45, 20);
 
         jLabel9.setText("CPF");
         add(jLabel9);
-        jLabel9.setBounds(10, 100, 45, 14);
+        jLabel9.setBounds(10, 100, 45, 20);
 
         jLabel10.setText("Celular");
         add(jLabel10);
-        jLabel10.setBounds(10, 140, 45, 14);
+        jLabel10.setBounds(10, 140, 45, 20);
         add(jTextField10);
-        jTextField10.setBounds(180, 170, 50, 20);
+        jTextField10.setBounds(180, 170, 50, 32);
 
         jLabel11.setText("Usuário");
         add(jLabel11);
-        jLabel11.setBounds(10, 220, 60, 14);
+        jLabel11.setBounds(10, 220, 60, 20);
 
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,13 +154,13 @@ public class PanelCadCli extends javax.swing.JPanel {
             }
         });
         add(jTextField11);
-        jTextField11.setBounds(100, 210, 110, 20);
+        jTextField11.setBounds(100, 210, 110, 32);
 
         jLabel12.setText("Senha");
         add(jLabel12);
-        jLabel12.setBounds(10, 260, 45, 14);
+        jLabel12.setBounds(10, 260, 45, 20);
         add(jTextField12);
-        jTextField12.setBounds(100, 250, 110, 20);
+        jTextField12.setBounds(100, 250, 110, 32);
 
         jButton3.setText("Cancelar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -182,7 +182,7 @@ public class PanelCadCli extends javax.swing.JPanel {
 
         jLabel13.setText(".");
         add(jLabel13);
-        jLabel13.setBounds(140, 100, 10, 14);
+        jLabel13.setBounds(140, 100, 10, 20);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
