@@ -37,6 +37,7 @@ public class Atendimento {
             this.data = rs.getDate("data");
             this.horario = rs.getTime("horario");
         }
+        conexao.close();
     }
     
     

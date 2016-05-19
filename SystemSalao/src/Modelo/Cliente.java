@@ -39,5 +39,6 @@ public class Cliente {
             this.login_id = rs.getInt("login_id");
             this.celular = rs.getString("celular");
         }
+        conexao.close();
     }
 }
