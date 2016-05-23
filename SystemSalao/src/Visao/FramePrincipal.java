@@ -181,7 +181,7 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelPrinc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -208,19 +208,10 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // obter dimensões do pai  
-        int larguraPai   = jPanelPrinc.getWidth();  
-        int alturaPai    = jPanelPrinc.getHeight();  
-        // obter dimensões do filho  
-        int larguraFilho = panelCadCli.getWidth();  
-        int alturaFilho  = panelCadCli.getWidth();  
-        // calcular novas coordenadas do filho  
-        int novoX        = (larguraPai - larguraFilho) / 2;  
-        int novoY        = (alturaPai - alturaFilho) / 2;  
-        //c.removeAll();
-        //c.repaint();
-        jPanelPrinc.add(panelCadCli);
-        panelCadCli.setLocation(novoX, novoY);
+        c.removeAll();
+        //jPanelPrinc.add(panelCadCli);
+        panelAgendaDois.setBounds(5,290,330,235);
+        //panelCadCli.setLocation(0, 0);
         panelCadCli.setVisible(true);
                 // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
