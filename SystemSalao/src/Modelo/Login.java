@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,4 +34,17 @@ public class Login {
         }
         conexao.close();
     }
+
+    public int getId_login() {
+        return id_login;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+    
 }

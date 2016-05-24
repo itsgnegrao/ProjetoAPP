@@ -5,6 +5,8 @@
  */
 package Visao;
 
+import Controle.ControleLogin;
+
 /**
  *
  * @author a1602020
@@ -46,8 +48,18 @@ public class FrameLogin extends javax.swing.JFrame {
         });
 
         txtLogin.setText("User");
+        txtLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLoginActionPerformed(evt);
+            }
+        });
 
         txtSenha.setText("Password");
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Cantarell", 1, 12)); // NOI18N
         jLabel2.setText("Não possui login");
@@ -95,10 +107,27 @@ public class FrameLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        FramePrincipal fp1 = new FramePrincipal();
-        fp1.setExtendedState(fp1.MAXIMIZED_BOTH);
-        fp1.setVisible(true);
+        /*String login = txtLogin.getText();
+        String senha = txtSenha.getText();
+        System.out.println(login + " " + senha);
+        ControleLogin login_control = new ControleLogin(login, senha);
+        if (login_control.getEstado() == 1) {
+        // Comentado só para não dar erro no teste*/
+            System.out.println("MONTE DE COCO LEOZAO");
+            FramePrincipal fp1 = new FramePrincipal();
+            fp1.setExtendedState(fp1.MAXIMIZED_BOTH);
+            fp1.setVisible(true);
+        //}
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLoginActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     /**
      * @param args the command line arguments

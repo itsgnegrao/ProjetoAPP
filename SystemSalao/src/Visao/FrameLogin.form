@@ -89,11 +89,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="User"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLoginActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSenha">
       <Properties>
         <Property name="text" type="java.lang.String" value="Password"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSenhaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
