@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
  * @author Leonardo
  */
 public class Login {
+
     int id_login;
     String user;
     String senha;
@@ -32,6 +33,7 @@ public class Login {
             this.senha = rs.getString("senha");
             this.user = rs.getString("user");
         }
+
         conexao.close();
     }
 
@@ -46,5 +48,5 @@ public class Login {
     public String getSenha() {
         return senha;
     }
-    
+
 }

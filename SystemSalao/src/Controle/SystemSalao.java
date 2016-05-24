@@ -20,14 +20,9 @@ public class SystemSalao {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
-        //String string = "show tables;"; //apenas para teste.
-        //Connection conexao = ConnectionFactory.createConnection();
-        //PreparedStatement ps;
-        //ps = conexao.prepareStatement(string);
-        //ps.execute();
-        //System.out.println(" SE CHEGOU AQUI DEU CERTO! SEM ERRO NA CONEXÃO COM O MYSQL");
         FrameLogin fl1 = new FrameLogin();
         fl1.setVisible(true);
+        fl1.setLocationRelativeTo(null);  
     }
     
 }

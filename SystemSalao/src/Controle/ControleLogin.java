@@ -24,10 +24,12 @@ public class ControleLogin {
         try {
             Login login_bd = new Login("Select * from Login where user='" + login + "' AND senha='" + senha + "';");
             System.out.println("UUUUUU " + login_bd.getUser() + ", " + login_bd.getSenha());
+            if (login_bd.getUser() == null) {
+                JOptionPane.showMessageDialog(null, "Usuario Não Cadastrado!");
+                this.estado = 0;
+            }
             if (login_bd.getUser().equals(login) && login_bd.getSenha().equals(senha)) {
                 this.estado = 1;
-            } else {
-                this.estado = 0;
             }
         } catch (SQLException ex) {
             Logger.getLogger(ControleLogin.class.getName()).log(Level.SEVERE, null, ex);
