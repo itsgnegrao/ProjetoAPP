@@ -107,17 +107,17 @@ public class FrameLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        /*String login = txtLogin.getText();
+        String login = txtLogin.getText();
         String senha = txtSenha.getText();
         System.out.println(login + " " + senha);
         ControleLogin login_control = new ControleLogin(login, senha);
         if (login_control.getEstado() == 1) {
-        // Comentado só para não dar erro no teste*/
+        // Comentado só para não dar erro no teste
             System.out.println("MONTE DE COCO LEOZAO");
             FramePrincipal fp1 = new FramePrincipal();
             fp1.setExtendedState(fp1.MAXIMIZED_BOTH);
             fp1.setVisible(true);
-        //}
+        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
