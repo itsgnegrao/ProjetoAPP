@@ -22,20 +22,13 @@ public class Login {
     String user;
     String senha;
 
-    public Login(String string) throws SQLException {
-        Connection conexao = ConnectionFactory.createConnection();
-        PreparedStatement ps;
-        ps = conexao.prepareStatement(string);
-        ps.execute();
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            this.id_login = rs.getInt("id_login");
-            this.senha = rs.getString("senha");
-            this.user = rs.getString("user");
-        }
-
-        conexao.close();
+    public Login(int id_login, String user, String senha) {
+        this.id_login = id_login;
+        this.user = user;
+        this.senha = senha;
     }
+    
+    
 
     public int getId_login() {
         return id_login;
