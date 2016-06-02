@@ -19,17 +19,9 @@ public class Cargo {
     int id_cargo;
     String descricao;
 
-    public Cargo(String string) throws SQLException {
-        Connection conexao = ConnectionFactory.createConnection();
-        PreparedStatement ps;
-        ps = conexao.prepareStatement(string);
-        ps.execute();
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            this.id_cargo = rs.getInt("id_cargo");
-            this.descricao = rs.getString("descricao");
-        }
-        conexao.close();
+    public Cargo(int id_cargo, String descricao) {
+        this.id_cargo = id_cargo;
+        this.descricao = descricao;
     }
     
 }

@@ -22,23 +22,14 @@ public class Atendimento {
     int id_func;
     int id_cli;
     Date data;
-    Time horario;
+    Time horario;    
 
-    public Atendimento(String string) throws SQLException {
-        Connection conexao = ConnectionFactory.createConnection();
-        PreparedStatement ps;
-        ps = conexao.prepareStatement(string);
-        ps.execute();
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            this.id_atend = rs.getInt("id_atend");
-            this.id_func = rs.getInt("id_func");
-            this.id_cli = rs.getInt("id_cli");
-            this.data = rs.getDate("data");
-            this.horario = rs.getTime("horario");
-        }
-        conexao.close();
+    public Atendimento(int id_atend, int id_func, int id_cli, Date data, Time horario) {
+        this.id_atend = id_atend;
+        this.id_func = id_func;
+        this.id_cli = id_cli;
+        this.data = data;
+        this.horario = horario;
     }
-    
     
 }

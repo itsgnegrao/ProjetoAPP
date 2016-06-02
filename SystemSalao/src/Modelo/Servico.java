@@ -20,17 +20,10 @@ public class Servico {
     String descricao;
     float valor;
 
-    public Servico(String string) throws SQLException {
-        Connection conexao = ConnectionFactory.createConnection();
-        PreparedStatement ps;
-        ps = conexao.prepareStatement(string);
-        ps.execute();
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            this.id_serv = rs.getInt("id_serv");
-            this.descricao = rs.getString("descricao");
-            this.valor = rs.getFloat("valor");
-        }
-        conexao.close();
+    public Servico(int id_serv, String descricao, float valor) {
+        this.id_serv = id_serv;
+        this.descricao = descricao;
+        this.valor = valor;
     }
+
 }
