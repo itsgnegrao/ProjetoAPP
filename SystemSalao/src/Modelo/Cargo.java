@@ -19,6 +19,14 @@ public class Cargo {
     int id_cargo;
     String descricao;
 
+    public int getId_cargo() {
+        return id_cargo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
     public Cargo(int id_cargo, String descricao) {
         this.id_cargo = id_cargo;
         this.descricao = descricao;
