@@ -37,7 +37,7 @@ public class ControleCadastroCli {
     public ControleCadastroCli(int id_cli) {
         try {
             String string = "Select * from Cliente where id_cli=" + id_cli + ";";
-            String string1 = "Select * from Login natural join cliente_login";
+            String string1 = "Select * from login l, cliente_login cl where l.id_login = cl.id_login AND cl.id_cli ="+id_cli+";";
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
             ps = conexao.prepareStatement(string);

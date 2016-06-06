@@ -78,6 +78,16 @@ public class FrameCadCli extends javax.swing.JFrame {
         });
 
         txtCpf1.setText("111");
+        txtCpf1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCpf1ActionPerformed(evt);
+            }
+        });
+        txtCpf1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCpf1KeyPressed(evt);
+            }
+        });
 
         txtCpf2.setText("222");
         txtCpf2.addActionListener(new java.awt.event.ActionListener() {
@@ -85,8 +95,18 @@ public class FrameCadCli extends javax.swing.JFrame {
                 txtCpf2ActionPerformed(evt);
             }
         });
+        txtCpf2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCpf2KeyPressed(evt);
+            }
+        });
 
         txtCpf3.setText("333");
+        txtCpf3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCpf3KeyPressed(evt);
+            }
+        });
 
         txtNome.setText("Gabriel");
         txtNome.addActionListener(new java.awt.event.ActionListener() {
@@ -99,10 +119,25 @@ public class FrameCadCli extends javax.swing.JFrame {
         jLabel5.setText("Data Nasc");
 
         txtCpf4.setText("44");
+        txtCpf4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCpf4KeyPressed(evt);
+            }
+        });
 
         txtMes.setText("10");
+        txtMes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtMesKeyPressed(evt);
+            }
+        });
 
         txtDia.setText("15");
+        txtDia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDiaKeyPressed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
         jLabel8.setText("Nome");
@@ -117,6 +152,11 @@ public class FrameCadCli extends javax.swing.JFrame {
         txtAno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAnoActionPerformed(evt);
+            }
+        });
+        txtAno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAnoKeyPressed(evt);
             }
         });
 
@@ -255,9 +295,8 @@ public class FrameCadCli extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,7 +404,9 @@ public class FrameCadCli extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAnoActionPerformed
 
     private void txtCel1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCel1KeyPressed
-
+       if (txtCel1.getText().length() == 1){
+            txtCel2.grabFocus();
+        }
     }//GEN-LAST:event_txtCel1KeyPressed
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
@@ -397,8 +438,55 @@ public class FrameCadCli extends javax.swing.JFrame {
         String senha = cliente_login.getSenha();
         txtUser.setText(user);
         txtSenha.setText(senha);
+        System.out.println(user + " "+ senha);
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtCpf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpf1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCpf1ActionPerformed
+
+    private void txtCpf1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf1KeyPressed
+        if (txtCpf1.getText().length() == 2){
+            txtCpf2.grabFocus();
+        }
+    }//GEN-LAST:event_txtCpf1KeyPressed
+
+    private void txtCpf2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf2KeyPressed
+        if (txtCpf2.getText().length() == 2){
+            txtCpf3.grabFocus();
+        }
+    }//GEN-LAST:event_txtCpf2KeyPressed
+
+    private void txtCpf3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf3KeyPressed
+        if (txtCpf3.getText().length() == 2){
+            txtCpf4.grabFocus();
+        }
+    }//GEN-LAST:event_txtCpf3KeyPressed
+
+    private void txtCpf4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf4KeyPressed
+        if (txtCpf4.getText().length() == 1){
+            txtCel1.grabFocus();
+        }
+    }//GEN-LAST:event_txtCpf4KeyPressed
+
+    private void txtDiaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiaKeyPressed
+        if (txtDia.getText().length() == 1){
+            txtMes.grabFocus();
+        }
+    }//GEN-LAST:event_txtDiaKeyPressed
+
+    private void txtMesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMesKeyPressed
+        if (txtMes.getText().length() == 1){
+            txtAno.grabFocus();
+        }
+    }//GEN-LAST:event_txtMesKeyPressed
+
+    private void txtAnoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnoKeyPressed
+        if (txtAno.getText().length() == 3){
+            txtUser.grabFocus();
+        }
+    }//GEN-LAST:event_txtAnoKeyPressed
 
     /**
      * @param args the command line arguments
