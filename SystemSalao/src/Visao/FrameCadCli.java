@@ -438,6 +438,7 @@ public class FrameCadCli extends javax.swing.JFrame {
         String senha = cliente_login.getSenha();
         txtUser.setText(user);
         txtSenha.setText(senha);
+        System.out.println(user + " "+ senha);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

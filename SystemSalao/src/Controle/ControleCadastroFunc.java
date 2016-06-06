@@ -26,7 +26,7 @@ public class ControleCadastroFunc {
     public ControleCadastroFunc(int id_func) {
         try {
             String string = "Select * from Funcionario where id_func=" + id_func + ";";
-            String string1 = "Select * from Login natural join funcionario_login";
+            String string1 = "Select * from login l, funcionario_login fl where l.id_login = fl.id_login AND fl.id_cli ="+id_func+";";
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
             ps = conexao.prepareStatement(string);
