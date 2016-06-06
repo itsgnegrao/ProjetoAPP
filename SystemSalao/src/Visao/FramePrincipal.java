@@ -35,53 +35,74 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnCadCli = new javax.swing.JButton();
+        btnCadFunc = new javax.swing.JButton();
+        btnAgenda = new javax.swing.JButton();
+        btnCaixa = new javax.swing.JButton();
+        btnAtendimento = new javax.swing.JButton();
+        btnServicos = new javax.swing.JButton();
         jPanelPrinc = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuCadCli = new javax.swing.JMenuItem();
         jMenuCadFunc = new javax.swing.JMenuItem();
+        jMenuCadServico = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuAgenda = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuCaixa = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuNovoAtend = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(java.awt.Color.white);
 
-        jButton2.setText("cc");
-        jButton2.setPreferredSize(new java.awt.Dimension(50, 50));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnCadCli.setText("cc");
+        btnCadCli.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnCadCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCadCliActionPerformed(evt);
             }
         });
 
-        jButton1.setText("cf");
-        jButton1.setPreferredSize(new java.awt.Dimension(50, 50));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCadFunc.setText("cf");
+        btnCadFunc.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnCadFunc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCadFuncActionPerformed(evt);
             }
         });
 
-        jButton4.setText("ag");
-        jButton4.setPreferredSize(new java.awt.Dimension(50, 50));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnAgenda.setText("ag");
+        btnAgenda.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnAgendaActionPerformed(evt);
             }
         });
 
-        jButton3.setText("cx");
-        jButton3.setPreferredSize(new java.awt.Dimension(50, 50));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnCaixa.setText("cx");
+        btnCaixa.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnCaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnCaixaActionPerformed(evt);
+            }
+        });
+
+        btnAtendimento.setText("fin at");
+        btnAtendimento.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnAtendimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtendimentoActionPerformed(evt);
+            }
+        });
+
+        btnServicos.setText("ser");
+        btnServicos.setPreferredSize(new java.awt.Dimension(50, 50));
+        btnServicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnServicosActionPerformed(evt);
             }
         });
 
@@ -92,29 +113,36 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCadCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(btnCadFunc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAgenda, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnServicos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCadCli, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCadFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnServicos, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -147,6 +175,14 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuCadFunc);
 
+        jMenuCadServico.setText("Serviço");
+        jMenuCadServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuCadServicoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuCadServico);
+
         jMenuBar1.add(jMenu1);
 
         jMenu3.setText("Agenda");
@@ -173,6 +209,18 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jMenu5.setText("Atendimento");
+
+        jMenuNovoAtend.setText("Novo Atendimento");
+        jMenuNovoAtend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuNovoAtendActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuNovoAtend);
+
+        jMenuBar1.add(jMenu5);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -191,9 +239,11 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelPrinc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanelPrinc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -201,51 +251,75 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void jMenuCadFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadFuncActionPerformed
        FrameCadFunc fcc1 = new FrameCadFunc();
-       fcc1.setLocation(5,5);
+       fcc1.setLocationRelativeTo(null);
        fcc1.setVisible(true);
     }//GEN-LAST:event_jMenuCadFuncActionPerformed
 
     private void jMenuCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadCliActionPerformed
        FrameCadCli fcc1 = new FrameCadCli();
-       fcc1.setLocation(100,100);
+       fcc1.setLocationRelativeTo(null);
        fcc1.setVisible(true);
     }//GEN-LAST:event_jMenuCadCliActionPerformed
 
     private void jMenuAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAgendaActionPerformed
        FrameAgenda fa1 = new FrameAgenda();
-       fa1.setLocation(100,100);
+       fa1.setLocationRelativeTo(null);
        fa1.setVisible(true);
     }//GEN-LAST:event_jMenuAgendaActionPerformed
 
     private void jMenuCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCaixaActionPerformed
        FrameCaixa fc1 = new FrameCaixa();
-       fc1.setLocation(100,100);
+       fc1.setLocationRelativeTo(null);
        fc1.setVisible(true);
     }//GEN-LAST:event_jMenuCaixaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadCliActionPerformed
         FrameCadCli fcc1 = new FrameCadCli();
-       fcc1.setLocation(100,100);
+       fcc1.setLocationRelativeTo(null);
        fcc1.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnCadCliActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCadFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadFuncActionPerformed
         FrameCadFunc fcc1 = new FrameCadFunc();
-       fcc1.setLocation(5,5);
+       fcc1.setLocationRelativeTo(null);
        fcc1.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCadFuncActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendaActionPerformed
         FrameAgenda fa1 = new FrameAgenda();
-       fa1.setLocation(100,100);
+       fa1.setLocationRelativeTo(null);
        fa1.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnAgendaActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaixaActionPerformed
         FrameCaixa fc1 = new FrameCaixa();
-       fc1.setLocation(100,100);
+       fc1.setLocationRelativeTo(null);
        fc1.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnCaixaActionPerformed
+
+    private void btnAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtendimentoActionPerformed
+       FrameAtendimento fa1 = new FrameAtendimento();
+       fa1.setLocationRelativeTo(null); 
+       fa1.setVisible(true);
+    }//GEN-LAST:event_btnAtendimentoActionPerformed
+
+    private void btnServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicosActionPerformed
+       FrameServicos fa1 = new FrameServicos();
+       fa1.setLocationRelativeTo(null); 
+       fa1.setVisible(true);
+    }//GEN-LAST:event_btnServicosActionPerformed
+
+    private void jMenuNovoAtendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuNovoAtendActionPerformed
+        FrameAtendimento fa1 = new FrameAtendimento();
+       fa1.setLocationRelativeTo(null); 
+       fa1.setVisible(true);
+    }//GEN-LAST:event_jMenuNovoAtendActionPerformed
+
+    private void jMenuCadServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadServicoActionPerformed
+       FrameServicos fa1 = new FrameServicos();
+       fa1.setLocationRelativeTo(null); 
+       fa1.setVisible(true);
+    }//GEN-LAST:event_jMenuCadServicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,18 +327,23 @@ public class FramePrincipal extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnAgenda;
+    private javax.swing.JButton btnAtendimento;
+    private javax.swing.JButton btnCadCli;
+    private javax.swing.JButton btnCadFunc;
+    private javax.swing.JButton btnCaixa;
+    private javax.swing.JButton btnServicos;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuItem jMenuAgenda;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuCadCli;
     private javax.swing.JMenuItem jMenuCadFunc;
+    private javax.swing.JMenuItem jMenuCadServico;
     private javax.swing.JMenuItem jMenuCaixa;
+    private javax.swing.JMenuItem jMenuNovoAtend;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelPrinc;
     // End of variables declaration//GEN-END:variables
