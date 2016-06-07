@@ -78,7 +78,6 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         Xclose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 385));
 
         jLabel1.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
         jLabel1.setText("CADASTRO CLIENTE");
@@ -123,7 +122,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
         jLabel5.setText("Data Nasc");
 
         txtCpf4.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -144,13 +143,13 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
         jLabel8.setText("Nome");
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
         jLabel9.setText("CPF");
 
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
         jLabel10.setText("Celular");
 
         txtAno.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +163,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
         jLabel11.setText("Usuário");
 
         txtUser.addActionListener(new java.awt.event.ActionListener() {
@@ -173,7 +172,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
         jLabel12.setText("Senha");
 
         jButton3.setText("Cancelar");
@@ -219,7 +218,6 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel2.setText("ID");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -237,7 +235,6 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel13.setText("/");
 
-        txtEstado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         txtEstado.setText("Busque para editar.");
 
         Xclose.setForeground(new java.awt.Color(255, 0, 51));
@@ -312,7 +309,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
                                                     .addComponent(jLabel6)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                     .addComponent(txtCpf4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))))))))
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +363,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
                     .addComponent(jButton3))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
