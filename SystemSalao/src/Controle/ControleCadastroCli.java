@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,7 +38,7 @@ public class ControleCadastroCli {
     public ControleCadastroCli(int id_cli) {
         try {
             String string = "Select * from Cliente where id_cli=" + id_cli + ";";
-            String string1 = "Select * from login l, cliente_login cl where l.id_login = cl.id_login AND cl.id_cli ="+id_cli+";";
+            String string1 = "Select * from login l, cliente_login cl where l.id_login = cl.id_login AND cl.id_cli =" + id_cli + ";";
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
             ps = conexao.prepareStatement(string);
@@ -46,7 +47,11 @@ public class ControleCadastroCli {
             while (rs.next()) {
                 cliente = new Cliente(rs.getInt("id_cli"), rs.getString("nome_cli"), rs.getDate("data_nasc_cli"), rs.getString("cpf_cli"), rs.getInt("login_id"), rs.getString("celular"));
             }
-
+            
+            if (cliente == null) {
+                JOptionPane.showMessageDialog(null, "Cliente Não Cadastrado!");
+            }
+            
             ps = conexao.prepareStatement(string1);
             ps.execute();
             rs = ps.executeQuery();
