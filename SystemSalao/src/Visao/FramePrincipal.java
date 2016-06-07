@@ -13,8 +13,8 @@ import javax.swing.JPanel;
  *
  * @author leonardo corrá, giovani bertuzzo, gabriel negrão
  */
-public class FramePrincipal extends javax.swing.JFrame {    
-        
+public class FramePrincipal extends javax.swing.JFrame {
+
     /**
      * Creates new form NovoJFrame
      */
@@ -55,6 +55,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jMenuNovoAtend = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Salãozão");
 
         jPanel2.setBackground(java.awt.Color.white);
 
@@ -126,7 +127,7 @@ public class FramePrincipal extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(btnServicos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,15 +147,17 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanelPrinc.setPreferredSize(new java.awt.Dimension(500, 500));
+
         javax.swing.GroupLayout jPanelPrincLayout = new javax.swing.GroupLayout(jPanelPrinc);
         jPanelPrinc.setLayout(jPanelPrincLayout);
         jPanelPrincLayout.setHorizontalGroup(
             jPanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 596, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
         jPanelPrincLayout.setVerticalGroup(
             jPanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Cadastros");
@@ -230,9 +233,9 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelPrinc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,81 +253,92 @@ public class FramePrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuCadFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadFuncActionPerformed
-       FrameCadFunc fcc1 = new FrameCadFunc();
-       fcc1.setLocationRelativeTo(null);
-       fcc1.setVisible(true);
+        FrameCadFunc fcc1 = new FrameCadFunc();
+        fcc1.setLocationRelativeTo(null);
+        fcc1.setVisible(true);
     }//GEN-LAST:event_jMenuCadFuncActionPerformed
 
     private void jMenuCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadCliActionPerformed
-       FrameCadCli fcc1 = new FrameCadCli();
-       fcc1.setLocationRelativeTo(null);
-       fcc1.setVisible(true);
+        FrameCadCli fcc1 = new FrameCadCli();
+        jPanelPrinc.removeAll();
+        jPanelPrinc.add(fcc1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fcc1.getWidth();
+        int aIFrame = fcc1.getHeight();
+        fcc1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
+        fcc1.setVisible(true);
     }//GEN-LAST:event_jMenuCadCliActionPerformed
 
     private void jMenuAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAgendaActionPerformed
-       FrameAgenda fa1 = new FrameAgenda();
-       fa1.setLocationRelativeTo(null);
-       fa1.setVisible(true);
+        FrameAgenda fa1 = new FrameAgenda();
+        fa1.setLocationRelativeTo(null);
+        fa1.setVisible(true);
     }//GEN-LAST:event_jMenuAgendaActionPerformed
 
     private void jMenuCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCaixaActionPerformed
-       FrameCaixa fc1 = new FrameCaixa();
-       fc1.setLocationRelativeTo(null);
-       fc1.setVisible(true);
+        FrameCaixa fc1 = new FrameCaixa();
+        fc1.setLocationRelativeTo(null);
+        fc1.setVisible(true);
     }//GEN-LAST:event_jMenuCaixaActionPerformed
 
     private void btnCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadCliActionPerformed
         FrameCadCli fcc1 = new FrameCadCli();
-       fcc1.setLocationRelativeTo(null);
-       fcc1.setVisible(true);
+        jPanelPrinc.removeAll();
+        jPanelPrinc.add(fcc1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fcc1.getWidth();
+        int aIFrame = fcc1.getHeight();
+        fcc1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
+        fcc1.setVisible(true);
     }//GEN-LAST:event_btnCadCliActionPerformed
 
     private void btnCadFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadFuncActionPerformed
         FrameCadFunc fcc1 = new FrameCadFunc();
-       fcc1.setLocationRelativeTo(null);
-       fcc1.setVisible(true);
+        fcc1.setLocationRelativeTo(null);
+        fcc1.setVisible(true);
     }//GEN-LAST:event_btnCadFuncActionPerformed
 
     private void btnAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendaActionPerformed
         FrameAgenda fa1 = new FrameAgenda();
-       fa1.setLocationRelativeTo(null);
-       fa1.setVisible(true);
+        fa1.setLocationRelativeTo(null);
+        fa1.setVisible(true);
     }//GEN-LAST:event_btnAgendaActionPerformed
 
     private void btnCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaixaActionPerformed
         FrameCaixa fc1 = new FrameCaixa();
-       fc1.setLocationRelativeTo(null);
-       fc1.setVisible(true);
+        fc1.setLocationRelativeTo(null);
+        fc1.setVisible(true);
     }//GEN-LAST:event_btnCaixaActionPerformed
 
     private void btnAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtendimentoActionPerformed
-       FrameAtendimento fa1 = new FrameAtendimento();
-       fa1.setLocationRelativeTo(null); 
-       fa1.setVisible(true);
+        FrameAtendimento fa1 = new FrameAtendimento();
+        fa1.setLocationRelativeTo(null);
+        fa1.setVisible(true);
     }//GEN-LAST:event_btnAtendimentoActionPerformed
 
     private void btnServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicosActionPerformed
-       FrameServicos fa1 = new FrameServicos();
-       fa1.setLocationRelativeTo(null); 
-       fa1.setVisible(true);
+        FrameServicos fa1 = new FrameServicos();
+        fa1.setLocationRelativeTo(null);
+        fa1.setVisible(true);
     }//GEN-LAST:event_btnServicosActionPerformed
 
     private void jMenuNovoAtendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuNovoAtendActionPerformed
         FrameAtendimento fa1 = new FrameAtendimento();
-       fa1.setLocationRelativeTo(null); 
-       fa1.setVisible(true);
+        fa1.setLocationRelativeTo(null);
+        fa1.setVisible(true);
     }//GEN-LAST:event_jMenuNovoAtendActionPerformed
 
     private void jMenuCadServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadServicoActionPerformed
-       FrameServicos fa1 = new FrameServicos();
-       fa1.setLocationRelativeTo(null); 
-       fa1.setVisible(true);
+        FrameServicos fa1 = new FrameServicos();
+        fa1.setLocationRelativeTo(null);
+        fa1.setVisible(true);
     }//GEN-LAST:event_jMenuCadServicoActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgenda;
