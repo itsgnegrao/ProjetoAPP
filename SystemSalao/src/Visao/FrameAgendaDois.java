@@ -35,20 +35,20 @@ public class FrameAgendaDois extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        chkCorte = new javax.swing.JCheckBox();
+        chkPintura = new javax.swing.JCheckBox();
+        chkChapinha = new javax.swing.JCheckBox();
+        chkSombrancelha = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
+        chkMaquiagem = new javax.swing.JCheckBox();
+        chkEscova = new javax.swing.JCheckBox();
+        chkUnha = new javax.swing.JCheckBox();
+        chkMassagem = new javax.swing.JCheckBox();
+        txtSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,70 +103,70 @@ public class FrameAgendaDois extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
         jLabel5.setText("Selecione os serviços prestados");
 
-        jCheckBox1.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        jCheckBox1.setText("Corte");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        chkCorte.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
+        chkCorte.setText("Corte");
+        chkCorte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                chkCorteActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        jCheckBox2.setText("Pintura");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        chkPintura.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
+        chkPintura.setText("Pintura");
+        chkPintura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                chkPinturaActionPerformed(evt);
             }
         });
 
-        jCheckBox3.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        jCheckBox3.setText("Chapinha");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        chkChapinha.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
+        chkChapinha.setText("Chapinha");
+        chkChapinha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                chkChapinhaActionPerformed(evt);
             }
         });
 
-        jCheckBox4.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        jCheckBox4.setText("Sombrancelha");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        chkSombrancelha.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
+        chkSombrancelha.setText("Sombrancelha");
+        chkSombrancelha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                chkSombrancelhaActionPerformed(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
         jLabel6.setText("Digite a senha para confirmar o agendamento");
 
-        jCheckBox5.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        jCheckBox5.setText("Maquiagem");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+        chkMaquiagem.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
+        chkMaquiagem.setText("Maquiagem");
+        chkMaquiagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
+                chkMaquiagemActionPerformed(evt);
             }
         });
 
-        jCheckBox6.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        jCheckBox6.setText("Escova");
-        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+        chkEscova.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
+        chkEscova.setText("Escova");
+        chkEscova.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox6ActionPerformed(evt);
+                chkEscovaActionPerformed(evt);
             }
         });
 
-        jCheckBox7.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        jCheckBox7.setText("Unha (Pé e mão)");
-        jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
+        chkUnha.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
+        chkUnha.setText("Unha (Pé e mão)");
+        chkUnha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox7ActionPerformed(evt);
+                chkUnhaActionPerformed(evt);
             }
         });
 
-        jCheckBox8.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        jCheckBox8.setText("Massagem");
-        jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
+        chkMassagem.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
+        chkMassagem.setText("Massagem");
+        chkMassagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox8ActionPerformed(evt);
+                chkMassagemActionPerformed(evt);
             }
         });
 
@@ -204,21 +204,21 @@ public class FrameAgendaDois extends javax.swing.JFrame {
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox1)
-                                    .addComponent(jCheckBox2)
-                                    .addComponent(jCheckBox3)
-                                    .addComponent(jCheckBox4))
+                                    .addComponent(chkCorte)
+                                    .addComponent(chkPintura)
+                                    .addComponent(chkChapinha)
+                                    .addComponent(chkSombrancelha))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox5)
-                                    .addComponent(jCheckBox6)
-                                    .addComponent(jCheckBox7)
-                                    .addComponent(jCheckBox8)))
+                                    .addComponent(chkMaquiagem)
+                                    .addComponent(chkEscova)
+                                    .addComponent(chkUnha)
+                                    .addComponent(chkMassagem)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addComponent(jLabel12)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -247,27 +247,27 @@ public class FrameAgendaDois extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
+                        .addComponent(chkCorte)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox2)
+                        .addComponent(chkPintura)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox3)
+                        .addComponent(chkChapinha)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox4))
+                        .addComponent(chkSombrancelha))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox5)
+                        .addComponent(chkMaquiagem)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox6)
+                        .addComponent(chkEscova)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox7)
+                        .addComponent(chkUnha)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox8)))
+                        .addComponent(chkMassagem)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
+                    .addComponent(jLabel12)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,40 +291,40 @@ public class FrameAgendaDois extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void chkCorteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkCorteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_chkCorteActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void chkPinturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPinturaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_chkPinturaActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void chkChapinhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkChapinhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_chkChapinhaActionPerformed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+    private void chkSombrancelhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSombrancelhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    }//GEN-LAST:event_chkSombrancelhaActionPerformed
 
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+    private void chkMaquiagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMaquiagemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
+    }//GEN-LAST:event_chkMaquiagemActionPerformed
 
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+    private void chkEscovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkEscovaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
+    }//GEN-LAST:event_chkEscovaActionPerformed
 
-    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
+    private void chkUnhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkUnhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox7ActionPerformed
+    }//GEN-LAST:event_chkUnhaActionPerformed
 
-    private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
+    private void chkMassagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMassagemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox8ActionPerformed
+    }//GEN-LAST:event_chkMassagemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -362,17 +362,17 @@ public class FrameAgendaDois extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox chkChapinha;
+    private javax.swing.JCheckBox chkCorte;
+    private javax.swing.JCheckBox chkEscova;
+    private javax.swing.JCheckBox chkMaquiagem;
+    private javax.swing.JCheckBox chkMassagem;
+    private javax.swing.JCheckBox chkPintura;
+    private javax.swing.JCheckBox chkSombrancelha;
+    private javax.swing.JCheckBox chkUnha;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -380,9 +380,9 @@ public class FrameAgendaDois extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField txtCel1;
     private javax.swing.JTextField txtCel2;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }

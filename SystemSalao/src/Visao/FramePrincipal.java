@@ -147,17 +147,17 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanelPrinc.setPreferredSize(new java.awt.Dimension(500, 500));
+        jPanelPrinc.setPreferredSize(new java.awt.Dimension(800, 600));
 
         javax.swing.GroupLayout jPanelPrincLayout = new javax.swing.GroupLayout(jPanelPrinc);
         jPanelPrinc.setLayout(jPanelPrincLayout);
         jPanelPrincLayout.setHorizontalGroup(
             jPanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         jPanelPrincLayout.setVerticalGroup(
             jPanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Cadastros");
@@ -261,6 +261,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void jMenuCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadCliActionPerformed
         FrameCadCli fcc1 = new FrameCadCli();
         jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
         jPanelPrinc.add(fcc1);
         int lDesk = jPanelPrinc.getWidth();
         int aDesk = jPanelPrinc.getHeight();
@@ -272,7 +273,14 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void jMenuAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAgendaActionPerformed
         FrameAgenda fa1 = new FrameAgenda();
-        fa1.setLocationRelativeTo(null);
+        jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
+        jPanelPrinc.add(fa1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fa1.getWidth();
+        int aIFrame = fa1.getHeight();
+        fa1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
         fa1.setVisible(true);
     }//GEN-LAST:event_jMenuAgendaActionPerformed
 
@@ -285,6 +293,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void btnCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadCliActionPerformed
         FrameCadCli fcc1 = new FrameCadCli();
         jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
         jPanelPrinc.add(fcc1);
         int lDesk = jPanelPrinc.getWidth();
         int aDesk = jPanelPrinc.getHeight();
@@ -302,7 +311,14 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void btnAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendaActionPerformed
         FrameAgenda fa1 = new FrameAgenda();
-        fa1.setLocationRelativeTo(null);
+        jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
+        jPanelPrinc.add(fa1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fa1.getWidth();
+        int aIFrame = fa1.getHeight();
+        fa1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
         fa1.setVisible(true);
     }//GEN-LAST:event_btnAgendaActionPerformed
 
