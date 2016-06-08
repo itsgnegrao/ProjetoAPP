@@ -7,6 +7,7 @@ package Visao;
 
 import Controle.ControleAtendimento;
 import Modelo.Atendimento;
+import java.awt.Color;
 import java.util.ArrayList;
 
 /**
@@ -20,6 +21,8 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
      */
     public FrameAgenda() {
         initComponents();
+        ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
+        this.setBorder(null);
     }
 
     /**
@@ -49,9 +52,9 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         btn1530 = new javax.swing.JButton();
         btn1500 = new javax.swing.JButton();
         btn1600 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
+        btn1730 = new javax.swing.JButton();
+        btn1700 = new javax.swing.JButton();
+        btn1630 = new javax.swing.JButton();
         jCalendar1 = new com.toedter.calendar.JCalendar();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -59,6 +62,11 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
 
         btnConsultar.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
         btnConsultar.setText("CONSULTAR");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
 
         jButton20.setBackground(new java.awt.Color(76, 192, 77));
         jButton20.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
@@ -75,6 +83,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         jLabel6.setText("Ocupado");
 
         btn830.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn830.setForeground(java.awt.Color.black);
         btn830.setText("08:30");
         btn830.setPreferredSize(new java.awt.Dimension(70, 30));
         btn830.addActionListener(new java.awt.event.ActionListener() {
@@ -84,6 +93,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn800.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn800.setForeground(java.awt.Color.black);
         btn800.setText("08:00");
         btn800.setPreferredSize(new java.awt.Dimension(70, 30));
         btn800.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +103,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn930.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn930.setForeground(java.awt.Color.black);
         btn930.setText("09:30");
         btn930.setPreferredSize(new java.awt.Dimension(70, 30));
         btn930.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +113,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn900.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn900.setForeground(java.awt.Color.black);
         btn900.setText("09:00");
         btn900.setPreferredSize(new java.awt.Dimension(70, 30));
         btn900.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +123,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn1000.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1000.setForeground(java.awt.Color.black);
         btn1000.setText("10:00");
         btn1000.setPreferredSize(new java.awt.Dimension(70, 30));
         btn1000.addActionListener(new java.awt.event.ActionListener() {
@@ -120,6 +133,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn1130.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1130.setForeground(java.awt.Color.black);
         btn1130.setText("11:30");
         btn1130.setPreferredSize(new java.awt.Dimension(70, 30));
         btn1130.addActionListener(new java.awt.event.ActionListener() {
@@ -129,6 +143,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn1100.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1100.setForeground(java.awt.Color.black);
         btn1100.setText("11:00");
         btn1100.setPreferredSize(new java.awt.Dimension(70, 30));
         btn1100.addActionListener(new java.awt.event.ActionListener() {
@@ -138,6 +153,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn1030.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1030.setForeground(java.awt.Color.black);
         btn1030.setText("10:30");
         btn1030.setPreferredSize(new java.awt.Dimension(70, 30));
         btn1030.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +163,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn1430.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1430.setForeground(java.awt.Color.black);
         btn1430.setText("14:30");
         btn1430.setPreferredSize(new java.awt.Dimension(70, 30));
         btn1430.addActionListener(new java.awt.event.ActionListener() {
@@ -156,6 +173,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn1400.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1400.setForeground(java.awt.Color.black);
         btn1400.setText("14:00");
         btn1400.setPreferredSize(new java.awt.Dimension(70, 30));
         btn1400.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +183,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn1530.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1530.setForeground(java.awt.Color.black);
         btn1530.setText("15:30");
         btn1530.setPreferredSize(new java.awt.Dimension(70, 30));
         btn1530.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +193,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn1500.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1500.setForeground(java.awt.Color.black);
         btn1500.setText("15:00");
         btn1500.setPreferredSize(new java.awt.Dimension(70, 30));
         btn1500.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +203,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         });
 
         btn1600.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1600.setForeground(java.awt.Color.black);
         btn1600.setText("16:00");
         btn1600.setPreferredSize(new java.awt.Dimension(70, 30));
         btn1600.addActionListener(new java.awt.event.ActionListener() {
@@ -191,30 +212,33 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton16.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
-        jButton16.setText("17:30");
-        jButton16.setPreferredSize(new java.awt.Dimension(70, 30));
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        btn1730.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1730.setForeground(java.awt.Color.black);
+        btn1730.setText("17:30");
+        btn1730.setPreferredSize(new java.awt.Dimension(70, 30));
+        btn1730.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                btn1730ActionPerformed(evt);
             }
         });
 
-        jButton17.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
-        jButton17.setText("17:00");
-        jButton17.setPreferredSize(new java.awt.Dimension(70, 30));
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        btn1700.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1700.setForeground(java.awt.Color.black);
+        btn1700.setText("17:00");
+        btn1700.setPreferredSize(new java.awt.Dimension(70, 30));
+        btn1700.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                btn1700ActionPerformed(evt);
             }
         });
 
-        jButton18.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
-        jButton18.setText("16:30");
-        jButton18.setPreferredSize(new java.awt.Dimension(70, 30));
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        btn1630.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
+        btn1630.setForeground(java.awt.Color.black);
+        btn1630.setText("16:30");
+        btn1630.setPreferredSize(new java.awt.Dimension(70, 30));
+        btn1630.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                btn1630ActionPerformed(evt);
             }
         });
 
@@ -289,11 +313,11 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(btn1600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(10, 10, 10)
-                                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn1630, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(10, 10, 10)
-                                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn1700, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(10, 10, 10)
-                                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(btn1730, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(20, 20, 20))))
         );
         layout.setVerticalGroup(
@@ -329,9 +353,9 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
                                 .addGap(8, 8, 8)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btn1600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btn1630, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn1700, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn1730, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -366,8 +390,6 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btn1600ActionPerformed
 
     private void jCalendar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCalendar1MouseClicked
-        ControleAtendimento ConAtend = new ControleAtendimento(jCalendar1.getDate());
-        ArrayList<Atendimento> atendList = ConAtend.getAtendList();
 
     }//GEN-LAST:event_jCalendar1MouseClicked
 
@@ -437,23 +459,33 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1530ActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+    private void btn1630ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1630ActionPerformed
         FrameAgendaDois fa2 = new FrameAgendaDois();
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
-    }//GEN-LAST:event_jButton18ActionPerformed
+    }//GEN-LAST:event_btn1630ActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void btn1700ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1700ActionPerformed
         FrameAgendaDois fa2 = new FrameAgendaDois();
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
-    }//GEN-LAST:event_jButton17ActionPerformed
+    }//GEN-LAST:event_btn1700ActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void btn1730ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1730ActionPerformed
         FrameAgendaDois fa2 = new FrameAgendaDois();
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
-    }//GEN-LAST:event_jButton16ActionPerformed
+    }//GEN-LAST:event_btn1730ActionPerformed
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        ControleAtendimento ConAtend = new ControleAtendimento((jCalendar1.getDate().getYear() + 1900), jCalendar1.getDate().getMonth() + 1, jCalendar1.getDate().getDate());
+        ArrayList<Atendimento> atendList = ConAtend.getAtendList();
+        if (atendList.isEmpty()) {
+            SetGreen(atendList);
+        } else {
+            SetColor(atendList);
+        }
+    }//GEN-LAST:event_btnConsultarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -466,14 +498,14 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
     private javax.swing.JButton btn1500;
     private javax.swing.JButton btn1530;
     private javax.swing.JButton btn1600;
+    private javax.swing.JButton btn1630;
+    private javax.swing.JButton btn1700;
+    private javax.swing.JButton btn1730;
     private javax.swing.JButton btn800;
     private javax.swing.JButton btn830;
     private javax.swing.JButton btn900;
     private javax.swing.JButton btn930;
     private javax.swing.JButton btnConsultar;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private com.toedter.calendar.JCalendar jCalendar1;
@@ -483,4 +515,139 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
+
+    private void SetGreen(ArrayList<Atendimento> atendList) {
+        btn800.setBackground(Color.green);
+        btn800.setEnabled(true);
+        btn830.setBackground(Color.green);
+        btn830.setEnabled(true);
+        btn900.setBackground(Color.green);
+        btn900.setEnabled(true);
+        btn930.setBackground(Color.green);
+        btn930.setEnabled(true);
+        btn1000.setBackground(Color.green);
+        btn1000.setEnabled(true);
+        btn1030.setBackground(Color.green);
+        btn1030.setEnabled(true);
+        btn1100.setBackground(Color.green);
+        btn1100.setEnabled(true);
+        btn1130.setBackground(Color.green);
+        btn1130.setEnabled(true);
+        btn1400.setBackground(Color.green);
+        btn1400.setEnabled(true);
+        btn1430.setBackground(Color.green);
+        btn1430.setEnabled(true);
+        btn1500.setBackground(Color.green);
+        btn1500.setEnabled(true);
+        btn1530.setBackground(Color.green);
+        btn1530.setEnabled(true);
+        btn1600.setBackground(Color.green);
+        btn1600.setEnabled(true);
+        btn1630.setBackground(Color.green);
+        btn1630.setEnabled(true);
+        btn1700.setBackground(Color.green);
+        btn1700.setEnabled(true);
+        btn1730.setBackground(Color.green);
+        btn1730.setEnabled(true);
+
+    }
+
+    private void SetColor(ArrayList<Atendimento> atendList) {
+        if (atendList.get(0).getHorario().getHours() == 8 && atendList.get(0).getHorario().getMinutes() == 00) {
+                btn800.setEnabled(false);
+                btn800.setBackground(Color.red);
+            } else {
+                btn800.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 8 && atendList.get(0).getHorario().getMinutes() == 30) {
+                btn830.setEnabled(false);
+                btn830.setBackground(Color.red);
+            } else {
+                btn830.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 9 && atendList.get(0).getHorario().getMinutes() == 00) {
+                btn900.setEnabled(false);
+                btn900.setBackground(Color.red);
+            } else {
+                btn900.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 9 && atendList.get(0).getHorario().getMinutes() == 30) {
+                btn930.setEnabled(false);
+                btn930.setBackground(Color.red);
+            } else {
+                btn930.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 10 && atendList.get(0).getHorario().getMinutes() == 00) {
+                btn1000.setEnabled(false);
+                btn1000.setBackground(Color.red);
+            } else {
+                btn1000.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 10 && atendList.get(0).getHorario().getMinutes() == 30) {
+                btn1030.setEnabled(false);
+                btn1030.setBackground(Color.red);
+            } else {
+                btn1030.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 11 && atendList.get(0).getHorario().getMinutes() == 00) {
+                btn1100.setEnabled(false);
+                btn1100.setBackground(Color.red);
+            } else {
+                btn1100.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 11 && atendList.get(0).getHorario().getMinutes() == 30) {
+                btn1130.setEnabled(false);
+                btn1130.setBackground(Color.red);
+            } else {
+                btn1130.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 14 && atendList.get(0).getHorario().getMinutes() == 30) {
+                btn1400.setEnabled(false);
+                btn1400.setBackground(Color.red);
+            } else {
+                btn1400.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 14 && atendList.get(0).getHorario().getMinutes() == 30) {
+                btn1430.setEnabled(false);
+                btn1430.setBackground(Color.red);
+            } else {
+                btn1430.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 15 && atendList.get(0).getHorario().getMinutes() == 30) {
+                btn1500.setEnabled(false);
+                btn1500.setBackground(Color.red);
+            } else {
+                btn1500.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 15 && atendList.get(0).getHorario().getMinutes() == 30) {
+                btn1530.setEnabled(false);
+                btn1530.setBackground(Color.red);
+            } else {
+                btn1530.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 16 && atendList.get(0).getHorario().getMinutes() == 00) {
+                btn1600.setEnabled(false);
+                btn1600.setBackground(Color.red);
+            } else {
+                btn1600.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 16 && atendList.get(0).getHorario().getMinutes() == 30) {
+                btn1630.setEnabled(false);
+                btn1630.setBackground(Color.red);
+            } else {
+                btn1630.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 17 && atendList.get(0).getHorario().getMinutes() == 00) {
+                btn1700.setEnabled(false);
+                btn1700.setBackground(Color.red);
+            } else {
+                btn1700.setBackground(Color.green);
+            }
+            if (atendList.get(0).getHorario().getHours() == 17 && atendList.get(0).getHorario().getMinutes() == 30) {
+                btn1730.setEnabled(false);
+                btn1730.setBackground(Color.red);
+            } else {
+                btn1730.setBackground(Color.green);
+            }
+    }
 }

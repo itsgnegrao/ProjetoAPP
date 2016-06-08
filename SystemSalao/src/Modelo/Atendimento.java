@@ -31,5 +31,25 @@ public class Atendimento {
         this.data = data;
         this.horario = horario;
     }
+
+    public int getId_atend() {
+        return id_atend;
+    }
+
+    public int getId_func() {
+        return id_func;
+    }
+
+    public int getId_cli() {
+        return id_cli;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public Time getHorario() {
+        return horario;
+    }
     
 }

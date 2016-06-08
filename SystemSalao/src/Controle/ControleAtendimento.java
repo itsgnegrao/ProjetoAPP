@@ -28,15 +28,16 @@ public class ControleAtendimento {
         return atendList;
     }
 
-    public ControleAtendimento(Date data) {
-                try {
-            String string = "Select * from Atendimento where data = " +data+";";
+    public ControleAtendimento(int Ano, int Mes, int Dia) {
+        try {
+            String string = "Select * from Atendimento where data = '" +Ano+"-"+Mes+"-"+Dia+"';";
+            System.out.println(string);
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
             ps = conexao.prepareStatement(string);
             ps.execute();
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Atendimento atendimento = new Atendimento(rs.getInt("id_atend"), rs.getInt("id_func"), rs.getInt("id_cli"), rs.getDate("data"), rs.getTime("horario"));
                 atendList.add(atendimento);
             }
