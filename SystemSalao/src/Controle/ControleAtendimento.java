@@ -31,7 +31,6 @@ public class ControleAtendimento {
     public ControleAtendimento(int Ano, int Mes, int Dia) {
         try {
             String string = "Select * from Atendimento where data = '" +Ano+"-"+Mes+"-"+Dia+"';";
-            System.out.println(string);
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
             ps = conexao.prepareStatement(string);
