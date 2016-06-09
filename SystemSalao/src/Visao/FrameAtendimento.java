@@ -5,17 +5,32 @@
  */
 package Visao;
 
-/**
- *
- * @author a1602020
- */
+import Modelo.Atendimento;
+import Modelo.Cliente;
+import Controle.ControleAtendimento;
+import Controle.ControleCadastroCli;
+import Controle.ControleServico;
+import Modelo.Servico;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 public class FrameAtendimento extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrameAtendimento
-     */
     public FrameAtendimento() {
         initComponents();
+        ControleCadastroCli conCli;
+        Cliente cliente;
+        ControleAtendimento ConAtend = new ControleAtendimento(2016, 6, 30);
+        ArrayList<Atendimento> atendList = ConAtend.getAtendList();
+        DefaultListModel model = new DefaultListModel();
+        String id;
+        for (int i = 0; i < atendList.size(); i++) {
+            conCli = new ControleCadastroCli(atendList.get(i).getId_cli());
+            cliente = conCli.getCliente();
+            id = Integer.toString(atendList.get(i).getId_atend());
+            model.addElement(id + "-" + cliente.getNome_cli());
+        }
+        Lista_Atendimento.setModel(model);
     }
 
     /**
@@ -49,14 +64,14 @@ public class FrameAtendimento extends javax.swing.JFrame {
         checkBoxMassagem = new javax.swing.JCheckBox();
         checkBoxCorte = new javax.swing.JCheckBox();
         jLabel10 = new javax.swing.JLabel();
-        lblValorTotal = new javax.swing.JLabel();
+        ValorTotal = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         txtDataDia = new javax.swing.JTextField();
         txtDataMes = new javax.swing.JTextField();
         txtDataAno = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        ListAtendimentos = new javax.swing.JList<>();
+        Lista_Atendimento = new javax.swing.JList<>();
         jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
@@ -65,6 +80,8 @@ public class FrameAtendimento extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         lblValorTotal2 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        ValorTotal1 = new javax.swing.JLabel();
+        lblValorTotal3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -201,10 +218,10 @@ public class FrameAtendimento extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
         jLabel10.setText("TOTAL:");
 
-        lblValorTotal.setBackground(new java.awt.Color(92, 97, 108));
-        lblValorTotal.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
-        lblValorTotal.setForeground(new java.awt.Color(228, 48, 46));
-        lblValorTotal.setText("R$ 00,00");
+        ValorTotal.setBackground(new java.awt.Color(92, 97, 108));
+        ValorTotal.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
+        ValorTotal.setForeground(new java.awt.Color(228, 48, 46));
+        ValorTotal.setText("00.00");
 
         btnSalvar.setText("Finalizar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -241,26 +258,26 @@ public class FrameAtendimento extends javax.swing.JFrame {
             }
         });
 
-        ListAtendimentos.setBackground(new java.awt.Color(197, 193, 193));
-        ListAtendimentos.setForeground(new java.awt.Color(0, 0, 0));
-        ListAtendimentos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "0 - 08:00", "1 - 08:30", "2 - 09:00", "3 - 09:30" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(ListAtendimentos);
+        Lista_Atendimento.setBackground(new java.awt.Color(197, 193, 193));
+        Lista_Atendimento.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(Lista_Atendimento);
 
         jLabel11.setBackground(new java.awt.Color(92, 97, 108));
         jLabel11.setText("Atendimento - Hora:");
 
         jButton1.setText("Finalizar Pedido");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
         jLabel12.setText("TROCO");
 
         lblValorTotal1.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
         lblValorTotal1.setForeground(new java.awt.Color(78, 55, 246));
-        lblValorTotal1.setText("R$ 00,00");
+        lblValorTotal1.setText("R$");
 
         jLabel14.setBackground(new java.awt.Color(92, 97, 108));
         jLabel14.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
@@ -273,6 +290,15 @@ public class FrameAtendimento extends javax.swing.JFrame {
         lblValorTotal2.setText("R$");
 
         jLabel2.setText("*campo necessário");
+
+        ValorTotal1.setBackground(new java.awt.Color(92, 97, 108));
+        ValorTotal1.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
+        ValorTotal1.setForeground(new java.awt.Color(228, 48, 46));
+        ValorTotal1.setText("R$");
+
+        lblValorTotal3.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
+        lblValorTotal3.setForeground(new java.awt.Color(78, 55, 246));
+        lblValorTotal3.setText("00.00");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -287,9 +313,7 @@ public class FrameAtendimento extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel12)
-                        .addGap(30, 30, 30)
-                        .addComponent(lblValorTotal1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -340,21 +364,25 @@ public class FrameAtendimento extends javax.swing.JFrame {
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGap(12, 12, 12))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addGap(30, 30, 30)
-                                        .addComponent(lblValorTotal))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel14)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblValorTotal2)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(lblValorTotal2))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ValorTotal1))
+                                    .addComponent(lblValorTotal1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ValorTotal)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblValorTotal3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtIdFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -418,7 +446,8 @@ public class FrameAtendimento extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(lblValorTotal))
+                            .addComponent(ValorTotal)
+                            .addComponent(ValorTotal1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
@@ -431,11 +460,14 @@ public class FrameAtendimento extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addComponent(jButton1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(lblValorTotal1)
-                    .addComponent(btnSalvar)
-                    .addComponent(btnCancelar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel12)
+                        .addComponent(btnSalvar)
+                        .addComponent(btnCancelar))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblValorTotal3)
+                        .addComponent(lblValorTotal1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -518,6 +550,53 @@ public class FrameAtendimento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMinActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ControleServico conServ;
+        Servico servico;
+        conServ = new ControleServico(Lista_Atendimento.getSelectedValue());
+        ArrayList<Servico> servList = conServ.getServList();
+        float f;
+
+        for (int i = 0; i < servList.size(); i++) {
+            servico = servList.get(i);
+            if (servico.getDescricao().equals("Corte")) {
+                checkBoxCorte.setSelected(true);
+                f = Float.valueOf(ValorTotal.getText()).floatValue();
+                f+= servico.getValor();
+                ValorTotal.setText(String.valueOf(f));
+                
+            } else if (servico.getDescricao().equals("Pintura")) {
+                checkBoxPintura.setSelected(true);
+                f = Float.valueOf(ValorTotal.getText()).floatValue();
+                f+= servico.getValor();
+                ValorTotal.setText(String.valueOf(f));
+                
+            } else if (servico.getDescricao().equals("Chapinha")) {
+                checkBoxChapinha.setSelected(true);
+                f = Float.valueOf(ValorTotal.getText()).floatValue();
+                f+= servico.getValor();
+                ValorTotal.setText(String.valueOf(f));
+                
+            } else if (servico.getDescricao().equals("Sombrancelha")) {
+                checkBoxSombrancelha.setSelected(true);
+                f = Float.valueOf(ValorTotal.getText()).floatValue();
+                f+= servico.getValor();
+                ValorTotal.setText(String.valueOf(f));
+                
+            } else if (servico.getDescricao().equals("Maquiagem")) {
+                checkBoxMaquiagem.setSelected(true);
+            } else if (servico.getDescricao().equals("Escova")) {
+                checkBoxEscova.setSelected(true);
+            } else if (servico.getDescricao().equals("Unha")) {
+                checkBoxUnha.setSelected(true);
+            } else if (servico.getDescricao().equals("Massagem")) {
+                checkBoxMassagem.setSelected(true);
+            }
+
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -554,7 +633,9 @@ public class FrameAtendimento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> ListAtendimentos;
+    private javax.swing.JList<String> Lista_Atendimento;
+    private javax.swing.JLabel ValorTotal;
+    private javax.swing.JLabel ValorTotal1;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JCheckBox checkBoxChapinha;
@@ -582,9 +663,9 @@ public class FrameAtendimento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel lblValorTotal;
     private javax.swing.JLabel lblValorTotal1;
     private javax.swing.JLabel lblValorTotal2;
+    private javax.swing.JLabel lblValorTotal3;
     private javax.swing.JTextField txtDataAno;
     private javax.swing.JTextField txtDataDia;
     private javax.swing.JTextField txtDataMes;

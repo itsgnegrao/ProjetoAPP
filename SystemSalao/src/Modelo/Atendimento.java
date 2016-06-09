@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -22,7 +23,7 @@ public class Atendimento {
     int id_func;
     int id_cli;
     Date data;
-    Time horario;    
+    Time horario;
 
     public Atendimento(int id_atend, int id_func, int id_cli, Date data, Time horario) {
         this.id_atend = id_atend;

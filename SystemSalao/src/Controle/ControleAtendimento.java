@@ -7,6 +7,7 @@ package Controle;
 
 import Modelo.Atendimento;
 import Modelo.Cargo;
+import Modelo.Servico;
 import java.sql.Connection;
 import java.util.Date;
 import java.sql.PreparedStatement;
@@ -39,7 +40,7 @@ public class ControleAtendimento {
             while (rs.next()) {
                 Atendimento atendimento = new Atendimento(rs.getInt("id_atend"), rs.getInt("id_func"), rs.getInt("id_cli"), rs.getDate("data"), rs.getTime("horario"));
                 atendList.add(atendimento);
-            }
+            }                
             conexao.close();
         } catch (SQLException ex) {
             Logger.getLogger(ControleCargo.class.getName()).log(Level.SEVERE, null, ex);
