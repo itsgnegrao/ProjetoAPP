@@ -38,7 +38,7 @@ public class ControleServico {
 
     public ControleServico(String string) {
         try {
-            String str[] = string.split("-");
+            String str[] = string.split(" - ");
             String select = "Select * from Servico  natural join Servico_Atendimento  where id_atend = " + str[0] + ";";
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;

@@ -29,7 +29,7 @@ public class FrameAtendimento extends javax.swing.JFrame {
             conCli = new ControleCadastroCli(atendList.get(i).getId_cli());
             cliente = conCli.getCliente();
             id = Integer.toString(atendList.get(i).getId_atend());
-            model.addElement(id + "-"+cliente.getId_cli()+"-" + cliente.getNome_cli());
+            model.addElement(id + " - "+cliente.getId_cli()+" - " + cliente.getNome_cli());
         }
         Lista_Atendimento.setModel(model);
                 
@@ -163,7 +163,7 @@ public class FrameAtendimento extends javax.swing.JFrame {
         ValorTotal.setBackground(new java.awt.Color(92, 97, 108));
         ValorTotal.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
         ValorTotal.setForeground(new java.awt.Color(228, 48, 46));
-        ValorTotal.setText("00.00");
+        ValorTotal.setText("00,00");
 
         btnSalvar.setText("Finalizar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -243,7 +243,7 @@ public class FrameAtendimento extends javax.swing.JFrame {
 
         Troco.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
         Troco.setForeground(new java.awt.Color(78, 55, 246));
-        Troco.setText("00.00");
+        Troco.setText("00,00");
 
         jButton3.setText("Gerar Troco");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -320,10 +320,8 @@ public class FrameAtendimento extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(39, 39, 39)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jButton3)
-                                            .addComponent(jButton2)))
+                                        .addGap(41, 41, 41)
+                                        .addComponent(jButton2))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(lblValorTotal2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -346,7 +344,10 @@ public class FrameAtendimento extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2)))
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(jButton3)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -388,7 +389,7 @@ public class FrameAtendimento extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel15)
                 .addGap(1, 1, 1)
@@ -413,12 +414,16 @@ public class FrameAtendimento extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Recebido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblValorTotal2))
-                .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvar)
-                    .addComponent(btnCancelar)
-                    .addComponent(jButton3))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnSalvar)
+                            .addComponent(btnCancelar))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3))))
         );
 
         pack();
@@ -498,21 +503,22 @@ public class FrameAtendimento extends javax.swing.JFrame {
     }//GEN-LAST:event_txtHoraMouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        float total = Float.valueOf(ValorTotal.getText());
-        float recebido = Float.valueOf(Recebido.getText());
+        float total = Float.valueOf(ValorTotal.getText().replace(",", "."));
+        float recebido = Float.valueOf(Recebido.getText().replace(",", "."));
         float troco = recebido - total;
-        Troco.setText(String.valueOf(troco));
+        Troco.setText(String.format("%.2f",troco));
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         List<String> servicos = Lista_Servicos.getSelectedValuesList();
         String tok[];
         float soma = 0.0f;
+        float aux;
         for (int i = 0; i < servicos.size(); i++) {
             tok = servicos.get(i).split(" - ");
             soma+=Float.valueOf(tok[2]);
         }
-        ValorTotal.setText(String.valueOf(soma));
+        ValorTotal.setText(String.format("%.2f", soma));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
