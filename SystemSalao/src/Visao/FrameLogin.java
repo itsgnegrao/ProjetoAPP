@@ -6,6 +6,7 @@
 package Visao;
 
 import Controle.ControleLogin;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -64,6 +65,11 @@ public class FrameLogin extends javax.swing.JFrame {
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSenhaActionPerformed(evt);
+            }
+        });
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
             }
         });
 
@@ -132,7 +138,6 @@ public class FrameLogin extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String login = txtLogin.getText();
         String senha = txtSenha.getText();
-        System.out.println(login + " " + senha);
         ControleLogin login_control = new ControleLogin(login, senha);
         if (login_control.getEstado() == 1) {
             // Comentado só para não dar erro no teste
@@ -155,6 +160,12 @@ public class FrameLogin extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            jButton1.doClick();
+        }
+    }//GEN-LAST:event_txtSenhaKeyPressed
 
     /**
      * @param args the command line arguments
@@ -186,7 +197,7 @@ public class FrameLogin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                 new FrameLogin().setVisible(true);
+                new FrameLogin().setVisible(true);
             }
         });
     }

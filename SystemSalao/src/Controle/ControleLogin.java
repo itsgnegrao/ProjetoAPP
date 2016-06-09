@@ -40,7 +40,6 @@ public class ControleLogin {
             }
             conexao.close();
             Login login_bd = new Login(id_login, user, senha_bd);
-            System.out.println("UUUUUU " + login_bd.getUser() + ", " + login_bd.getSenha());
             if (login_bd.getUser() == null) {
                 JOptionPane.showMessageDialog(null, "Usuario Não Cadastrado!");
                 this.estado = 0;
