@@ -5,8 +5,12 @@
  */
 package Visao;
 
+import Controle.ControleCadastroFunc;
 import Controle.ControleCargo;
 import Modelo.Cargo;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
@@ -22,7 +26,7 @@ public class FrameCadFunc extends javax.swing.JFrame {
         initComponents();
         ControleCargo cc1 = new ControleCargo();
         ArrayList<Cargo> cargoList = cc1.getCargoList();
-        for(int i = 0; i < cargoList.size(); i++){
+        for (int i = 0; i < cargoList.size(); i++) {
             boxCargo.addItem(cargoList.get(i).getDescricao());
         }
     }
@@ -73,9 +77,32 @@ public class FrameCadFunc extends javax.swing.JFrame {
             }
         });
 
+        txtCpf1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCpf1KeyPressed(evt);
+            }
+        });
+
+        txtDDD.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDDDKeyPressed(evt);
+            }
+        });
+
         txtCpf2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCpf2ActionPerformed(evt);
+            }
+        });
+        txtCpf2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCpf2KeyPressed(evt);
+            }
+        });
+
+        txtCpf3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCpf3KeyPressed(evt);
             }
         });
 
@@ -84,9 +111,32 @@ public class FrameCadFunc extends javax.swing.JFrame {
                 txtNomeActionPerformed(evt);
             }
         });
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomeKeyPressed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
         jLabel5.setText("Data Nasc");
+
+        txtCpf4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCpf4KeyPressed(evt);
+            }
+        });
+
+        txtDia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDiaKeyPressed(evt);
+            }
+        });
+
+        txtMes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtMesKeyPressed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
         jLabel8.setText("Nome");
@@ -96,6 +146,12 @@ public class FrameCadFunc extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
         jLabel10.setText("Celular");
+
+        txtAno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAnoKeyPressed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
         jLabel11.setText("Usuário");
@@ -310,12 +366,24 @@ public class FrameCadFunc extends javax.swing.JFrame {
         String pis = txtPis.getText();
         String user = txtUser.getText();
         String senha = txtSenha.getText();
-        
+
         System.out.println(nome + " " + cpf + " " + cel + " " + data + " " + pis + " " + user + " " + senha);
+	Date date = new Date(System.currentTimeMillis());
+        int atual = date.getYear() + 1900;
+        atual -= Integer.parseInt(txtAno.getText());
+        if(date.getMonth() + 1 < Integer.parseInt(txtMes.getText())){
+            System.out.println(date.getMonth() + " " + Integer.parseInt(txtMes.getText()));
+            atual -= 1;
+        }else if(date.getMonth() + 1 == Integer.parseInt(txtMes.getText())){
+            if(date.getDate() > Integer.parseInt(txtDia.getText())){
+                atual -= 1;
+            }
+        }
+        //ControleCadastroFunc novo_func = new ControleCadastroFunc(atual, nome, cpf, pis, data, pis, senha);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void boxCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxCargoActionPerformed
-      boxCargo.getSelectedItem();
+        boxCargo.getSelectedItem();
     }//GEN-LAST:event_boxCargoActionPerformed
 
     private void txtBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscarMouseClicked
@@ -327,8 +395,60 @@ public class FrameCadFunc extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void boxCargoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boxCargoMouseClicked
-        
+
     }//GEN-LAST:event_boxCargoMouseClicked
+
+    private void txtCpf1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf1KeyPressed
+        if (txtCpf1.getText().length() == 2) {
+            txtCpf2.grabFocus();
+        }
+    }//GEN-LAST:event_txtCpf1KeyPressed
+
+    private void txtCpf2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf2KeyPressed
+        if (txtCpf2.getText().length() == 2) {
+            txtCpf3.grabFocus();
+        }
+    }//GEN-LAST:event_txtCpf2KeyPressed
+
+    private void txtCpf3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf3KeyPressed
+        if (txtCpf3.getText().length() == 2) {
+            txtCpf4.grabFocus();
+        }
+    }//GEN-LAST:event_txtCpf3KeyPressed
+
+    private void txtCpf4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf4KeyPressed
+        if (txtCpf4.getText().length() == 1) {
+            boxCargo.grabFocus();
+        }
+    }//GEN-LAST:event_txtCpf4KeyPressed
+
+    private void txtDDDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDDDKeyPressed
+        if (txtDDD.getText().length() == 1) {
+            txtCel.grabFocus();
+        }
+    }//GEN-LAST:event_txtDDDKeyPressed
+
+    private void txtDiaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiaKeyPressed
+        if (txtDia.getText().length() == 1) {
+            txtMes.grabFocus();
+        }
+    }//GEN-LAST:event_txtDiaKeyPressed
+
+    private void txtMesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMesKeyPressed
+        if (txtMes.getText().length() == 1){
+            txtAno.grabFocus();
+        }
+    }//GEN-LAST:event_txtMesKeyPressed
+
+    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeKeyPressed
+
+    private void txtAnoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnoKeyPressed
+        if (txtAno.getText().length() == 3){
+            txtSenha.grabFocus();
+        }
+    }//GEN-LAST:event_txtAnoKeyPressed
 
     /**
      * @param args the command line arguments

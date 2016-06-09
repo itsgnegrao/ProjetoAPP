@@ -193,19 +193,30 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCpf1">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCpf1KeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtDDD">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDDDKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCpf2">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCpf2ActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCpf2KeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCpf3">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCpf3KeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNome">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNomeKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -217,10 +228,19 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCpf4">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCpf4KeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtDia">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDiaKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtMes">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMesKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -247,6 +267,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAno">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAnoKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
