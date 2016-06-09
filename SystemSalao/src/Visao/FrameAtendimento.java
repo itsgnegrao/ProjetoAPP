@@ -28,7 +28,7 @@ public class FrameAtendimento extends javax.swing.JFrame {
             conCli = new ControleCadastroCli(atendList.get(i).getId_cli());
             cliente = conCli.getCliente();
             id = Integer.toString(atendList.get(i).getId_atend());
-            model.addElement(id + "-" + cliente.getNome_cli());
+            model.addElement(id + "-"+cliente.getId_cli()+"-" + cliente.getNome_cli());
         }
         Lista_Atendimento.setModel(model);
     }
@@ -77,11 +77,12 @@ public class FrameAtendimento extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         lblValorTotal1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Recebido = new javax.swing.JTextField();
         lblValorTotal2 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ValorTotal1 = new javax.swing.JLabel();
-        lblValorTotal3 = new javax.swing.JLabel();
+        Troco = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -259,11 +260,10 @@ public class FrameAtendimento extends javax.swing.JFrame {
         });
 
         Lista_Atendimento.setBackground(new java.awt.Color(197, 193, 193));
-        Lista_Atendimento.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(Lista_Atendimento);
 
         jLabel11.setBackground(new java.awt.Color(92, 97, 108));
-        jLabel11.setText("Atendimento - Hora:");
+        jLabel11.setText("Atendimento -  Id Cliente - Nome Cliente");
 
         jButton1.setText("Finalizar Pedido");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -283,7 +283,7 @@ public class FrameAtendimento extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
         jLabel14.setText("RECEBIDO");
 
-        jTextField1.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
+        Recebido.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
 
         lblValorTotal2.setBackground(new java.awt.Color(92, 97, 108));
         lblValorTotal2.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
@@ -296,9 +296,16 @@ public class FrameAtendimento extends javax.swing.JFrame {
         ValorTotal1.setForeground(new java.awt.Color(228, 48, 46));
         ValorTotal1.setText("R$");
 
-        lblValorTotal3.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
-        lblValorTotal3.setForeground(new java.awt.Color(78, 55, 246));
-        lblValorTotal3.setText("00.00");
+        Troco.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
+        Troco.setForeground(new java.awt.Color(78, 55, 246));
+        Troco.setText("00.00");
+
+        jButton3.setText("Gerar Troco");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -312,8 +319,7 @@ public class FrameAtendimento extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -329,7 +335,7 @@ public class FrameAtendimento extends javax.swing.JFrame {
                                                 .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
                                                 .addComponent(txtIdCli, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel5)
@@ -339,13 +345,17 @@ public class FrameAtendimento extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel8)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(checkBoxMaquiagem)
-                                                    .addComponent(checkBoxEscova)
-                                                    .addComponent(checkBoxUnha)
-                                                    .addComponent(checkBoxMassagem)
-                                                    .addComponent(txtMin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(checkBoxMaquiagem)
+                                                            .addComponent(checkBoxEscova)
+                                                            .addComponent(checkBoxUnha)
+                                                            .addComponent(checkBoxMassagem)))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(7, 7, 7)
+                                                        .addComponent(txtMin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel7)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -369,20 +379,18 @@ public class FrameAtendimento extends javax.swing.JFrame {
                                         .addComponent(jLabel14)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblValorTotal2))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel10)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ValorTotal1))
-                                    .addComponent(lblValorTotal1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addComponent(lblValorTotal1)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ValorTotal)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblValorTotal3))
+                                    .addComponent(Recebido, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Troco))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtIdFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -390,7 +398,16 @@ public class FrameAtendimento extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(85, 85, 85)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ValorTotal1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ValorTotal)
+                        .addGap(55, 55, 55)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -442,17 +459,7 @@ public class FrameAtendimento extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(checkBoxUnha)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(checkBoxMassagem)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(ValorTotal)
-                            .addComponent(ValorTotal1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblValorTotal2)))
+                                .addComponent(checkBoxMassagem))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -461,14 +468,29 @@ public class FrameAtendimento extends javax.swing.JFrame {
                         .addComponent(jButton1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(Recebido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblValorTotal2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                        .addComponent(jButton3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(ValorTotal)
+                            .addComponent(ValorTotal1))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel12)
                         .addComponent(btnSalvar)
                         .addComponent(btnCancelar))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblValorTotal3)
-                        .addComponent(lblValorTotal1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Troco)
+                        .addComponent(lblValorTotal1)
+                        .addComponent(jLabel12)))
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -481,14 +503,6 @@ public class FrameAtendimento extends javax.swing.JFrame {
     private void txtIdFuncMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIdFuncMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdFuncMouseClicked
-
-    private void txtMinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMinMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMinMouseClicked
-
-    private void txtHoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHoraMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHoraMouseClicked
 
     private void checkBoxPinturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxPinturaActionPerformed
         // TODO add your handling code here:
@@ -530,25 +544,9 @@ public class FrameAtendimento extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void txtDataDiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDataDiaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataDiaMouseClicked
-
-    private void txtDataMesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDataMesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataMesMouseClicked
-
-    private void txtDataAnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDataAnoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataAnoMouseClicked
-
     private void txtIdFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdFuncActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdFuncActionPerformed
-
-    private void txtMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMinActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMinActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ControleServico conServ;
@@ -556,7 +554,6 @@ public class FrameAtendimento extends javax.swing.JFrame {
         conServ = new ControleServico(Lista_Atendimento.getSelectedValue());
         ArrayList<Servico> servList = conServ.getServList();
         float f;
-
         for (int i = 0; i < servList.size(); i++) {
             servico = servList.get(i);
             if (servico.getDescricao().equals("Corte")) {
@@ -585,17 +582,73 @@ public class FrameAtendimento extends javax.swing.JFrame {
                 
             } else if (servico.getDescricao().equals("Maquiagem")) {
                 checkBoxMaquiagem.setSelected(true);
+                f = Float.valueOf(ValorTotal.getText()).floatValue();
+                f+= servico.getValor();
+                ValorTotal.setText(String.valueOf(f));
             } else if (servico.getDescricao().equals("Escova")) {
                 checkBoxEscova.setSelected(true);
+                f = Float.valueOf(ValorTotal.getText()).floatValue();
+                f+= servico.getValor();
+                ValorTotal.setText(String.valueOf(f));
             } else if (servico.getDescricao().equals("Unha")) {
                 checkBoxUnha.setSelected(true);
+                f = Float.valueOf(ValorTotal.getText()).floatValue();
+                f+= servico.getValor();
+                ValorTotal.setText(String.valueOf(f));
             } else if (servico.getDescricao().equals("Massagem")) {
                 checkBoxMassagem.setSelected(true);
+                f = Float.valueOf(ValorTotal.getText()).floatValue();
+                f+= servico.getValor();
+                ValorTotal.setText(String.valueOf(f));
             }
 
         }
+        String str[] = Lista_Atendimento.getSelectedValue().split("-");
+        ControleAtendimento conAtend = new ControleAtendimento(Integer.parseInt(str[0]));
+        Atendimento atendimento = conAtend.getAtendimento();
+        txtIdCli.setText(String.valueOf(atendimento.getId_cli()));
+        String data[] = atendimento.getData().toString().split("-");
+        txtDataAno.setText(data[0]);
+        txtDataMes.setText(data[1]);
+        txtDataDia.setText(data[2]);
+        String hora[] = atendimento.getHorario().toString().split(":");
+        txtHora.setText(hora[0]);
+        txtMin.setText(hora[1]);
+        
+        
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtDataDiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDataDiaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDataDiaMouseClicked
+
+    private void txtDataMesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDataMesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDataMesMouseClicked
+
+    private void txtDataAnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDataAnoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDataAnoMouseClicked
+
+    private void txtMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMinActionPerformed
+
+    private void txtMinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMinMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMinMouseClicked
+
+    private void txtHoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHoraMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHoraMouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        float total = Float.valueOf(ValorTotal.getText());
+        float recebido = Float.valueOf(Recebido.getText());
+        float troco = recebido - total;
+        Troco.setText(String.valueOf(troco));
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -634,6 +687,8 @@ public class FrameAtendimento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> Lista_Atendimento;
+    private javax.swing.JTextField Recebido;
+    private javax.swing.JLabel Troco;
     private javax.swing.JLabel ValorTotal;
     private javax.swing.JLabel ValorTotal1;
     private javax.swing.JButton btnCancelar;
@@ -647,6 +702,7 @@ public class FrameAtendimento extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkBoxSombrancelha;
     private javax.swing.JCheckBox checkBoxUnha;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -662,10 +718,8 @@ public class FrameAtendimento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblValorTotal1;
     private javax.swing.JLabel lblValorTotal2;
-    private javax.swing.JLabel lblValorTotal3;
     private javax.swing.JTextField txtDataAno;
     private javax.swing.JTextField txtDataDia;
     private javax.swing.JTextField txtDataMes;

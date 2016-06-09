@@ -24,6 +24,11 @@ import java.util.logging.Logger;
 public class ControleAtendimento {
 
     ArrayList<Atendimento> atendList = new ArrayList<>();
+    Atendimento atendimento;
+
+    public Atendimento getAtendimento() {
+        return atendimento;
+    }
 
     public ArrayList<Atendimento> getAtendList() {
         return atendList;
@@ -31,7 +36,7 @@ public class ControleAtendimento {
 
     public ControleAtendimento(int Ano, int Mes, int Dia) {
         try {
-            String string = "Select * from Atendimento where data = '" +Ano+"-"+Mes+"-"+Dia+"';";
+            String string = "Select * from Atendimento where data = '" + Ano + "-" + Mes + "-" + Dia + "';";
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
             ps = conexao.prepareStatement(string);
@@ -40,7 +45,24 @@ public class ControleAtendimento {
             while (rs.next()) {
                 Atendimento atendimento = new Atendimento(rs.getInt("id_atend"), rs.getInt("id_func"), rs.getInt("id_cli"), rs.getDate("data"), rs.getTime("horario"));
                 atendList.add(atendimento);
-            }                
+            }
+            conexao.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ControleCargo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public ControleAtendimento(int id_atend) {
+        try {
+            String string = "Select * from Atendimento where id_atend = " +id_atend+ ";";
+            Connection conexao = ConnectionFactory.createConnection();
+            PreparedStatement ps;
+            ps = conexao.prepareStatement(string);
+            ps.execute();
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                atendimento = new Atendimento(rs.getInt("id_atend"), rs.getInt("id_func"), rs.getInt("id_cli"), rs.getDate("data"), rs.getTime("horario"));
+            }
             conexao.close();
         } catch (SQLException ex) {
             Logger.getLogger(ControleCargo.class.getName()).log(Level.SEVERE, null, ex);
