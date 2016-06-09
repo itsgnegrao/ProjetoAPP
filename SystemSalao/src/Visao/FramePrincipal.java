@@ -7,6 +7,7 @@ package Visao;
 
 import java.awt.Color;
 import java.awt.Container;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**

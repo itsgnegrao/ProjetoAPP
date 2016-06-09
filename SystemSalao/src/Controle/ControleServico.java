@@ -18,6 +18,24 @@ public class ControleServico {
 
     ArrayList<Servico> servList = new ArrayList<>();
 
+    public ControleServico() {
+        try {
+            String select = "Select * from Servico;";
+            Connection conexao = ConnectionFactory.createConnection();
+            PreparedStatement ps;
+            ps = conexao.prepareStatement(select);
+            ps.execute();
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Servico servico = new Servico(rs.getInt("id_serv"), rs.getString("descricao"), rs.getFloat("valor"));
+                servList.add(servico);
+            }
+            conexao.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ControleServico.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public ControleServico(String string) {
         try {
             String str[] = string.split("-");

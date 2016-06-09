@@ -50,7 +50,7 @@ public class FrameAgendaDois extends javax.swing.JFrame {
         chkMassagem = new javax.swing.JCheckBox();
         txtSenha = new javax.swing.JPasswordField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jButton20.setBackground(new java.awt.Color(76, 192, 77));
         jButton20.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
