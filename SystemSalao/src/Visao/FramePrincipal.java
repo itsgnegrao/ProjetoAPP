@@ -5,6 +5,7 @@
  */
 package Visao;
 
+import com.sun.awt.AWTUtilities;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -67,6 +68,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Salãozão");
 
+        jPanelPrinc.setBackground(new java.awt.Color(255, 51, 51));
         jPanelPrinc.setOpaque(false);
 
         javax.swing.GroupLayout jPanelPrincLayout = new javax.swing.GroupLayout(jPanelPrinc);

@@ -23,6 +23,8 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         initComponents();
         ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
         this.setBorder(null);
+        this.setOpaque(false);
+        this.getContentPane().setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -229,6 +231,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         jCalendar1.setDecorationBackgroundColor(new java.awt.Color(240, 240, 240));
         jCalendar1.setDecorationBackgroundVisible(false);
         jCalendar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCalendar1.setOpaque(false);
         jCalendar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jCalendar1MouseClicked(evt);

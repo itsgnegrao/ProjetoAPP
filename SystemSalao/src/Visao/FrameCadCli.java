@@ -9,6 +9,7 @@ import Controle.ControleAlterInsert;
 import Controle.ControleCadastroCli;
 import Modelo.Cliente;
 import Modelo.Login;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.KeyEvent;
 import java.sql.Date;
@@ -30,6 +31,8 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         Xclose.setVisible(false);
         ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
         this.setBorder(null);
+        this.setOpaque(false);
+        this.getContentPane().setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -434,19 +437,18 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
                     soma = 0;
                     String stringLogin = "Update salaozao.login SET";
                     if (!cliente_login.getUser().equals(txtUser.getText())) {
-                        soma++;
+                        soma = 1;
                         stringLogin += " user = '" + txtUser.getText() + "'";
                     }
                     if (!cliente_login.getSenha().equals(txtSenha.getText())) {
-                        if (soma >= 1) {
-                            stringCli += ",";
+                        if (soma == 1) {
+                            stringLogin += ", ";
                         }
-                        soma++;
                         stringLogin += " senha = '" + txtSenha.getText() + "'";
                     }
                     stringLogin += " WHERE id_login = " + cliente.getLogin_id();
 
-                    //System.out.println(stringLogin);
+                    System.out.println(stringLogin);
                     ControleAlterInsert alter;
                     System.out.println(stringCli);
                     if (!stringCli.equals("Update salaozao.cliente SET WHERE id_cli = " + cliente.getId_cli())) {
