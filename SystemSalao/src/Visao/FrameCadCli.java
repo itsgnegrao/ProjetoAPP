@@ -9,11 +9,14 @@ import Controle.ControleAlterInsert;
 import Controle.ControleCadastroCli;
 import Modelo.Cliente;
 import Modelo.Login;
+import java.awt.FlowLayout;
 import java.awt.event.KeyEvent;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class FrameCadCli extends javax.swing.JInternalFrame {
@@ -331,7 +334,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
                                                     .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
                                                     .addComponent(txtUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))))))))
                         .addGap(22, 22, 22)))
-                .addContainerGap(498, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

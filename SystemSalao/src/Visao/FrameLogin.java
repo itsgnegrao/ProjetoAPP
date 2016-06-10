@@ -6,7 +6,9 @@
 package Visao;
 
 import Controle.ControleLogin;
+import java.awt.FlowLayout;
 import java.awt.event.KeyEvent;
+import javax.swing.JLabel;
 
 /**
  *
@@ -18,6 +20,10 @@ public class FrameLogin extends javax.swing.JFrame {
      * Creates new form FrameLogin
      */
     public FrameLogin() {
+        JLabel background = new JLabel();
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/bglogin.png")));
+        setContentPane(background);
+        setLayout(new FlowLayout());
         initComponents();
         this.setVisible(true);
         this.dispose();
@@ -73,10 +79,10 @@ public class FrameLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Usuario");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Senha");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -92,36 +98,43 @@ public class FrameLogin extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
+                        .addContainerGap()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtLogin, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(45, 45, 45)))
-                            .addComponent(jLabel3))
+                        .addGap(63, 63, 63)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, 0))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(jLabel4)
+                        .addGap(46, 46, 46)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(1, 1, 1)
                 .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)

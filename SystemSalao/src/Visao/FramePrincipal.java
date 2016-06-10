@@ -7,6 +7,13 @@ package Visao;
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -20,10 +27,11 @@ public class FramePrincipal extends javax.swing.JFrame {
      * Creates new form NovoJFrame
      */
     public FramePrincipal() {
+        JLabel background = new JLabel();
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/background.png")));
+        setContentPane(background);
+        setLayout(new FlowLayout());
         initComponents();
-        //this.jPanel2.setVisible(true);
-        //c.repaint();
-        //c.removeAll();
     }
 
     /**
@@ -59,6 +67,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         setTitle("Salãozão");
 
         btnCadCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/cliente icon.png"))); // NOI18N
+        btnCadCli.setBorderPainted(false);
+        btnCadCli.setFocusPainted(false);
         btnCadCli.setPreferredSize(new java.awt.Dimension(100, 100));
         btnCadCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +77,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         btnCadFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/func icon.png"))); // NOI18N
+        btnCadFunc.setBorderPainted(false);
+        btnCadFunc.setFocusPainted(false);
         btnCadFunc.setPreferredSize(new java.awt.Dimension(100, 100));
         btnCadFunc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +87,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         btnAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/agenda icon.png"))); // NOI18N
+        btnAgenda.setBorderPainted(false);
+        btnAgenda.setFocusPainted(false);
         btnAgenda.setPreferredSize(new java.awt.Dimension(100, 100));
         btnAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +97,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         btnCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/relatorio icon.png"))); // NOI18N
+        btnCaixa.setBorderPainted(false);
+        btnCaixa.setFocusPainted(false);
         btnCaixa.setPreferredSize(new java.awt.Dimension(100, 100));
         btnCaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +107,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         btnAtendimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/atend icon.png"))); // NOI18N
+        btnAtendimento.setBorderPainted(false);
+        btnAtendimento.setFocusPainted(false);
         btnAtendimento.setPreferredSize(new java.awt.Dimension(100, 100));
         btnAtendimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +117,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         btnServicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/servicos icon.png"))); // NOI18N
+        btnServicos.setBorderPainted(false);
+        btnServicos.setFocusPainted(false);
         btnServicos.setPreferredSize(new java.awt.Dimension(100, 100));
         btnServicos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +131,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +139,7 @@ public class FramePrincipal extends javax.swing.JFrame {
                             .addComponent(btnCadCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnCadFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, 0))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -131,19 +151,19 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
+                .addGap(0, 0, 0)
                 .addComponent(btnCadCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(btnCadFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(btnAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(btnCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(btnServicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(btnAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
 
         javax.swing.GroupLayout jPanelPrincLayout = new javax.swing.GroupLayout(jPanelPrinc);
@@ -229,8 +249,8 @@ public class FramePrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanelPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
                 .addContainerGap())
         );
