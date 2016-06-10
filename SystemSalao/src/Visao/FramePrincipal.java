@@ -43,14 +43,13 @@ public class FramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        btnCadCli = new javax.swing.JButton();
-        btnCadFunc = new javax.swing.JButton();
-        btnAgenda = new javax.swing.JButton();
-        btnCaixa = new javax.swing.JButton();
-        btnAtendimento = new javax.swing.JButton();
-        btnServicos = new javax.swing.JButton();
         jPanelPrinc = new javax.swing.JPanel();
+        btnCli = new javax.swing.JLabel();
+        btnFunc = new javax.swing.JLabel();
+        btnAgenda = new javax.swing.JLabel();
+        btnRelat = new javax.swing.JLabel();
+        btnServ = new javax.swing.JLabel();
+        btnAtend = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuCadCli = new javax.swing.JMenuItem();
@@ -66,116 +65,58 @@ public class FramePrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Salãozão");
 
-        btnCadCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/cliente icon.png"))); // NOI18N
-        btnCadCli.setBorderPainted(false);
-        btnCadCli.setFocusPainted(false);
-        btnCadCli.setPreferredSize(new java.awt.Dimension(100, 100));
-        btnCadCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadCliActionPerformed(evt);
-            }
-        });
-
-        btnCadFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/func icon.png"))); // NOI18N
-        btnCadFunc.setBorderPainted(false);
-        btnCadFunc.setFocusPainted(false);
-        btnCadFunc.setPreferredSize(new java.awt.Dimension(100, 100));
-        btnCadFunc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadFuncActionPerformed(evt);
-            }
-        });
-
-        btnAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/agenda icon.png"))); // NOI18N
-        btnAgenda.setBorderPainted(false);
-        btnAgenda.setFocusPainted(false);
-        btnAgenda.setPreferredSize(new java.awt.Dimension(100, 100));
-        btnAgenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgendaActionPerformed(evt);
-            }
-        });
-
-        btnCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/relatorio icon.png"))); // NOI18N
-        btnCaixa.setBorderPainted(false);
-        btnCaixa.setFocusPainted(false);
-        btnCaixa.setPreferredSize(new java.awt.Dimension(100, 100));
-        btnCaixa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCaixaActionPerformed(evt);
-            }
-        });
-
-        btnAtendimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/atend icon.png"))); // NOI18N
-        btnAtendimento.setBorderPainted(false);
-        btnAtendimento.setFocusPainted(false);
-        btnAtendimento.setPreferredSize(new java.awt.Dimension(100, 100));
-        btnAtendimento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtendimentoActionPerformed(evt);
-            }
-        });
-
-        btnServicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/servicos icon.png"))); // NOI18N
-        btnServicos.setBorderPainted(false);
-        btnServicos.setFocusPainted(false);
-        btnServicos.setPreferredSize(new java.awt.Dimension(100, 100));
-        btnServicos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnServicosActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCadCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCadFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, 0))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnServicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(btnCadCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnCadFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnServicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-        );
-
         javax.swing.GroupLayout jPanelPrincLayout = new javax.swing.GroupLayout(jPanelPrinc);
         jPanelPrinc.setLayout(jPanelPrincLayout);
         jPanelPrincLayout.setHorizontalGroup(
             jPanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 767, Short.MAX_VALUE)
+            .addGap(0, 658, Short.MAX_VALUE)
         );
         jPanelPrincLayout.setVerticalGroup(
             jPanelPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        btnCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/cliente2.png"))); // NOI18N
+        btnCli.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCliMouseClicked(evt);
+            }
+        });
+
+        btnFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/func icon2.png"))); // NOI18N
+        btnFunc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFuncMouseClicked(evt);
+            }
+        });
+
+        btnAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/agenda icon2.png"))); // NOI18N
+        btnAgenda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAgendaMouseClicked(evt);
+            }
+        });
+
+        btnRelat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/relatorio icon2.png"))); // NOI18N
+        btnRelat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRelatMouseClicked(evt);
+            }
+        });
+
+        btnServ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/servicos icon2.png"))); // NOI18N
+        btnServ.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnServMouseClicked(evt);
+            }
+        });
+
+        btnAtend.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/atend icon2.png"))); // NOI18N
+        btnAtend.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAtendMouseClicked(evt);
+            }
+        });
 
         jMenu1.setText("Cadastros");
 
@@ -249,9 +190,15 @@ public class FramePrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanelPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCli)
+                    .addComponent(btnFunc)
+                    .addComponent(btnAgenda)
+                    .addComponent(btnRelat)
+                    .addComponent(btnServ)
+                    .addComponent(btnAtend))
+                .addGap(30, 30, 30)
+                .addComponent(jPanelPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, 658, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -259,9 +206,21 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(393, Short.MAX_VALUE))
+                    .addComponent(jPanelPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, 686, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCli)
+                        .addGap(0, 0, 0)
+                        .addComponent(btnFunc)
+                        .addGap(0, 0, 0)
+                        .addComponent(btnAgenda)
+                        .addGap(0, 0, 0)
+                        .addComponent(btnRelat)
+                        .addGap(0, 0, 0)
+                        .addComponent(btnServ)
+                        .addGap(0, 0, 0)
+                        .addComponent(btnAtend)
+                        .addGap(0, 86, Short.MAX_VALUE)))
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -305,56 +264,6 @@ public class FramePrincipal extends javax.swing.JFrame {
         fc1.setVisible(true);
     }//GEN-LAST:event_jMenuCaixaActionPerformed
 
-    private void btnCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadCliActionPerformed
-        FrameCadCli fcc1 = new FrameCadCli();
-        jPanelPrinc.removeAll();
-        jPanelPrinc.repaint();
-        jPanelPrinc.add(fcc1);
-        int lDesk = jPanelPrinc.getWidth();
-        int aDesk = jPanelPrinc.getHeight();
-        int lIFrame = fcc1.getWidth();
-        int aIFrame = fcc1.getHeight();
-        fcc1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
-        fcc1.setVisible(true);
-    }//GEN-LAST:event_btnCadCliActionPerformed
-
-    private void btnCadFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadFuncActionPerformed
-        FrameCadFunc fcc1 = new FrameCadFunc();
-        fcc1.setLocationRelativeTo(null);
-        fcc1.setVisible(true);
-    }//GEN-LAST:event_btnCadFuncActionPerformed
-
-    private void btnAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendaActionPerformed
-        FrameAgenda fa1 = new FrameAgenda();
-        jPanelPrinc.removeAll();
-        jPanelPrinc.repaint();
-        jPanelPrinc.add(fa1);
-        int lDesk = jPanelPrinc.getWidth();
-        int aDesk = jPanelPrinc.getHeight();
-        int lIFrame = fa1.getWidth();
-        int aIFrame = fa1.getHeight();
-        fa1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
-        fa1.setVisible(true);
-    }//GEN-LAST:event_btnAgendaActionPerformed
-
-    private void btnCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaixaActionPerformed
-        FrameCaixa fc1 = new FrameCaixa();
-        fc1.setLocationRelativeTo(null);
-        fc1.setVisible(true);
-    }//GEN-LAST:event_btnCaixaActionPerformed
-
-    private void btnAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtendimentoActionPerformed
-        FrameAtendimento fa1 = new FrameAtendimento();
-        fa1.setLocationRelativeTo(null);
-        fa1.setVisible(true);
-    }//GEN-LAST:event_btnAtendimentoActionPerformed
-
-    private void btnServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicosActionPerformed
-        FrameServicos fa1 = new FrameServicos();
-        fa1.setLocationRelativeTo(null);
-        fa1.setVisible(true);
-    }//GEN-LAST:event_btnServicosActionPerformed
-
     private void jMenuNovoAtendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuNovoAtendActionPerformed
         FrameAtendimento fa1 = new FrameAtendimento();
         fa1.setLocationRelativeTo(null);
@@ -367,17 +276,67 @@ public class FramePrincipal extends javax.swing.JFrame {
         fa1.setVisible(true);
     }//GEN-LAST:event_jMenuCadServicoActionPerformed
 
+    private void btnCliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCliMouseClicked
+        FrameCadCli fcc1 = new FrameCadCli();
+        jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
+        jPanelPrinc.add(fcc1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fcc1.getWidth();
+        int aIFrame = fcc1.getHeight();
+        fcc1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
+        fcc1.setVisible(true);
+    }//GEN-LAST:event_btnCliMouseClicked
+
+    private void btnFuncMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFuncMouseClicked
+        FrameCadFunc fcc1 = new FrameCadFunc();
+        fcc1.setLocationRelativeTo(null);
+        fcc1.setVisible(true);
+    }//GEN-LAST:event_btnFuncMouseClicked
+
+    private void btnAgendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgendaMouseClicked
+        FrameAgenda fa1 = new FrameAgenda();
+        jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
+        jPanelPrinc.add(fa1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fa1.getWidth();
+        int aIFrame = fa1.getHeight();
+        fa1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
+        fa1.setVisible(true);
+    }//GEN-LAST:event_btnAgendaMouseClicked
+
+    private void btnRelatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatMouseClicked
+        FrameCaixa fc1 = new FrameCaixa();
+        fc1.setLocationRelativeTo(null);
+        fc1.setVisible(true);
+    }//GEN-LAST:event_btnRelatMouseClicked
+
+    private void btnServMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnServMouseClicked
+        FrameServicos fa1 = new FrameServicos();
+        fa1.setLocationRelativeTo(null);
+        fa1.setVisible(true);
+    }//GEN-LAST:event_btnServMouseClicked
+
+    private void btnAtendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtendMouseClicked
+        FrameAtendimento fa1 = new FrameAtendimento();
+        fa1.setLocationRelativeTo(null);
+        fa1.setVisible(true);
+    }//GEN-LAST:event_btnAtendMouseClicked
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgenda;
-    private javax.swing.JButton btnAtendimento;
-    private javax.swing.JButton btnCadCli;
-    private javax.swing.JButton btnCadFunc;
-    private javax.swing.JButton btnCaixa;
-    private javax.swing.JButton btnServicos;
+    private javax.swing.JLabel btnAgenda;
+    private javax.swing.JLabel btnAtend;
+    private javax.swing.JLabel btnCli;
+    private javax.swing.JLabel btnFunc;
+    private javax.swing.JLabel btnRelat;
+    private javax.swing.JLabel btnServ;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -389,7 +348,6 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuCadServico;
     private javax.swing.JMenuItem jMenuCaixa;
     private javax.swing.JMenuItem jMenuNovoAtend;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelPrinc;
     // End of variables declaration//GEN-END:variables
 }
