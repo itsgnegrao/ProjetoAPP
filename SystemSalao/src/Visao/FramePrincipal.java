@@ -13,9 +13,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 /**
  *
@@ -65,6 +67,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Salãozão");
 
+        jPanelPrinc.setOpaque(false);
+
         javax.swing.GroupLayout jPanelPrincLayout = new javax.swing.GroupLayout(jPanelPrinc);
         jPanelPrinc.setLayout(jPanelPrincLayout);
         jPanelPrincLayout.setHorizontalGroup(
@@ -76,45 +80,81 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        btnCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/cliente2.png"))); // NOI18N
+        btnCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/cliente icon.png"))); // NOI18N
         btnCli.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCliMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCliMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCliMouseExited(evt);
+            }
         });
 
-        btnFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/func icon2.png"))); // NOI18N
+        btnFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/func icon.png"))); // NOI18N
         btnFunc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnFuncMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnFuncMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnFuncMouseExited(evt);
+            }
         });
 
-        btnAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/agenda icon2.png"))); // NOI18N
+        btnAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/agenda icon.png"))); // NOI18N
         btnAgenda.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAgendaMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAgendaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAgendaMouseExited(evt);
+            }
         });
 
-        btnRelat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/relatorio icon2.png"))); // NOI18N
+        btnRelat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/relatorio icon.png"))); // NOI18N
         btnRelat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRelatMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRelatMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRelatMouseExited(evt);
+            }
         });
 
-        btnServ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/servicos icon2.png"))); // NOI18N
+        btnServ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/servicos icon.png"))); // NOI18N
         btnServ.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnServMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnServMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnServMouseExited(evt);
+            }
         });
 
-        btnAtend.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/atend icon2.png"))); // NOI18N
+        btnAtend.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/atend icon.png"))); // NOI18N
         btnAtend.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAtendMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAtendMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAtendMouseExited(evt);
             }
         });
 
@@ -325,6 +365,54 @@ public class FramePrincipal extends javax.swing.JFrame {
         fa1.setLocationRelativeTo(null);
         fa1.setVisible(true);
     }//GEN-LAST:event_btnAtendMouseClicked
+
+    private void btnCliMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCliMouseEntered
+        btnCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/cliente2.png")));
+    }//GEN-LAST:event_btnCliMouseEntered
+
+    private void btnCliMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCliMouseExited
+        btnCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/cliente icon.png")));
+    }//GEN-LAST:event_btnCliMouseExited
+
+    private void btnFuncMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFuncMouseEntered
+        btnFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/func icon2.png")));
+    }//GEN-LAST:event_btnFuncMouseEntered
+
+    private void btnFuncMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFuncMouseExited
+        btnFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/func icon.png")));
+    }//GEN-LAST:event_btnFuncMouseExited
+
+    private void btnAgendaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgendaMouseEntered
+        btnAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/agenda icon2.png")));
+    }//GEN-LAST:event_btnAgendaMouseEntered
+
+    private void btnAgendaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgendaMouseExited
+        btnAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/agenda icon.png")));
+    }//GEN-LAST:event_btnAgendaMouseExited
+
+    private void btnRelatMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatMouseEntered
+        btnRelat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/relatorio icon2.png")));
+    }//GEN-LAST:event_btnRelatMouseEntered
+
+    private void btnRelatMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatMouseExited
+        btnRelat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/relatorio icon.png")));
+    }//GEN-LAST:event_btnRelatMouseExited
+
+    private void btnServMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnServMouseEntered
+        btnServ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/servicos icon2.png")));
+    }//GEN-LAST:event_btnServMouseEntered
+
+    private void btnServMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnServMouseExited
+        btnServ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/servicos icon.png")));
+    }//GEN-LAST:event_btnServMouseExited
+
+    private void btnAtendMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtendMouseEntered
+        btnAtend.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/atend icon2.png")));
+    }//GEN-LAST:event_btnAtendMouseEntered
+
+    private void btnAtendMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtendMouseExited
+        btnAtend.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/atend icon.png")));
+    }//GEN-LAST:event_btnAtendMouseExited
 
     /**
      * @param args the command line arguments
