@@ -49,7 +49,7 @@ public class ControleCadastroFunc {
     }
     
     int id_func;
-    public ControleCadastroFunc(String idade_func, String nome_func, String cpf_func, String pis_func, String salario_func, String cargo_id, String login_id) throws SQLException {
+    public ControleCadastroFunc(String idade_func, String nome_func, String cpf_func, String pis_func, String cargo_id, String user, String senha) throws SQLException {
         try{
             String string1 = "Select id_func from Funcionario";
             Connection conexao1 = ConnectionFactory.createConnection();
@@ -61,15 +61,34 @@ public class ControleCadastroFunc {
                 id_func = rs.getInt("id_func");
             }
             conexao1.close();
-            
+            System.out.println(id_func);
             id_func += 2;
+            System.out.println(id_func);
             
-            String string = "Insert INTO Funcionario VALUES(" + id_func + "," + idade_func + ",'" + nome_func + "','" + cpf_func + "','" + pis_func + "'," + salario_func + "," + cargo_id + "," + login_id + ");";
+            String string2 = "Insert INTO login  VALUES(" + id_func + ",'" + user + "','" + senha + "');";
+            System.out.println(string2);
+            Connection conexao2 = ConnectionFactory.createConnection();
+            PreparedStatement ps2;
+            ps2 = conexao2.prepareStatement(string2);
+            ps2.execute();
+            conexao2.close();
+            
+            String string = "Insert INTO Funcionario VALUES(" + id_func + ",'" + nome_func + "'," + idade_func + ",'" + cpf_func + "','" + pis_func + "'," + cargo_id + "," + id_func + ");";
+            System.out.println(string);
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
             ps = conexao.prepareStatement(string);
             ps.execute();
             conexao.close();
+            
+            String string3 = "Insert INTO funcionario_login  VALUES(" + id_func + "," + id_func + ");";
+            System.out.println(string3);
+            Connection conexao3 = ConnectionFactory.createConnection();
+            PreparedStatement ps3;
+            ps3 = conexao3.prepareStatement(string3);
+            ps3.execute();
+            conexao3.close();
+            
         } catch(SQLException ex) {
             Logger.getLogger(ControleCadastroFunc.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("DEU NAO MLEKOTE");
