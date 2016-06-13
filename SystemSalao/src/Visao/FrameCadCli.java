@@ -30,9 +30,6 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         initComponents();
         Xclose.setVisible(false);
         ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
-        this.setBorder(null);
-        this.setOpaque(false);
-        this.getContentPane().setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -76,6 +73,8 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         txtSenha = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
 
+        setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton4.setText("Salvar");
         jButton4.setPreferredSize(new java.awt.Dimension(175, 40));
@@ -103,11 +102,6 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         });
 
         txtBuscar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtBuscarMouseClicked(evt);
-            }
-        });
         txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtBuscarKeyPressed(evt);
@@ -503,10 +497,6 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_txtCel1KeyPressed
 
-    private void txtBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscarMouseClicked
-        txtBuscar.setText("");
-    }//GEN-LAST:event_txtBuscarMouseClicked
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (txtBuscar.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o Campo ID!");
@@ -537,10 +527,10 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         txtSenha.setText(senha);
         System.out.println(user + " " + senha);
 
-        //jButton1.setVisible(false);
+        jButton1.setVisible(false);
         objetoBuscado = 1;
-        //txtEstado.setText("Clique no X para excluir busca e cadastrar novo");
-        //Xclose.setVisible(true);
+        txtEstado.setText("Clique no X para excluir busca e cadastrar novo");
+        Xclose.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtCpf4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf4KeyPressed
