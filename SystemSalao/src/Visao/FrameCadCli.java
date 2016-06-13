@@ -537,10 +537,10 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         txtSenha.setText(senha);
         System.out.println(user + " " + senha);
 
-        jButton1.setVisible(false);
+        //jButton1.setVisible(false);
         objetoBuscado = 1;
-        txtEstado.setText("Clique no X para excluir busca e cadastrar novo");
-        Xclose.setVisible(true);
+        //txtEstado.setText("Clique no X para excluir busca e cadastrar novo");
+        //Xclose.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtCpf4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf4KeyPressed
