@@ -9,9 +9,12 @@ import Controle.ControleCadastroFunc;
 import Controle.ControleCargo;
 import Modelo.Cargo;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -366,20 +369,24 @@ public class FrameCadFunc extends javax.swing.JFrame {
         String pis = txtPis.getText();
         String user = txtUser.getText();
         String senha = txtSenha.getText();
+        String cargo = String.valueOf(boxCargo.getSelectedIndex());
 
-        System.out.println(nome + " " + cpf + " " + cel + " " + data + " " + pis + " " + user + " " + senha);
 	Date date = new Date(System.currentTimeMillis());
         int atual = date.getYear() + 1900;
         atual -= Integer.parseInt(txtAno.getText());
         if(date.getMonth() + 1 < Integer.parseInt(txtMes.getText())){
-            System.out.println(date.getMonth() + " " + Integer.parseInt(txtMes.getText()));
             atual -= 1;
         }else if(date.getMonth() + 1 == Integer.parseInt(txtMes.getText())){
             if(date.getDate() > Integer.parseInt(txtDia.getText())){
                 atual -= 1;
             }
         }
-        //ControleCadastroFunc novo_func = new ControleCadastroFunc(atual, nome, cpf, pis, data, pis, senha);
+        String idade = String.valueOf(atual);
+        try {
+            ControleCadastroFunc novo_func = new ControleCadastroFunc(idade, nome, cpf, pis,cargo,user,senha);
+        } catch (SQLException ex) {
+            Logger.getLogger(FrameCadFunc.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void boxCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxCargoActionPerformed
