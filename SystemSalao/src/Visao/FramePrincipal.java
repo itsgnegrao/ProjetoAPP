@@ -308,7 +308,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuAgendaActionPerformed
 
     private void jMenuCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCaixaActionPerformed
-        FrameCaixa fc1 = new FrameCaixa();
+        FrameRelatorio fc1 = new FrameRelatorio();
         fc1.setLocationRelativeTo(null);
         fc1.setVisible(true);
     }//GEN-LAST:event_jMenuCaixaActionPerformed
@@ -372,7 +372,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgendaMouseClicked
 
     private void btnRelatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatMouseClicked
-        FrameCaixa fc1 = new FrameCaixa();
+        FrameRelatorio fc1 = new FrameRelatorio();
         fc1.setLocationRelativeTo(null);
         fc1.setVisible(true);
     }//GEN-LAST:event_btnRelatMouseClicked
