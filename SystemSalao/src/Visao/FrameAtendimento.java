@@ -5,14 +5,19 @@
  */
 package Visao;
 
+import Controle.ControleAlterInsert;
 import Modelo.Atendimento;
 import Modelo.Cliente;
 import Controle.ControleAtendimento;
 import Controle.ControleCadastroCli;
 import Controle.ControleServico;
 import Modelo.Servico;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 
 /**
@@ -27,9 +32,13 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
     public FrameAtendimento() {
         initComponents();
         ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
+        
         ControleCadastroCli conCli;
         Cliente cliente;
-        ControleAtendimento ConAtend = new ControleAtendimento(2016, 6, 30);
+
+        Date hoje = new Date();
+
+        ControleAtendimento ConAtend = new ControleAtendimento((hoje.getYear()+1900), (hoje.getMonth()+1), hoje.getDate());
         ArrayList<Atendimento> atendList = ConAtend.getAtendList();
         DefaultListModel model = new DefaultListModel();
         String id;
@@ -49,6 +58,7 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
             model2.addElement(servList.get(i).getId_serv() + " - " + servList.get(i).getDescricao() + " - " + String.format("%.2f", servList.get(i).getValor()));
         }
         Lista_Servicos.setModel(model2);
+        
     }
 
     /**
@@ -450,7 +460,7 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
         String hora[] = atendimento.getHorario().toString().split(":");
         txtHora.setText(hora[0]);
         txtMin.setText(hora[1]);
-        
+
         List<String> servicos = Lista_Servicos.getSelectedValuesList();
         String tok[];
         float soma = 0.0f;
@@ -482,7 +492,15 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtHoraMouseClicked
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-
+        try {
+            String str[] = Lista_Atendimento.getSelectedValue().split(" - ");
+            String string = "UPDATE Atendimento SET id_func="+txtIdFunc.getText()+" WHERE id_atend="+str[0]+";";
+            ControleAlterInsert insert = new ControleAlterInsert(string);
+            dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(FrameAtendimento.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
