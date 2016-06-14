@@ -46,7 +46,7 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
         ArrayList<Servico> servList = conServ.getServList();
         DefaultListModel model2 = new DefaultListModel();
         for (int i = 0; i < servList.size(); i++) {
-            model2.addElement(servList.get(i).getId_serv() + " - " + servList.get(i).getDescricao() + " - " + servList.get(i).getValor());
+            model2.addElement(servList.get(i).getId_serv() + " - " + servList.get(i).getDescricao() + " - " + String.format("%.2f", servList.get(i).getValor()));
         }
         Lista_Servicos.setModel(model2);
     }
@@ -81,9 +81,7 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
         Lista_Servicos = new javax.swing.JList<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         ValorTotal = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         txtDataDia = new javax.swing.JTextField();
@@ -185,28 +183,15 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
         Lista_Servicos.setBackground(new java.awt.Color(197, 193, 193));
         jScrollPane2.setViewportView(Lista_Servicos);
 
-        jLabel9.setText("Selecione os serviços prestados:");
+        jLabel9.setText("Serviços prestados:");
 
         jLabel10.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
         jLabel10.setText("TOTAL:");
-
-        jLabel15.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
-        jLabel15.setText("Segure Ctrl para selecionar varios.");
 
         ValorTotal.setBackground(new java.awt.Color(92, 97, 108));
         ValorTotal.setFont(new java.awt.Font("Droid Sans Fallback", 1, 18)); // NOI18N
         ValorTotal.setForeground(new java.awt.Color(228, 48, 46));
         ValorTotal.setText("00,00");
-
-        jButton2.setText("Gerar Total");
-        jButton2.setMaximumSize(null);
-        jButton2.setMinimumSize(null);
-        jButton2.setPreferredSize(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         btnSalvar.setText("Finalizar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -341,20 +326,16 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtIdFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2)))
+                        .addComponent(txtIdFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblValorTotal2)
@@ -389,7 +370,7 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
@@ -413,40 +394,32 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
-                .addGap(1, 1, 1)
+                        .addComponent(jScrollPane2)))
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel14))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 9, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ValorTotal1)
+                            .addComponent(ValorTotal))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(ValorTotal1)
-                                    .addComponent(ValorTotal))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Troco)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(lblValorTotal1)
-                                        .addComponent(jLabel12)))))))
-                .addGap(9, 9, 9)
+                            .addComponent(Troco)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblValorTotal1)
+                                .addComponent(jLabel12))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Recebido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblValorTotal2))))
+                .addGap(18, 18, 18)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Recebido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblValorTotal2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnSalvar)
-                        .addComponent(btnCancelar))
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSalvar)
+                    .addComponent(btnCancelar))
                 .addContainerGap())
         );
 
@@ -477,6 +450,16 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
         String hora[] = atendimento.getHorario().toString().split(":");
         txtHora.setText(hora[0]);
         txtMin.setText(hora[1]);
+        
+        List<String> servicos = Lista_Servicos.getSelectedValuesList();
+        String tok[];
+        float soma = 0.0f;
+        float aux;
+        for (int i = 0; i < servicos.size(); i++) {
+            tok = servicos.get(i).split(" - ");
+            soma += Float.valueOf(tok[2].replace(",", "."));
+        }
+        ValorTotal.setText(String.format("%.2f", soma));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtMinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMinMouseClicked
@@ -497,18 +480,6 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
     private void txtHoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHoraMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHoraMouseClicked
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        List<String> servicos = Lista_Servicos.getSelectedValuesList();
-        String tok[];
-        float soma = 0.0f;
-        float aux;
-        for (int i = 0; i < servicos.size(); i++) {
-            tok = servicos.get(i).split(" - ");
-            soma += Float.valueOf(tok[2].replace(",", "."));
-        }
-        ValorTotal.setText(String.format("%.2f", soma));
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
@@ -557,7 +528,6 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -565,7 +535,6 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -34,6 +34,23 @@ public class ControleAtendimento {
         return atendList;
     }
 
+    public ControleAtendimento() {
+        try {
+            String string = "Select * from Atendimento;";
+            Connection conexao = ConnectionFactory.createConnection();
+            PreparedStatement ps;
+            ps = conexao.prepareStatement(string);
+            ps.execute();
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                atendimento = new Atendimento(rs.getInt("id_atend"), rs.getInt("id_func"), rs.getInt("id_cli"), rs.getDate("data"), rs.getTime("horario"));
+            }
+            conexao.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ControleCargo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public ControleAtendimento(int Ano, int Mes, int Dia) {
         try {
             String string = "Select * from Atendimento where data = '" + Ano + "-" + Mes + "-" + Dia + "';";
@@ -43,7 +60,7 @@ public class ControleAtendimento {
             ps.execute();
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Atendimento atendimento = new Atendimento(rs.getInt("id_atend"), rs.getInt("id_func"), rs.getInt("id_cli"), rs.getDate("data"), rs.getTime("horario"));
+                atendimento = new Atendimento(rs.getInt("id_atend"), rs.getInt("id_func"), rs.getInt("id_cli"), rs.getDate("data"), rs.getTime("horario"));
                 atendList.add(atendimento);
             }
             conexao.close();
@@ -54,7 +71,7 @@ public class ControleAtendimento {
 
     public ControleAtendimento(int id_atend) {
         try {
-            String string = "Select * from Atendimento where id_atend = " +id_atend+ ";";
+            String string = "Select * from Atendimento where id_atend = " + id_atend + ";";
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
             ps = conexao.prepareStatement(string);

@@ -147,12 +147,12 @@ public class FrameLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String login = txtLogin.getText();
+        String user = txtLogin.getText();
         String senha = txtSenha.getText();
-        ControleLogin login_control = new ControleLogin(login, senha);
+        ControleLogin login_control = new ControleLogin(user, senha);
         if (login_control.getEstado() == 1) {
             // Comentado só para não dar erro no teste
-            FramePrincipal fp1 = new FramePrincipal();
+            FramePrincipal fp1 = new FramePrincipal(login_control.getLogin());
             fp1.setExtendedState(fp1.MAXIMIZED_BOTH);
             fp1.setVisible(true);
             dispose();

@@ -5,6 +5,21 @@
  */
 package Visao;
 
+import Controle.ControleAlterInsert;
+import Controle.ControleAtendimento;
+import Controle.ControleCadastroCli;
+import Controle.ControleServico;
+import Modelo.Login;
+import Modelo.Servico;
+import java.sql.SQLException;
+import java.sql.Time;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author a1602020
@@ -14,8 +29,33 @@ public class FrameAgendaDois extends javax.swing.JFrame {
     /**
      * Creates new form FrameAgendaDois
      */
+    Login login;
+    Date data;
+    String horario;
+    
+
     public FrameAgendaDois() {
+    }
+
+    FrameAgendaDois(Login login_agenda, Date data_agenda, String horario_agenda) {
         initComponents();
+        login = login_agenda;
+        data = data_agenda;
+        horario = horario_agenda;
+        
+        ControleCadastroCli contCli = new ControleCadastroCli(login.getId_login());
+        txtNome.setText(contCli.getCliente().getNome_cli());
+        txtCel1.setText(contCli.getCliente().getCelular().substring(0, 2));
+        txtCel2.setText(contCli.getCliente().getCelular().substring(2));
+
+        ControleServico conServ = new ControleServico();
+        Servico servico;
+        ArrayList<Servico> servList = conServ.getServList();
+        DefaultListModel model2 = new DefaultListModel();
+        for (int i = 0; i < servList.size(); i++) {
+            model2.addElement(servList.get(i).getId_serv() + " - " + servList.get(i).getDescricao() + " - " + String.format("%.2f", servList.get(i).getValor()));
+        }
+        Lista_servicos.setModel(model2);
     }
 
     /**
@@ -39,25 +79,20 @@ public class FrameAgendaDois extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        chkCorte = new javax.swing.JCheckBox();
-        chkPintura = new javax.swing.JCheckBox();
-        chkChapinha = new javax.swing.JCheckBox();
-        chkSombrancelha = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
-        chkMaquiagem = new javax.swing.JCheckBox();
-        chkEscova = new javax.swing.JCheckBox();
-        chkUnha = new javax.swing.JCheckBox();
-        chkMassagem = new javax.swing.JCheckBox();
         txtSenha = new javax.swing.JPasswordField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Lista_servicos = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Agendar Horario");
 
-        jButton20.setBackground(new java.awt.Color(76, 192, 77));
+        jButton20.setBackground(new java.awt.Color(255, 153, 51));
         jButton20.setFont(new java.awt.Font("Cantarell", 0, 10)); // NOI18N
         jButton20.setPreferredSize(new java.awt.Dimension(30, 30));
 
         jLabel1.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        jLabel1.setText("Status:");
+        jLabel1.setText("Agendamento em andamento...");
 
         txtCel2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,10 +100,14 @@ public class FrameAgendaDois extends javax.swing.JFrame {
             }
         });
 
-        txtCel1.setText("DDD");
         txtCel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtCel1MouseClicked(evt);
+            }
+        });
+        txtCel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCel1ActionPerformed(evt);
             }
         });
 
@@ -81,7 +120,7 @@ public class FrameAgendaDois extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
         jLabel12.setText("Senha");
 
-        jButton4.setText("Salvar");
+        jButton4.setText("Confirmar");
         jButton4.setPreferredSize(new java.awt.Dimension(95, 40));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,72 +142,11 @@ public class FrameAgendaDois extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
         jLabel5.setText("Selecione os serviços prestados");
 
-        chkCorte.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        chkCorte.setText("Corte");
-        chkCorte.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkCorteActionPerformed(evt);
-            }
-        });
-
-        chkPintura.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        chkPintura.setText("Pintura");
-        chkPintura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkPinturaActionPerformed(evt);
-            }
-        });
-
-        chkChapinha.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        chkChapinha.setText("Chapinha");
-        chkChapinha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkChapinhaActionPerformed(evt);
-            }
-        });
-
-        chkSombrancelha.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        chkSombrancelha.setText("Sombrancelha");
-        chkSombrancelha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkSombrancelhaActionPerformed(evt);
-            }
-        });
-
         jLabel6.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
         jLabel6.setText("Digite a senha para confirmar o agendamento");
 
-        chkMaquiagem.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        chkMaquiagem.setText("Maquiagem");
-        chkMaquiagem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkMaquiagemActionPerformed(evt);
-            }
-        });
-
-        chkEscova.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        chkEscova.setText("Escova");
-        chkEscova.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkEscovaActionPerformed(evt);
-            }
-        });
-
-        chkUnha.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        chkUnha.setText("Unha (Pé e mão)");
-        chkUnha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkUnhaActionPerformed(evt);
-            }
-        });
-
-        chkMassagem.setFont(new java.awt.Font("Cantarell", 0, 12)); // NOI18N
-        chkMassagem.setText("Massagem");
-        chkMassagem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkMassagemActionPerformed(evt);
-            }
-        });
+        Lista_servicos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(Lista_servicos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,49 +155,42 @@ public class FrameAgendaDois extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
+                        .addComponent(jLabel12)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtCel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCel2))
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel4)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(chkCorte)
-                                    .addComponent(chkPintura)
-                                    .addComponent(chkChapinha)
-                                    .addComponent(chkSombrancelha))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(chkMaquiagem)
-                                    .addComponent(chkEscova)
-                                    .addComponent(chkUnha)
-                                    .addComponent(chkMassagem)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jLabel12)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel10)
+                                            .addComponent(jLabel8))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(txtCel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(txtCel2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,45 +205,32 @@ public class FrameAgendaDois extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(jLabel4)
                 .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(chkCorte)
+                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chkPintura)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chkChapinha)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chkSombrancelha))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(chkMaquiagem)
+                        .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chkEscova)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chkUnha)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chkMassagem)))
+                        .addComponent(jLabel10)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
@@ -283,48 +241,46 @@ public class FrameAgendaDois extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCel2ActionPerformed
 
     private void txtCel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCel1MouseClicked
-        txtCel1.setText("");
+        
     }//GEN-LAST:event_txtCel1MouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        ControleAtendimento conAtend = new ControleAtendimento();
+        ControleAlterInsert insert;
+        String total[] = Lista_servicos.getSelectedValue().split(" - ");
+        String string = "Insert into Atendimento (id_atend, id_cli, data, horario, total) values(";
+        String string2 = "Insert into Servico_atendimento values(";
+        if(txtSenha.getText().equals(login.getSenha())){
+            try {
+                string += (conAtend.getAtendimento().getId_atend()+1)+",";
+                string += login.getId_login()+",";
+                string += "'"+(data.getYear()+ 1900)+"-"+(data.getMonth()+1)+"-"+ data.getDate()+"',";
+                string += "'"+horario+"',";
+                string += total[2].replace(",", ".")+")";
+                
+                string2 += (conAtend.getAtendimento().getId_atend()+1)+",";
+                string2 += Lista_servicos.getSelectedIndex()+",";
+                string2 += 1+")";
+                
+                insert = new ControleAlterInsert(string); 
+                insert = new ControleAlterInsert(string2);
+                dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(FrameAgendaDois.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Senha Incorreta, tente novamente!");
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void chkCorteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkCorteActionPerformed
+    private void txtCel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCel1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkCorteActionPerformed
-
-    private void chkPinturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPinturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkPinturaActionPerformed
-
-    private void chkChapinhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkChapinhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkChapinhaActionPerformed
-
-    private void chkSombrancelhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSombrancelhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkSombrancelhaActionPerformed
-
-    private void chkMaquiagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMaquiagemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkMaquiagemActionPerformed
-
-    private void chkEscovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkEscovaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkEscovaActionPerformed
-
-    private void chkUnhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkUnhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkUnhaActionPerformed
-
-    private void chkMassagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMassagemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkMassagemActionPerformed
+    }//GEN-LAST:event_txtCel1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -362,14 +318,7 @@ public class FrameAgendaDois extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox chkChapinha;
-    private javax.swing.JCheckBox chkCorte;
-    private javax.swing.JCheckBox chkEscova;
-    private javax.swing.JCheckBox chkMaquiagem;
-    private javax.swing.JCheckBox chkMassagem;
-    private javax.swing.JCheckBox chkPintura;
-    private javax.swing.JCheckBox chkSombrancelha;
-    private javax.swing.JCheckBox chkUnha;
+    private javax.swing.JList<String> Lista_servicos;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -380,6 +329,7 @@ public class FrameAgendaDois extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtCel1;
     private javax.swing.JTextField txtCel2;
     private javax.swing.JTextField txtNome;

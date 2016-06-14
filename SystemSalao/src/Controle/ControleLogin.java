@@ -21,40 +21,39 @@ import javax.swing.JOptionPane;
 public class ControleLogin {
 
     int estado = 0;
-    int id_login;
-    String senha_bd;
-    String user;
+    Login login;
 
-    public ControleLogin(String login, String senha) {
+    public Login getLogin() {
+        return login;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public ControleLogin(String user, String senha) {
         try {
-            String string = "Select * from Login where user='" + login + "' AND senha='" + senha + "';";
+            String string = "Select * from Login where user='" + user + "' AND senha='" + senha + "';";
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
             ps = conexao.prepareStatement(string);
             ps.execute();
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                id_login = rs.getInt("id_login");
-                senha_bd = rs.getString("senha");
-                user = rs.getString("user");
+                login = new Login(rs.getInt("id_login"), rs.getString("user"), rs.getString("senha"));
             }
             conexao.close();
-            Login login_bd = new Login(id_login, user, senha_bd);
-            if (login_bd.getUser() == null) {
+            if (login == null) {
                 JOptionPane.showMessageDialog(null, "Usuario Não Cadastrado!");
                 this.estado = 0;
             }
-            if (login_bd.getUser().equals(login) && login_bd.getSenha().equals(senha)) {
+            if (login.getUser().equals(user) && login.getSenha().equals(senha)) {
                 this.estado = 1;
             }
         } catch (SQLException ex) {
             Logger.getLogger(ControleLogin.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("DEU NAO MLEKOTE");
         }
-    }
-
-    public int getEstado() {
-        return estado;
     }
 
 }

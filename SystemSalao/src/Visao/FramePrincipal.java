@@ -5,6 +5,7 @@
  */
 package Visao;
 
+import Modelo.Login;
 import com.sun.awt.AWTUtilities;
 import java.awt.Color;
 import java.awt.Container;
@@ -29,7 +30,9 @@ public class FramePrincipal extends javax.swing.JFrame {
     /**
      * Creates new form NovoJFrame
      */
-    public FramePrincipal() {
+    Login login;
+    public FramePrincipal(Login login_login) {
+        login = login_login;
         JLabel background = new JLabel();
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visao/imgs/background.png")));
         setContentPane(background);
@@ -295,7 +298,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuCadCliActionPerformed
 
     private void jMenuAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAgendaActionPerformed
-        FrameAgenda fa1 = new FrameAgenda();
+        FrameAgenda fa1 = new FrameAgenda(login);
         jPanelPrinc.removeAll();
         jPanelPrinc.repaint();
         jPanelPrinc.add(fa1);
@@ -359,7 +362,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFuncMouseClicked
 
     private void btnAgendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgendaMouseClicked
-        FrameAgenda fa1 = new FrameAgenda();
+        FrameAgenda fa1 = new FrameAgenda(login);
         jPanelPrinc.removeAll();
         jPanelPrinc.repaint();
         jPanelPrinc.add(fa1);

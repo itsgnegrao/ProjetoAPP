@@ -7,6 +7,7 @@ package Visao;
 
 import Controle.ControleAtendimento;
 import Modelo.Atendimento;
+import Modelo.Login;
 import java.awt.Color;
 import java.util.ArrayList;
 
@@ -19,7 +20,10 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
     /**
      * Creates new form FrameAgenda2
      */
-    public FrameAgenda() {
+    Login login;
+
+    public FrameAgenda(Login login_frame_princ) {
+        login = login_frame_princ;
         initComponents();
         ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
     }
@@ -378,13 +382,13 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1000ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "10:00");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1000ActionPerformed
 
     private void btn1600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1600ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "16:00");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1600ActionPerformed
@@ -394,85 +398,85 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jCalendar1MouseClicked
 
     private void btn800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn800ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "8:00");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn800ActionPerformed
 
     private void btn830ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn830ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "8:30");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn830ActionPerformed
 
     private void btn900ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn900ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "9:00");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn900ActionPerformed
 
     private void btn930ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn930ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "9:30");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn930ActionPerformed
 
     private void btn1030ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1030ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "10:30");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1030ActionPerformed
 
     private void btn1100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1100ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "11:00");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1100ActionPerformed
 
     private void btn1130ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1130ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "11:30");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1130ActionPerformed
 
     private void btn1400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1400ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "14:00");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1400ActionPerformed
 
     private void btn1430ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1430ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "14:30");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1430ActionPerformed
 
     private void btn1500ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1500ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "15:00");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1500ActionPerformed
 
     private void btn1530ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1530ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "15:30");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1530ActionPerformed
 
     private void btn1630ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1630ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "16:30");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1630ActionPerformed
 
     private void btn1700ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1700ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "17:00");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1700ActionPerformed
 
     private void btn1730ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1730ActionPerformed
-        FrameAgendaDois fa2 = new FrameAgendaDois();
+        FrameAgendaDois fa2 = new FrameAgendaDois(login, jCalendar1.getDate(), "17:30");
         fa2.setLocationRelativeTo(null);
         fa2.setVisible(true);
     }//GEN-LAST:event_btn1730ActionPerformed
@@ -558,101 +562,72 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
     }
 
     private void SetColor(ArrayList<Atendimento> atendList) {
-        if (atendList.get(0).getHorario().getHours() == 8 && atendList.get(0).getHorario().getMinutes() == 00) {
+        SetGreen(atendList);
+        for (int i = 0; i < atendList.size(); i++) {
+            if (atendList.get(i).getHorario().getHours() == 8 && atendList.get(i).getHorario().getMinutes() == 00) {
                 btn800.setEnabled(false);
                 btn800.setBackground(Color.red);
-            } else {
-                btn800.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 8 && atendList.get(0).getHorario().getMinutes() == 30) {
+            if (atendList.get(i).getHorario().getHours() == 8 && atendList.get(i).getHorario().getMinutes() == 30) {
                 btn830.setEnabled(false);
                 btn830.setBackground(Color.red);
-            } else {
-                btn830.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 9 && atendList.get(0).getHorario().getMinutes() == 00) {
+            if (atendList.get(i).getHorario().getHours() == 9 && atendList.get(i).getHorario().getMinutes() == 00) {
                 btn900.setEnabled(false);
                 btn900.setBackground(Color.red);
-            } else {
-                btn900.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 9 && atendList.get(0).getHorario().getMinutes() == 30) {
+            if (atendList.get(i).getHorario().getHours() == 9 && atendList.get(i).getHorario().getMinutes() == 30) {
                 btn930.setEnabled(false);
                 btn930.setBackground(Color.red);
-            } else {
-                btn930.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 10 && atendList.get(0).getHorario().getMinutes() == 00) {
+            if (atendList.get(i).getHorario().getHours() == 10 && atendList.get(i).getHorario().getMinutes() == 00) {
                 btn1000.setEnabled(false);
                 btn1000.setBackground(Color.red);
-            } else {
-                btn1000.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 10 && atendList.get(0).getHorario().getMinutes() == 30) {
+            if (atendList.get(i).getHorario().getHours() == 10 && atendList.get(i).getHorario().getMinutes() == 30) {
                 btn1030.setEnabled(false);
                 btn1030.setBackground(Color.red);
-            } else {
-                btn1030.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 11 && atendList.get(0).getHorario().getMinutes() == 00) {
+            if (atendList.get(i).getHorario().getHours() == 11 && atendList.get(i).getHorario().getMinutes() == 00) {
                 btn1100.setEnabled(false);
                 btn1100.setBackground(Color.red);
-            } else {
-                btn1100.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 11 && atendList.get(0).getHorario().getMinutes() == 30) {
+            if (atendList.get(i).getHorario().getHours() == 11 && atendList.get(i).getHorario().getMinutes() == 30) {
                 btn1130.setEnabled(false);
                 btn1130.setBackground(Color.red);
-            } else {
-                btn1130.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 14 && atendList.get(0).getHorario().getMinutes() == 30) {
+            if (atendList.get(i).getHorario().getHours() == 14 && atendList.get(i).getHorario().getMinutes() == 00) {
                 btn1400.setEnabled(false);
                 btn1400.setBackground(Color.red);
-            } else {
-                btn1400.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 14 && atendList.get(0).getHorario().getMinutes() == 30) {
+            if (atendList.get(i).getHorario().getHours() == 14 && atendList.get(i).getHorario().getMinutes() == 30) {
                 btn1430.setEnabled(false);
                 btn1430.setBackground(Color.red);
-            } else {
-                btn1430.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 15 && atendList.get(0).getHorario().getMinutes() == 30) {
+            if (atendList.get(i).getHorario().getHours() == 15 && atendList.get(i).getHorario().getMinutes() == 00) {
                 btn1500.setEnabled(false);
                 btn1500.setBackground(Color.red);
-            } else {
-                btn1500.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 15 && atendList.get(0).getHorario().getMinutes() == 30) {
+            if (atendList.get(i).getHorario().getHours() == 15 && atendList.get(i).getHorario().getMinutes() == 30) {
                 btn1530.setEnabled(false);
                 btn1530.setBackground(Color.red);
-            } else {
-                btn1530.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 16 && atendList.get(0).getHorario().getMinutes() == 00) {
+            if (atendList.get(i).getHorario().getHours() == 16 && atendList.get(i).getHorario().getMinutes() == 00) {
                 btn1600.setEnabled(false);
                 btn1600.setBackground(Color.red);
-            } else {
-                btn1600.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 16 && atendList.get(0).getHorario().getMinutes() == 30) {
+            if (atendList.get(i).getHorario().getHours() == 16 && atendList.get(i).getHorario().getMinutes() == 30) {
                 btn1630.setEnabled(false);
                 btn1630.setBackground(Color.red);
-            } else {
-                btn1630.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 17 && atendList.get(0).getHorario().getMinutes() == 00) {
+            if (atendList.get(i).getHorario().getHours() == 17 && atendList.get(i).getHorario().getMinutes() == 00) {
                 btn1700.setEnabled(false);
                 btn1700.setBackground(Color.red);
-            } else {
-                btn1700.setBackground(Color.green);
             }
-            if (atendList.get(0).getHorario().getHours() == 17 && atendList.get(0).getHorario().getMinutes() == 30) {
+            if (atendList.get(i).getHorario().getHours() == 17 && atendList.get(i).getHorario().getMinutes() == 30) {
                 btn1730.setEnabled(false);
                 btn1730.setBackground(Color.red);
-            } else {
-                btn1730.setBackground(Color.green);
             }
+        }
     }
 }
