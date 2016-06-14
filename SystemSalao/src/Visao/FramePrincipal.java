@@ -270,7 +270,14 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void jMenuCadFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadFuncActionPerformed
         FrameCadFunc fcc1 = new FrameCadFunc();
-        fcc1.setLocationRelativeTo(null);
+        jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
+        jPanelPrinc.add(fcc1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fcc1.getWidth();
+        int aIFrame = fcc1.getHeight();
+        fcc1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
         fcc1.setVisible(true);
     }//GEN-LAST:event_jMenuCadFuncActionPerformed
 
@@ -340,7 +347,14 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void btnFuncMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFuncMouseClicked
         FrameCadFunc fcc1 = new FrameCadFunc();
-        fcc1.setLocationRelativeTo(null);
+        jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
+        jPanelPrinc.add(fcc1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fcc1.getWidth();
+        int aIFrame = fcc1.getHeight();
+        fcc1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
         fcc1.setVisible(true);
     }//GEN-LAST:event_btnFuncMouseClicked
 
