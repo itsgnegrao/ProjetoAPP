@@ -18,19 +18,51 @@ public class Funcionario {
     String nome_func;
     String cpf_func;
     String pis_func;
-    float salario_func;
     int cargo_id;
     int login_id;
+    String nasc;
 
-    public Funcionario(int id_func, int idade_func, String nome_func, String cpf_func, String pis_func, float salario_func, int cargo_id, int login_id) {
+    public int getId_func() {
+        return id_func;
+    }
+
+    public String getNasc() {
+        return nasc;
+    }
+
+    public int getIdade_func() {
+        return idade_func;
+    }
+
+    public String getNome_func() {
+        return nome_func;
+    }
+
+    public String getCpf_func() {
+        return cpf_func;
+    }
+
+    public String getPis_func() {
+        return pis_func;
+    }
+
+    public int getCargo_id() {
+        return cargo_id;
+    }
+
+    public int getLogin_id() {
+        return login_id;
+    }
+
+    public Funcionario(int id_func, int idade_func, String nome_func, String cpf_func, String pis_func, int cargo_id, int login_id, String nasc) {
         this.id_func = id_func;
         this.idade_func = idade_func;
         this.nome_func = nome_func;
         this.cpf_func = cpf_func;
         this.pis_func = pis_func;
-        this.salario_func = salario_func;
         this.cargo_id = cargo_id;
         this.login_id = login_id;
+        this.nasc  = nasc;
     }
     
 }
