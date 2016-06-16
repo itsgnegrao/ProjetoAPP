@@ -22,18 +22,26 @@ import java.util.logging.Logger;
 public class ControleCadastroFunc {
     Funcionario funcionario;
     Login funcionario_login;
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public Login getFuncionario_login() {
+        return funcionario_login;
+    }
     
     public ControleCadastroFunc(int id_func) {
         try {
             String string = "Select * from Funcionario where id_func=" + id_func + ";";
-            String string1 = "Select * from login l, funcionario_login fl where l.id_login = fl.id_login AND fl.id_cli ="+id_func+";";
+            String string1 = "Select * from login l, funcionario_login fl where l.id_login = fl.id_login AND fl.id_func ="+id_func+";";
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
             ps = conexao.prepareStatement(string);
             ps.execute();
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                funcionario = new Funcionario( rs.getInt("id_func"), rs.getInt("idade_func"), rs.getString("nome_func") , rs.getString("cpf_func"), rs.getString("pis_func"), rs.getFloat("salario_func"), rs.getInt("cargo_id"), rs.getInt("login_id"));
+                funcionario = new Funcionario( rs.getInt("id_func"), rs.getInt("idade_func"), rs.getString("nome_func") , rs.getString("cpf_func"), rs.getString("pis_func"), rs.getInt("cargo_id"), rs.getInt("login_id"), rs.getString("nasc"));
             }
 
             ps = conexao.prepareStatement(string1);
@@ -49,7 +57,7 @@ public class ControleCadastroFunc {
     }
     
     int id_func;
-    public ControleCadastroFunc(String idade_func, String nome_func, String cpf_func, String pis_func, String cargo_id, String user, String senha) throws SQLException {
+    public ControleCadastroFunc(String idade_func, String nome_func, String cpf_func, String pis_func, String cargo_id, String user, String senha, String nasc) throws SQLException {
         try{
             String string1 = "Select id_func from Funcionario";
             Connection conexao1 = ConnectionFactory.createConnection();
