@@ -1,4 +1,4 @@
-create database salaozao;
+funcionariocreate database salaozao;
 use salaozao;
 
 create table Login(
@@ -11,6 +11,7 @@ primary key(id_login)
 create table Cargo(
 id_cargo integer,
 descricao varchar(40),
+salario float,
 primary key(id_cargo)
 );
 
@@ -38,9 +39,9 @@ nome_func varchar(40),
 idade_func integer,
 cpf_func varchar(11),
 pis_func varchar(40),
-salario_func float,
 cargo_id integer,
 login_id integer,
+nasc varchar(8),
 primary key(id_func)
 );
 
