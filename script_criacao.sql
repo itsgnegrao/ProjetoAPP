@@ -1,4 +1,4 @@
-funcionariocreate database salaozao;
+create database salaozao;
 use salaozao;
 
 create table Login(
@@ -81,7 +81,7 @@ foreign key(id_atend) references Atendimento(id_atend),
 foreign key(id_serv) references Servico(id_serv)
 );
 
-INSERT INTO Cargo VALUES (0,'admin'),(1,'Gerente'),(2,'Atendente'),(3,'Caixa'),(4,'Cabeleleira');
+INSERT INTO Cargo VALUES (0,'admin',9999),(1,'Gerente',5000),(2,'Atendente',1200),(3,'Caixa',1200),(4,'Cabeleleira',2200);
 INSERT INTO Cliente VALUES (1,'gabriel','1996-10-15','00000000000',1,'4498469220'),(3,'Gabriel','1996-10-15','11122233344',3,'4498469220');
 INSERT INTO Funcionario VALUES (1,'admin',0,'0','0',0,0,0);
 INSERT INTO Login VALUES (0,'admin','admin'),(1,'cliente','cliente'),(3,'negrao','negrao');
