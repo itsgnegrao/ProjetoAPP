@@ -526,6 +526,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
                 Logger.getLogger(FrameCadFunc.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void txtCpf1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf1KeyPressed
