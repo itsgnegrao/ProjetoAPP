@@ -106,7 +106,7 @@ public class FrameAtendimento extends javax.swing.JInternalFrame {
         txtDataMes = new javax.swing.JTextField();
         txtDataAno = new javax.swing.JTextField();
 
-        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 5, true));
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 196, 138), 5, true));
 
         Lista_Atendimento.setBackground(new java.awt.Color(197, 193, 193));
         Lista_Atendimento.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);

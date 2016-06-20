@@ -31,6 +31,7 @@ public class FramePrincipal extends javax.swing.JFrame {
      * Creates new form NovoJFrame
      */
     Login login;
+
     public FramePrincipal(Login login_login) {
         login = login_login;
         JLabel background = new JLabel();
@@ -38,6 +39,29 @@ public class FramePrincipal extends javax.swing.JFrame {
         setContentPane(background);
         setLayout(new FlowLayout());
         initComponents();
+
+        if (login.getId_login() % 2 != 0) {
+            btnFunc.setVisible(false);
+            btnAtend.setVisible(false);
+            btnCli.setVisible(false);
+            btnRelat.setVisible(false);
+            btnServ.setVisible(false);
+
+            FrameAgenda fa1 = new FrameAgenda(login);
+            jPanelPrinc.removeAll();
+            jPanelPrinc.repaint();
+            jPanelPrinc.add(fa1);
+            int lDesk = jPanelPrinc.getWidth();
+            int aDesk = jPanelPrinc.getHeight();
+            int lIFrame = fa1.getWidth();
+            int aIFrame = fa1.getHeight();
+            fa1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
+            fa1.setVisible(true);
+            
+            jMenu1.setVisible(false);
+            jMenu4.setVisible(false);
+            jMenu5.setVisible(false);
+        }
     }
 
     /**
@@ -57,19 +81,20 @@ public class FramePrincipal extends javax.swing.JFrame {
         btnServ = new javax.swing.JLabel();
         btnAtend = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuAgenda = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuNovoAtend = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuCaixa = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuCadCli = new javax.swing.JMenuItem();
         jMenuCadFunc = new javax.swing.JMenuItem();
         jMenuCadServico = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuAgenda = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuCaixa = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuNovoAtend = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Salãozão");
+        setBackground(new java.awt.Color(204, 0, 0));
 
         jPanelPrinc.setBackground(new java.awt.Color(255, 51, 51));
         jPanelPrinc.setOpaque(false);
@@ -163,6 +188,42 @@ public class FramePrincipal extends javax.swing.JFrame {
             }
         });
 
+        jMenu3.setText("Agenda");
+
+        jMenuAgenda.setText("Consultar Agenda");
+        jMenuAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuAgendaActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuAgenda);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu5.setText("Atendimento");
+
+        jMenuNovoAtend.setText("Novo Atendimento");
+        jMenuNovoAtend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuNovoAtendActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuNovoAtend);
+
+        jMenuBar1.add(jMenu5);
+
+        jMenu4.setText("Relatório");
+
+        jMenuCaixa.setText("Gerar relatórios");
+        jMenuCaixa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuCaixaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuCaixa);
+
+        jMenuBar1.add(jMenu4);
+
         jMenu1.setText("Cadastros");
 
         jMenuCadCli.setText("Cliente");
@@ -191,42 +252,6 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu3.setText("Agenda");
-
-        jMenuAgenda.setText("Consultar Agenda");
-        jMenuAgenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuAgendaActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuAgenda);
-
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Relatório");
-
-        jMenuCaixa.setText("Gerar relatórios");
-        jMenuCaixa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuCaixaActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuCaixa);
-
-        jMenuBar1.add(jMenu4);
-
-        jMenu5.setText("Atendimento");
-
-        jMenuNovoAtend.setText("Novo Atendimento");
-        jMenuNovoAtend.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuNovoAtendActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuNovoAtend);
-
-        jMenuBar1.add(jMenu5);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -251,7 +276,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, 686, Short.MAX_VALUE)
+                    .addComponent(jPanelPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCli)
                         .addGap(0, 0, 0)
@@ -264,7 +289,7 @@ public class FramePrincipal extends javax.swing.JFrame {
                         .addComponent(btnServ)
                         .addGap(0, 0, 0)
                         .addComponent(btnAtend)
-                        .addGap(0, 86, Short.MAX_VALUE)))
+                        .addGap(0, 88, Short.MAX_VALUE)))
                 .addGap(20, 20, 20))
         );
 
