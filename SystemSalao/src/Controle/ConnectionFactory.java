@@ -22,9 +22,10 @@ public class ConnectionFactory {
         } catch (ClassNotFoundException e) {
             System.out.println("Driver não encontrado!" + e);
         }
-        String url = "jdbc:mysql://localhost:3306/salaozao";
+        String url = "jdbc:mysql://127.0.0.1:3306/salaozao";
         String user = "root";
-        String password = "";
+        String password = "root";
+        
         Connection conexao;
         conexao = DriverManager.getConnection(url, user, password);
         return conexao;

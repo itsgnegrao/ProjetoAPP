@@ -59,7 +59,7 @@ public class ControleCadastroFunc {
     int id_func;
     public ControleCadastroFunc(String idade_func, String nome_func, String cpf_func, String pis_func, String cargo_id, String user, String senha, String nasc) throws SQLException {
         try{
-            String string1 = "Select id_func from Funcionario";
+            /*String string1 = "Select id_func from Funcionario";
             Connection conexao1 = ConnectionFactory.createConnection();
             PreparedStatement ps1;
             ps1 = conexao1.prepareStatement(string1);
@@ -72,8 +72,8 @@ public class ControleCadastroFunc {
             System.out.println(id_func);
             id_func += 2;
             System.out.println(id_func);
-            
-            String string2 = "Insert INTO login  VALUES(" + id_func + ",'" + user + "','" + senha + "');";
+            */
+            String string2 = "Insert INTO login  VALUES(" + 9 + ",'" + user + "','" + senha + "');";
             System.out.println(string2);
             Connection conexao2 = ConnectionFactory.createConnection();
             PreparedStatement ps2;
@@ -81,7 +81,7 @@ public class ControleCadastroFunc {
             ps2.execute();
             conexao2.close();
             
-            String string = "Insert INTO Funcionario VALUES(" + id_func + ",'" + nome_func + "'," + idade_func + ",'" + cpf_func + "','" + pis_func + "'," + cargo_id + "," + id_func + ");";
+            String string = "Insert INTO Funcionario VALUES(" + 5 + ",'" + nome_func + "'," + idade_func + ",'" + cpf_func + "','" + pis_func + "'," + cargo_id + "," + 9 + ","+"'31011941'"+");";
             System.out.println(string);
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
@@ -89,7 +89,7 @@ public class ControleCadastroFunc {
             ps.execute();
             conexao.close();
             
-            String string3 = "Insert INTO funcionario_login  VALUES(" + id_func + "," + id_func + ");";
+            String string3 = "Insert INTO funcionario_login  VALUES(" + 5 + "," + 9 + ");";
             System.out.println(string3);
             Connection conexao3 = ConnectionFactory.createConnection();
             PreparedStatement ps3;

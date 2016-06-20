@@ -203,9 +203,9 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("Caixa");
+        jMenu4.setText("Relatório");
 
-        jMenuCaixa.setText("Consultar Caixa");
+        jMenuCaixa.setText("Gerar relatórios");
         jMenuCaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuCaixaActionPerformed(evt);
@@ -312,7 +312,14 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void jMenuCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCaixaActionPerformed
         FrameRelatorio fc1 = new FrameRelatorio();
-        fc1.setLocationRelativeTo(null);
+        jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
+        jPanelPrinc.add(fc1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fc1.getWidth();
+        int aIFrame = fc1.getHeight();
+        fc1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
         fc1.setVisible(true);
     }//GEN-LAST:event_jMenuCaixaActionPerformed
 
@@ -331,7 +338,14 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void jMenuCadServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadServicoActionPerformed
         FrameServicos fa1 = new FrameServicos();
-        fa1.setLocationRelativeTo(null);
+        jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
+        jPanelPrinc.add(fa1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fa1.getWidth();
+        int aIFrame = fa1.getHeight();
+        fa1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
         fa1.setVisible(true);
     }//GEN-LAST:event_jMenuCadServicoActionPerformed
 
@@ -376,13 +390,27 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void btnRelatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatMouseClicked
         FrameRelatorio fc1 = new FrameRelatorio();
-        fc1.setLocationRelativeTo(null);
+        jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
+        jPanelPrinc.add(fc1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fc1.getWidth();
+        int aIFrame = fc1.getHeight();
+        fc1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
         fc1.setVisible(true);
     }//GEN-LAST:event_btnRelatMouseClicked
 
     private void btnServMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnServMouseClicked
         FrameServicos fa1 = new FrameServicos();
-        fa1.setLocationRelativeTo(null);
+        jPanelPrinc.removeAll();
+        jPanelPrinc.repaint();
+        jPanelPrinc.add(fa1);
+        int lDesk = jPanelPrinc.getWidth();
+        int aDesk = jPanelPrinc.getHeight();
+        int lIFrame = fa1.getWidth();
+        int aIFrame = fa1.getHeight();
+        fa1.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
         fa1.setVisible(true);
     }//GEN-LAST:event_btnServMouseClicked
 
