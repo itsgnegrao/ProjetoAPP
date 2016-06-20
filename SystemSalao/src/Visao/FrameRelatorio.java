@@ -62,7 +62,7 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jInternalFrame1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 102), 5, true));
+        jInternalFrame1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 5, true));
         jInternalFrame1.setFocusable(false);
         jInternalFrame1.setNormalBounds(new java.awt.Rectangle(0, 0, 0, 0));
         jInternalFrame1.setVisible(true);

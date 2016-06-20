@@ -73,7 +73,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         txtSenha = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
 
-        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 102), 5, true));
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 5, true));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton4.setText("Salvar");

@@ -43,7 +43,7 @@ public class FrameServicos extends javax.swing.JInternalFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jInternalFrame1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 102), 5, true));
+        jInternalFrame1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 5, true));
         jInternalFrame1.setVisible(true);
 
         txtNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N

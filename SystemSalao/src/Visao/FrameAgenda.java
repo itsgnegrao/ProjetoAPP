@@ -64,7 +64,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
 
-        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 102), 5, true));
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 5, true));
 
         btnConsultar.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
         btnConsultar.setText("CONSULTAR");

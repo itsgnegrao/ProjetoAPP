@@ -83,7 +83,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 102), 5, true));
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 5, true));
         setMinimumSize(new java.awt.Dimension(647, 601));
         setPreferredSize(new java.awt.Dimension(647, 601));
 
