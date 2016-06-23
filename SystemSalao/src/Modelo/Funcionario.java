@@ -20,13 +20,13 @@ public class Funcionario {
     String pis_func;
     int cargo_id;
     int login_id;
-    String nasc;
+    Date nasc;
 
     public int getId_func() {
         return id_func;
     }
 
-    public String getNasc() {
+    public Date getNasc() {
         return nasc;
     }
 
@@ -54,7 +54,7 @@ public class Funcionario {
         return login_id;
     }
 
-    public Funcionario(int id_func, int idade_func, String nome_func, String cpf_func, String pis_func, int cargo_id, int login_id, String nasc) {
+    public Funcionario(int id_func, int idade_func, String nome_func, String cpf_func, String pis_func, int cargo_id, int login_id, Date nasc) {
         this.id_func = id_func;
         this.idade_func = idade_func;
         this.nome_func = nome_func;

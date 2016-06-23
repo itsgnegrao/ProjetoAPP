@@ -453,8 +453,8 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
                         soma++;
                         stringFunc += " cpf_func = '" + cpf + "'";
                     }
-                    String data_nasc = txtDia.getText() + txtMes.getText() + txtAno.getText();
-                    if (!funcionario.getNasc().equals(data_nasc)) {
+                    String data_nasc = txtAno.getText() + "-" + txtMes.getText() + "-" + txtDia.getText();
+                    if (!String.valueOf(funcionario.getNasc()).equals(data_nasc)) {
                         if (soma >= 1) {
                             stringFunc += ",";
                         }
@@ -503,7 +503,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         } else {
             String nome = txtNome.getText();
             String cpf = txtCpf1.getText() + txtCpf2.getText() + txtCpf3.getText() + txtCpf4.getText();
-            String data = txtDia.getText() + txtMes.getText() + txtAno.getText();
+            String data = txtAno.getText() + "-" + txtMes.getText() + "-" + txtDia.getText();
             String pis = txtPis.getText();
             String user = txtUser.getText();
             String senha = txtSenha.getText();
@@ -574,10 +574,10 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         txtUser.setText(funcionario_login.getUser());
         txtSenha.setText(funcionario_login.getSenha());
 
-        String nasc = funcionario.getNasc();
-        txtDia.setText(nasc.substring(0, 2));
-        txtMes.setText(nasc.substring(2, 4));
-        txtAno.setText(nasc.substring(4, 8));
+        String nasc = String.valueOf(funcionario.getNasc());
+        txtAno.setText(nasc.substring(0, 4));
+        txtMes.setText(nasc.substring(5, 7));
+        txtDia.setText(nasc.substring(8, 10));
 
         jButton1.setVisible(false);
         objetoBuscado = 1;

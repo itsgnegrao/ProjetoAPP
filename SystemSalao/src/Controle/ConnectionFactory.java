@@ -24,7 +24,7 @@ public class ConnectionFactory {
         }
         String url = "jdbc:mysql://127.0.0.1:3306/salaozao";
         String user = "root";
-        String password = "";
+        String password = "root";
         
         Connection conexao;
         conexao = DriverManager.getConnection(url, user, password);

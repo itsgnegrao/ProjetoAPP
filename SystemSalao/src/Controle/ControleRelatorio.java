@@ -143,7 +143,7 @@ public class ControleRelatorio {
             ps.execute();
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                func1 = new Funcionario(rs.getInt("id_func"), rs.getInt("idade_func"), rs.getString("nome_func") , rs.getString("cpf_func"), rs.getString("pis_func"), rs.getInt("cargo_id"), rs.getInt("login_id"), rs.getString("nasc"));
+                func1 = new Funcionario(rs.getInt("id_func"), rs.getInt("idade_func"), rs.getString("nome_func") , rs.getString("cpf_func"), rs.getString("pis_func"), rs.getInt("cargo_id"), rs.getInt("login_id"), rs.getDate("nasc"));
                 funcList.add(func1);
             }
             conexao.close();

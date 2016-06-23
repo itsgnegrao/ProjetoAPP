@@ -5,7 +5,6 @@
  */
 package Controle;
 
-import Modelo.Cliente;
 import Modelo.Funcionario;
 import Modelo.Login;
 import java.sql.Connection;
@@ -41,7 +40,7 @@ public class ControleCadastroFunc {
             ps.execute();
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                funcionario = new Funcionario( rs.getInt("id_func"), rs.getInt("idade_func"), rs.getString("nome_func") , rs.getString("cpf_func"), rs.getString("pis_func"), rs.getInt("cargo_id"), rs.getInt("login_id"), rs.getString("nasc"));
+                funcionario = new Funcionario( rs.getInt("id_func"), rs.getInt("idade_func"), rs.getString("nome_func") , rs.getString("cpf_func"), rs.getString("pis_func"), rs.getInt("cargo_id"), rs.getInt("login_id"), rs.getDate("nasc"));
             }
 
             ps = conexao.prepareStatement(string1);
@@ -81,7 +80,7 @@ public class ControleCadastroFunc {
             ps2.execute();
             conexao2.close();
             
-            String string = "Insert INTO Funcionario VALUES(" + id_func + ",'" + nome_func + "'," + idade_func + ",'" + cpf_func + "','" + pis_func + "'," + cargo_id + "," + id_func + ","+ nasc +");";
+            String string = "Insert INTO Funcionario VALUES(" + id_func + ",'" + nome_func + "'," + idade_func + ",'" + cpf_func + "','" + pis_func + "'," + cargo_id + "," + id_func + ",'"+ nasc +"');";
             System.out.println(string);
             Connection conexao = ConnectionFactory.createConnection();
             PreparedStatement ps;
