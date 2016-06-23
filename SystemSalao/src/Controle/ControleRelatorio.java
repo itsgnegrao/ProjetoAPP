@@ -5,9 +5,20 @@
  */
 package Controle;
 
+import Modelo.Atendimento;
 import Modelo.Cliente;
 import Modelo.Funcionario;
 import Modelo.Servico;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,6 +26,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,7 +39,63 @@ public class ControleRelatorio {
     Funcionario func1;
     ArrayList<Servico> servList = new ArrayList<>();
     Servico serv1;
+    ArrayList<Atendimento> atendList = new ArrayList<>();
+    Atendimento at1;
     
+    public ArrayList<Atendimento> getControleAtend(String dtIni, String dtFin, int tipoUsu, String idUsu) {
+        if(tipoUsu==1){  //USUARIO CLIENTE
+            try {
+                String string= "select * from Atendimento where id_cli=" +idUsu+ " and data between '" + dtIni + "' and '" + dtFin + "';";
+                Connection conexao = ConnectionFactory.createConnection();
+                PreparedStatement ps;
+                ps = conexao.prepareStatement(string);
+                ps.execute();
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    at1 = new Atendimento(rs.getInt("id_atend"), rs.getInt("id_func"), rs.getInt("id_cli") , rs.getDate("data"), rs.getTime("horario"));
+                    atendList.add(at1);
+                }
+                return atendList;
+            } catch (SQLException ex) {
+                Logger.getLogger(ControleAtendimento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else if(tipoUsu==2){ //USUARIO FUNCIONARIO
+            try {
+                String string= "select * from Atendimento where id_func=" +idUsu+ " and data between '" + dtIni + "' and '" + dtFin + "';";
+                Connection conexao = ConnectionFactory.createConnection();
+                PreparedStatement ps;
+                ps = conexao.prepareStatement(string);
+                ps.execute();
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    at1 = new Atendimento(rs.getInt("id_atend"), rs.getInt("id_func"), rs.getInt("id_cli") , rs.getDate("data"), rs.getTime("horario"));
+                    atendList.add(at1);
+                }
+                return atendList;
+            } catch (SQLException ex) {
+                Logger.getLogger(ControleAtendimento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else if(tipoUsu==3){  //DESC DE SERVICOS
+            try {
+                String string= "select * from Atendimento where id_cli=" +idUsu+ " and data between '" + dtIni + "' and '" + dtFin + "';";
+                Connection conexao = ConnectionFactory.createConnection();
+                PreparedStatement ps;
+                ps = conexao.prepareStatement(string);
+                ps.execute();
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    at1 = new Atendimento(rs.getInt("id_atend"), rs.getInt("id_func"), rs.getInt("id_cli") , rs.getDate("cpf_func"), rs.getTime("horario"));
+                    atendList.add(at1);
+                }
+                return atendList;
+            } catch (SQLException ex) {
+                Logger.getLogger(ControleAtendimento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            //
+        }
+        return null;
+    }
     public ArrayList<Servico> getControleServ() {
         try {
             String select = "Select * from Servico;";
@@ -84,6 +152,50 @@ public class ControleRelatorio {
             Logger.getLogger(ControleServico.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+
+    public void GerarRelat(ArrayList<Atendimento> arrayAtend) {
+    Document document = new Document();
+          try {             
+              PdfWriter.getInstance(document, new FileOutputStream("/home/todos/alunos/cm/a1602020/Documentos/Gera.pdf"));
+              document.open();
+              Font f = new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
+              // adicionando um parágrafo no documento
+              Paragraph p1 = new Paragraph("Relatório de Atendimentos", f);
+              p1.setAlignment(Element.ALIGN_CENTER);
+              document.add(p1);
+              document.add(new Paragraph("\n"));
+              
+              PdfPTable table = new PdfPTable(new float[] { 0.1f, 0.1f, 0.1f, 0.2f, 0.2f  });
+              Font f2 = new Font(Font.FontFamily.HELVETICA, 14, Font.NORMAL);              
+              Paragraph p2 = new Paragraph("                                           Atendimentos", f2);
+              p2.setAlignment(Element.ALIGN_CENTER);
+              PdfPCell header = new PdfPCell(p2);
+              header.setColspan(5);
+              table.addCell(header);
+              table.addCell("ID Atend");
+              table.addCell("ID_Cli");
+              table.addCell("ID_Func");
+              table.addCell("Data");
+              table.addCell("Hora");
+              
+              for(Atendimento a1: arrayAtend){
+                table.addCell(""+a1.getId_atend());
+                table.addCell(""+a1.getId_cli());
+                table.addCell(""+a1.getId_func());
+                table.addCell(""+a1.getData());
+                table.addCell(""+a1.getHorario());
+              }
+              document.add(table);
+              JOptionPane.showMessageDialog(null, "Arquivo PDF exportado com sucesso");
+            }
+          catch(DocumentException de) {
+              System.err.println(de.getMessage());
+          }
+          catch(IOException ioe) {
+              System.err.println(ioe.getMessage());
+          }
+          document.close();    
     }
 
 }
