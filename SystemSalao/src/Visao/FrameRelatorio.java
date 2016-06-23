@@ -6,6 +6,7 @@
 package Visao;
 
 import Controle.ControleRelatorio;
+import Modelo.Atendimento;
 import Modelo.Cliente;
 import Modelo.Funcionario;
 import Modelo.Servico;
@@ -30,6 +31,7 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
         ArrayList<Cliente> arrayCli = new ArrayList<>();
         ArrayList<Funcionario> arrayFunc = new ArrayList<>();
         ArrayList<Servico> arrayServ = new ArrayList<>();
+        ArrayList<Atendimento> arrayAtend = new ArrayList<>();
         ControleRelatorio cr1 = new ControleRelatorio();
 
     /**
@@ -231,9 +233,11 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
 
     private void jRadioCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioCliActionPerformed
         arrayCli=cr1.getControleCli();
+        if(arrayCli.size()==0)
+            JOptionPane.showMessageDialog(null, "Não existe clientes cadastrados");
         DefaultListModel dlm = new DefaultListModel();
         for(int i=0;i<arrayCli.size();i++){
-            dlm.addElement(arrayCli.get(i).getNome_cli());
+            dlm.addElement(arrayCli.get(i).getId_cli()+" "+arrayCli.get(i).getNome_cli());
         }
         jList1.setModel(dlm);
         arrayCli.clear();
@@ -241,9 +245,11 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
 
     private void jRadioFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioFuncActionPerformed
         arrayFunc=cr1.getControleFunc();
+        if(arrayFunc.size()==0)
+            JOptionPane.showMessageDialog(null, "Não existe clientes cadastrados");
         DefaultListModel dlm = new DefaultListModel();
         for(int i=0;i<arrayFunc.size();i++){
-            dlm.addElement(arrayFunc.get(i).getNome_func());
+            dlm.addElement(arrayFunc.get(i).getId_func()+" "+arrayFunc.get(i).getNome_func());
         }
         jList1.setModel(dlm);
         arrayFunc.clear();
@@ -255,9 +261,11 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
 
     private void jRadioServActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioServActionPerformed
         arrayServ=cr1.getControleServ();
+        if(arrayServ.size()==0)
+            JOptionPane.showMessageDialog(null, "Não existe clientes cadastrados");
         DefaultListModel dlm = new DefaultListModel();
         for(int i=0;i<arrayServ.size();i++){
-            dlm.addElement(arrayServ.get(i).getDescricao());
+            dlm.addElement(arrayServ.get(i).getId_serv()+" "+arrayServ.get(i).getDescricao());
         }
         jList1.setModel(dlm);
         arrayServ.clear();
@@ -265,7 +273,23 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
 
     private void btnGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null,"Fazer select com os dados");
+        String dataInicial = "2016-"+tfMes1.getText()+"-"+tfDia1.getText();
+        String dataFinal = "2016-"+tfMes2.getText()+"-"+tfDia2.getText();
+        String[] idselected = jList1.getSelectedValue().split(" ");
+        int tipo = 0;
+        if(jRadioCli.isSelected())
+            tipo=1;
+        if(jRadioFunc.isSelected())
+            tipo=2;
+        if(jRadioServ.isSelected())
+            tipo=3;
+        arrayAtend=cr1.getControleAtend(dataInicial, dataFinal, tipo, idselected[0]);
+        
+        if(arrayAtend.size()==0)
+            JOptionPane.showMessageDialog(null, "Não existe atendimentos no período");
+        else
+            cr1.GerarRelat(arrayAtend);
+        
     }//GEN-LAST:event_btnGerarActionPerformed
 
     private void tfDia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDia1ActionPerformed
