@@ -41,7 +41,7 @@ cpf_func varchar(11),
 pis_func varchar(40),
 cargo_id integer,
 login_id integer,
-nasc varchar(8),
+nasc date,
 primary key(id_func)
 );
 
