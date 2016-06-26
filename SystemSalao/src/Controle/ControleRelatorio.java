@@ -5,10 +5,12 @@
  */
 package Controle;
 
+import java.awt.Desktop;
 import Modelo.Atendimento;
 import Modelo.Cliente;
 import Modelo.Funcionario;
 import Modelo.Servico;
+import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
@@ -17,6 +19,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -154,12 +157,12 @@ public class ControleRelatorio {
         return null;
     }
 
-    public void GerarRelat(ArrayList<Atendimento> arrayAtend) {
+    public void GerarRelat(ArrayList<Atendimento> arrayAtend) throws IOException {
     Document document = new Document();
           try {             
-              PdfWriter.getInstance(document, new FileOutputStream("/home/todos/alunos/cm/a1602020/Documentos/Gera.pdf"));
+              PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\bertuzzo\\Documents\\GitHub\\ProjetoAPP\\SystemSalao\\src\\Gera.pdf"));
               document.open();
-              Font f = new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
+              Font f = new Font(Font.FontFamily.HELVETICA, 20, Font.BOLD, BaseColor.LIGHT_GRAY);
               // adicionando um parágrafo no documento
               Paragraph p1 = new Paragraph("Relatório de Atendimentos", f);
               p1.setAlignment(Element.ALIGN_CENTER);
@@ -167,15 +170,15 @@ public class ControleRelatorio {
               document.add(new Paragraph("\n"));
               
               PdfPTable table = new PdfPTable(new float[] { 0.1f, 0.1f, 0.1f, 0.2f, 0.2f  });
-              Font f2 = new Font(Font.FontFamily.HELVETICA, 14, Font.NORMAL);              
-              Paragraph p2 = new Paragraph("                                           Atendimentos", f2);
+              Font f2 = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD, BaseColor.BLACK);              
+              Paragraph p2 = new Paragraph("                                  Atendimentos", f2);
               p2.setAlignment(Element.ALIGN_CENTER);
               PdfPCell header = new PdfPCell(p2);
               header.setColspan(5);
               table.addCell(header);
               table.addCell("ID Atend");
-              table.addCell("ID_Cli");
-              table.addCell("ID_Func");
+              table.addCell("ID Cli");
+              table.addCell("ID Func");
               table.addCell("Data");
               table.addCell("Hora");
               
@@ -187,7 +190,7 @@ public class ControleRelatorio {
                 table.addCell(""+a1.getHorario());
               }
               document.add(table);
-              JOptionPane.showMessageDialog(null, "Arquivo PDF exportado com sucesso");
+              JOptionPane.showMessageDialog(null, "Arquivo PDF exportado com sucesso");              
             }
           catch(DocumentException de) {
               System.err.println(de.getMessage());
@@ -196,6 +199,8 @@ public class ControleRelatorio {
               System.err.println(ioe.getMessage());
           }
           document.close();    
+          Desktop desktop = Desktop.getDesktop();  
+          desktop.open(new File("C:\\Users\\bertuzzo\\Documents\\GitHub\\ProjetoAPP\\SystemSalao\\src\\Gera.pdf"));
     }
 
 }

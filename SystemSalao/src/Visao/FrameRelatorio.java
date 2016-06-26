@@ -10,7 +10,10 @@ import Modelo.Atendimento;
 import Modelo.Cliente;
 import Modelo.Funcionario;
 import Modelo.Servico;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -55,7 +58,6 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         tfMes1 = new javax.swing.JTextField();
-        jRadioServ = new javax.swing.JRadioButton();
         btnGerar = new javax.swing.JButton();
         tfDia1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -71,6 +73,11 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
         tfDia2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfDia2ActionPerformed(evt);
+            }
+        });
+        tfDia2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfDia2KeyPressed(evt);
             }
         });
 
@@ -115,13 +122,9 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
                 tfMes1ActionPerformed(evt);
             }
         });
-
-        buttonGroup1.add(jRadioServ);
-        jRadioServ.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jRadioServ.setText("Serviço ");
-        jRadioServ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioServActionPerformed(evt);
+        tfMes1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfMes1KeyPressed(evt);
             }
         });
 
@@ -140,6 +143,11 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
                 tfDia1ActionPerformed(evt);
             }
         });
+        tfDia1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfDia1KeyPressed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("até");
@@ -151,48 +159,48 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
                 tfMes2ActionPerformed(evt);
             }
         });
+        tfMes2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfMes2KeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jLabel7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                            .addComponent(btnGerar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfDia1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jRadioCli)
+                                        .addComponent(tfMes1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(tfDia2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioFunc)
+                                        .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioServ))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(tfDia1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(tfMes1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel4)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(tfDia2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel6)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(tfMes2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))))))
+                                        .addComponent(tfMes2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel7)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jRadioCli)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jRadioFunc))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                        .addComponent(btnGerar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -215,8 +223,7 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioCli)
-                    .addComponent(jRadioFunc)
-                    .addComponent(jRadioServ))
+                    .addComponent(jRadioFunc))
                 .addGap(11, 11, 11)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -246,7 +253,7 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
     private void jRadioFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioFuncActionPerformed
         arrayFunc=cr1.getControleFunc();
         if(arrayFunc.size()==0)
-            JOptionPane.showMessageDialog(null, "Não existe clientes cadastrados");
+            JOptionPane.showMessageDialog(null, "Não existe funcionários cadastrados");
         DefaultListModel dlm = new DefaultListModel();
         for(int i=0;i<arrayFunc.size();i++){
             dlm.addElement(arrayFunc.get(i).getId_func()+" "+arrayFunc.get(i).getNome_func());
@@ -259,18 +266,6 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfMes1ActionPerformed
 
-    private void jRadioServActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioServActionPerformed
-        arrayServ=cr1.getControleServ();
-        if(arrayServ.size()==0)
-            JOptionPane.showMessageDialog(null, "Não existe clientes cadastrados");
-        DefaultListModel dlm = new DefaultListModel();
-        for(int i=0;i<arrayServ.size();i++){
-            dlm.addElement(arrayServ.get(i).getId_serv()+" "+arrayServ.get(i).getDescricao());
-        }
-        jList1.setModel(dlm);
-        arrayServ.clear();
-    }//GEN-LAST:event_jRadioServActionPerformed
-
     private void btnGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarActionPerformed
         // TODO add your handling code here:
         String dataInicial = "2016-"+tfMes1.getText()+"-"+tfDia1.getText();
@@ -281,14 +276,16 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
             tipo=1;
         if(jRadioFunc.isSelected())
             tipo=2;
-        if(jRadioServ.isSelected())
-            tipo=3;
         arrayAtend=cr1.getControleAtend(dataInicial, dataFinal, tipo, idselected[0]);
         
         if(arrayAtend.size()==0)
             JOptionPane.showMessageDialog(null, "Não existe atendimentos no período");
         else
-            cr1.GerarRelat(arrayAtend);
+            try {
+                cr1.GerarRelat(arrayAtend);
+        } catch (IOException ex) {
+            Logger.getLogger(FrameRelatorio.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_btnGerarActionPerformed
 
@@ -299,6 +296,29 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
     private void tfMes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMes2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfMes2ActionPerformed
+
+    private void tfDia1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfDia1KeyPressed
+        if(tfDia1.getText().length()==1)
+            tfMes1.grabFocus();
+    }//GEN-LAST:event_tfDia1KeyPressed
+
+    private void tfMes1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfMes1KeyPressed
+        // TODO add your handling code here:
+        if(tfMes1.getText().length()==1)
+            tfDia2.grabFocus();
+    }//GEN-LAST:event_tfMes1KeyPressed
+
+    private void tfDia2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfDia2KeyPressed
+        // TODO add your handling code here:
+        if(tfDia2.getText().length()==1)
+            tfMes2.grabFocus();
+    }//GEN-LAST:event_tfDia2KeyPressed
+
+    private void tfMes2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfMes2KeyPressed
+        // TODO add your handling code here:
+        if(tfMes2.getText().length()==1)
+            tfMes2.grabFocus();
+    }//GEN-LAST:event_tfMes2KeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -313,7 +333,6 @@ public class FrameRelatorio extends javax.swing.JInternalFrame {
     private javax.swing.JList<String> jList1;
     private javax.swing.JRadioButton jRadioCli;
     private javax.swing.JRadioButton jRadioFunc;
-    private javax.swing.JRadioButton jRadioServ;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField tfDia1;
     private javax.swing.JTextField tfDia2;

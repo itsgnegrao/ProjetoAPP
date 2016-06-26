@@ -72,6 +72,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         txtSenha = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 5, true));
 
@@ -85,6 +86,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         });
 
         txtCel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtCel1.setEnabled(false);
         txtCel1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtCel1FocusGained(evt);
@@ -135,6 +137,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         jLabel13.setText("/");
 
         txtCpf4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtCpf4.setEnabled(false);
         txtCpf4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCpf4KeyPressed(evt);
@@ -144,6 +147,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         txtEstado.setText("Busque para editar.");
 
         txtMes.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtMes.setEnabled(false);
         txtMes.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtMesKeyPressed(evt);
@@ -159,6 +163,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         });
 
         txtDia.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtDia.setEnabled(false);
         txtDia.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtDiaKeyPressed(evt);
@@ -175,6 +180,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         jLabel10.setText("Celular");
 
         txtAno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtAno.setEnabled(false);
         txtAno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAnoActionPerformed(evt);
@@ -190,6 +196,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         jLabel11.setText("Usuário");
 
         txtUser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtUser.setEnabled(false);
         txtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUserActionPerformed(evt);
@@ -203,6 +210,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         jLabel1.setText("CADASTRO/BUSCA DE CLIENTE");
 
         txtCel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtCel2.setEnabled(false);
         txtCel2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCel2ActionPerformed(evt);
@@ -210,6 +218,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         });
 
         txtCpf1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtCpf1.setEnabled(false);
         txtCpf1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCpf1ActionPerformed(evt);
@@ -222,6 +231,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         });
 
         txtCpf2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtCpf2.setEnabled(false);
         txtCpf2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCpf2ActionPerformed(evt);
@@ -234,6 +244,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         });
 
         txtCpf3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtCpf3.setEnabled(false);
         txtCpf3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCpf3KeyPressed(evt);
@@ -241,6 +252,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         });
 
         txtNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtNome.setEnabled(false);
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -251,6 +263,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         jLabel5.setText("Data Nasc");
 
         txtSenha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtSenha.setEnabled(false);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton3.setText("Cancelar");
@@ -258,6 +271,14 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton2.setText("Novo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -295,7 +316,9 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
                                                 .addGap(49, 49, 49)
                                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(Xclose))
+                                                .addComponent(Xclose)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -344,7 +367,8 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(Xclose))
+                    .addComponent(Xclose)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -501,36 +525,52 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         if (txtBuscar.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o Campo ID!");
         }
+        txtAno.enable(true);
+        txtBuscar.enable(true);
+        txtCel1.enable(true);
+        txtCel2.enable(true);
+        txtCpf1.enable(true);
+        txtCpf2.enable(true);
+        txtCpf3.enable(true);
+        txtCpf4.enable(true);
+        txtDia.enable(true);
+        txtEstado.enable(true);
+        txtMes.enable(true);
+        txtNome.enable(true);
+        txtSenha.enable(true);
+        txtUser.enable(true);
         ControleCadastroCli cliente_busca = new ControleCadastroCli(Integer.valueOf(txtBuscar.getText()));
         cliente = cliente_busca.getCliente();
-        cliente_login = cliente_busca.getCliente_login();
-        txtNome.setText(cliente.getNome_cli());
+        if(cliente!=null){
+            cliente_login = cliente_busca.getCliente_login();
+            txtNome.setText(cliente.getNome_cli());
 
-        String cpf_cli = cliente.getCpf_cli();
-        txtCpf1.setText(cpf_cli.substring(0, 3));
-        txtCpf2.setText(cpf_cli.substring(3, 6));
-        txtCpf3.setText(cpf_cli.substring(6, 9));
-        txtCpf4.setText(cpf_cli.substring(9, 11));
+            String cpf_cli = cliente.getCpf_cli();
+            txtCpf1.setText(cpf_cli.substring(0, 3));
+            txtCpf2.setText(cpf_cli.substring(3, 6));
+            txtCpf3.setText(cpf_cli.substring(6, 9));
+            txtCpf4.setText(cpf_cli.substring(9, 11));
 
-        String celular = cliente.getCelular();
-        txtCel1.setText(celular.substring(0, 2));
-        txtCel2.setText(celular.substring(2));
+            String celular = cliente.getCelular();
+            txtCel1.setText(celular.substring(0, 2));
+            txtCel2.setText(celular.substring(2));
 
-        Date data = cliente.getData_nasc_cli();
-        txtAno.setText(data.toString().substring(0, 4));
-        txtMes.setText(data.toString().substring(5, 7));
-        txtDia.setText(data.toString().substring(8, 10));
+            Date data = cliente.getData_nasc_cli();
+            txtAno.setText(data.toString().substring(0, 4));
+            txtMes.setText(data.toString().substring(5, 7));
+            txtDia.setText(data.toString().substring(8, 10));
 
-        String user = cliente_login.getUser();
-        String senha = cliente_login.getSenha();
-        txtUser.setText(user);
-        txtSenha.setText(senha);
-        System.out.println(user + " " + senha);
-
+            String user = cliente_login.getUser();
+            String senha = cliente_login.getSenha();
+            txtUser.setText(user);
+            txtSenha.setText(senha);
+            //System.out.println(user + " " + senha);
+        }
         jButton1.setVisible(false);
         objetoBuscado = 1;
         txtEstado.setText("Clique no X para excluir busca e cadastrar novo");
         Xclose.setVisible(true);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtCpf4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf4KeyPressed
@@ -620,10 +660,31 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_txtBuscarKeyPressed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        txtBuscar.enable(false);
+        txtAno.enable(true);        
+        txtCel1.enable(true);
+        txtCel2.enable(true);
+        txtCpf1.enable(true);
+        txtCpf2.enable(true);
+        txtCpf3.enable(true);
+        txtCpf4.enable(true);
+        txtDia.enable(true);
+        txtEstado.enable(true);
+        txtMes.enable(true);
+        txtNome.enable(true);
+        txtSenha.enable(true);
+        txtUser.enable(true);
+        txtNome.grabFocus();
+                
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Xclose;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -701,5 +762,19 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         txtMes.setText("");
         txtUser.setText("");
         txtSenha.setText("");
+        txtAno.enable(false);
+        txtBuscar.enable(true);
+        txtCel1.enable(false);
+        txtCel2.enable(false);
+        txtCpf1.enable(false);
+        txtCpf2.enable(false);
+        txtCpf3.enable(false);
+        txtCpf4.enable(false);
+        txtDia.enable(false);
+        txtEstado.enable(false);
+        txtMes.enable(false);
+        txtNome.enable(false);
+        txtSenha.enable(false);
+        txtUser.enable(false);
     }
 }
