@@ -475,7 +475,8 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
                     if (!stringLogin.equals("Update salaozao.login SET WHERE id_login = " + cliente.getLogin_id())) {
                         alter = new ControleAlterInsert(stringLogin);
                     }
-
+                    JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!");
+                    dispose();
                 } catch (SQLException ex) {
                     Logger.getLogger(FrameCadCli.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -501,6 +502,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
 
                 ControleCadastroCli novo_cli = new ControleCadastroCli(nome, data_nasc, cpf, celular, user, senha);
                 JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!");
+                dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(FrameCadCli.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -541,7 +543,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         txtUser.enable(true);
         ControleCadastroCli cliente_busca = new ControleCadastroCli(Integer.valueOf(txtBuscar.getText()));
         cliente = cliente_busca.getCliente();
-        if(cliente!=null){
+        if (cliente != null) {
             cliente_login = cliente_busca.getCliente_login();
             txtNome.setText(cliente.getNome_cli());
 
@@ -570,7 +572,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         objetoBuscado = 1;
         txtEstado.setText("Clique no X para excluir busca e cadastrar novo");
         Xclose.setVisible(true);
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtCpf4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf4KeyPressed
@@ -662,8 +664,21 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        txtNome.setText("");
+        txtAno.setText("");
+        txtBuscar.setText("");
+        txtCel1.setText("");
+        txtCel2.setText("");
+        txtCpf1.setText("");
+        txtCpf2.setText("");
+        txtCpf3.setText("");
+        txtCpf4.setText("");
+        txtDia.setText("");
+        txtMes.setText("");
+        txtUser.setText("");
+        txtSenha.setText("");
         txtBuscar.enable(false);
-        txtAno.enable(true);        
+        txtAno.enable(true);
         txtCel1.enable(true);
         txtCel2.enable(true);
         txtCpf1.enable(true);
@@ -677,7 +692,7 @@ public class FrameCadCli extends javax.swing.JInternalFrame {
         txtSenha.enable(true);
         txtUser.enable(true);
         txtNome.grabFocus();
-                
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
