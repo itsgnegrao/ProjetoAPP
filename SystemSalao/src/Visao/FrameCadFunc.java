@@ -82,11 +82,14 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         txtBuscar = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 5, true));
+        setEnabled(false);
         setMinimumSize(new java.awt.Dimension(647, 601));
         setPreferredSize(new java.awt.Dimension(647, 601));
 
+        boxCargo.setEnabled(false);
         boxCargo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 boxCargoMouseClicked(evt);
@@ -98,6 +101,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
             }
         });
 
+        txtCpf2.setEnabled(false);
         txtCpf2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCpf2ActionPerformed(evt);
@@ -112,6 +116,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
         jLabel1.setText("CADASTRO DE FUNCIONÁRIOS");
 
+        txtCpf3.setEnabled(false);
         txtCpf3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCpf3KeyPressed(evt);
@@ -119,6 +124,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         });
 
         txtNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtNome.setEnabled(false);
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -133,18 +139,21 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Data Nasc");
 
+        txtCpf4.setEnabled(false);
         txtCpf4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCpf4KeyPressed(evt);
             }
         });
 
+        txtDia.setEnabled(false);
         txtDia.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtDiaKeyPressed(evt);
             }
         });
 
+        txtMes.setEnabled(false);
         txtMes.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtMesKeyPressed(evt);
@@ -158,6 +167,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setText("CPF");
 
+        txtAno.setEnabled(false);
         txtAno.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtAnoKeyPressed(evt);
@@ -167,6 +177,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setText("Usuário");
 
+        txtUser.setEnabled(false);
         txtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUserActionPerformed(evt);
@@ -175,6 +186,8 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel12.setText("Senha");
+
+        txtSenha.setEnabled(false);
 
         jButton3.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
         jButton3.setText("Cancelar");
@@ -195,6 +208,9 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel14.setText("Cargo");
 
+        txtPis.setEnabled(false);
+
+        txtCpf1.setEnabled(false);
         txtCpf1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCpf1KeyPressed(evt);
@@ -236,6 +252,14 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("ID");
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton2.setText("Novo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -300,10 +324,12 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Xclose))
+                                .addComponent(Xclose)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1)
                             .addComponent(txtEstado))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(87, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,9 +343,10 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Xclose))
+                        .addComponent(Xclose)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2))
-                .addGap(54, 54, 54)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -349,7 +376,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
                     .addComponent(jLabel12)
                     .addComponent(jButton4)
                     .addComponent(jButton3))
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         pack();
@@ -486,7 +513,8 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
                     if (!stringLogin.equals("Update salaozao.login SET WHERE id_login = " + funcionario.getLogin_id())) {
                         alter = new ControleAlterInsert(stringLogin);
                     }
-
+                    JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!");
+                    dispose();
                 } catch (SQLException ex) {
                     Logger.getLogger(FrameCadCli.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -522,11 +550,11 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
             String idade = String.valueOf(atual);
             try {
                 ControleCadastroFunc novo_func = new ControleCadastroFunc(idade, nome, cpf, pis, cargo, user, senha, data);
+                dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(FrameCadFunc.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void txtCpf1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCpf1KeyPressed
@@ -583,6 +611,19 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         objetoBuscado = 1;
         txtEstado.setText("Clique no X para excluir busca e cadastrar novo");
         Xclose.setVisible(true);
+        txtAno.enable(true);
+        txtCpf1.enable(true);
+        txtCpf2.enable(true);
+        txtCpf3.enable(true);
+        txtCpf4.enable(true);
+        txtDia.enable(true);
+        txtEstado.enable(true);
+        txtMes.enable(true);
+        txtNome.enable(true);
+        txtSenha.enable(true);
+        txtUser.enable(true);
+        txtPis.enable(true);
+        boxCargo.enable(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -590,11 +631,44 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        txtBuscar.setText("");
+        txtAno.setText("");
+        txtMes.setText("");
+        txtDia.setText("");
+        txtCpf1.setText("");
+        txtCpf2.setText("");
+        txtCpf3.setText("");
+        txtCpf4.setText("");
+        txtNome.setText("");
+        txtPis.setText("");
+        txtSenha.setText("");
+        txtUser.setText("");
+        txtBuscar.enable(false);
+        txtAno.enable(true);
+        txtCpf1.enable(true);
+        txtCpf2.enable(true);
+        txtCpf3.enable(true);
+        txtCpf4.enable(true);
+        txtDia.enable(true);
+        txtEstado.enable(true);
+        txtMes.enable(true);
+        txtNome.enable(true);
+        txtSenha.enable(true);
+        txtUser.enable(true);
+        txtPis.enable(true);
+        boxCargo.enable(true);
+        txtNome.grabFocus();
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Xclose;
     private javax.swing.JComboBox<String> boxCargo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -634,6 +708,20 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         txtPis.setText("");
         txtSenha.setText("");
         txtUser.setText("");
+        txtBuscar.enable(true);
+        txtAno.enable(false);
+        txtCpf1.enable(false);
+        txtCpf2.enable(false);
+        txtCpf3.enable(false);
+        txtCpf4.enable(false);
+        txtDia.enable(false);
+        txtEstado.enable(false);
+        txtMes.enable(false);
+        txtNome.enable(false);
+        txtSenha.enable(false);
+        txtUser.enable(false);
+        txtPis.enable(false);
+        boxCargo.enable(false);
     }
 
     private boolean verificaEdicao() {
@@ -642,14 +730,14 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         if (!funcionario.getNome_func().equals(txtNome.getText())) {
             soma++;
         }
-        if(!funcionario.getPis_func().equals(txtPis.getText())){
+        if (!funcionario.getPis_func().equals(txtPis.getText())) {
             soma++;
         }
         String cpf = txtCpf1.getText() + txtCpf2.getText() + txtCpf3.getText() + txtCpf4.getText();
         if (!funcionario.getCpf_func().equals(cpf)) {
             soma++;
         }
-        if(funcionario.getCargo_id() != boxCargo.getSelectedIndex()){
+        if (funcionario.getCargo_id() != boxCargo.getSelectedIndex()) {
             soma++;
         }
         String data_nasc = txtDia.getText() + txtMes.getText() + txtAno.getText();
