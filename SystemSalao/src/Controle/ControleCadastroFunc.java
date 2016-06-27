@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -95,7 +96,7 @@ public class ControleCadastroFunc {
             ps3 = conexao3.prepareStatement(string3);
             ps3.execute();
             conexao3.close();
-            
+            JOptionPane.showMessageDialog(null,"Cadastro realizado com sucesso!");
         } catch(SQLException ex) {
             Logger.getLogger(ControleCadastroFunc.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("DEU NAO MLEKOTE");
