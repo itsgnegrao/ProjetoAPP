@@ -48,6 +48,7 @@ public class ControleRelatorio {
     public ArrayList<Atendimento> getControleAtend(String dtIni, String dtFin, int tipoUsu, String idUsu) {
         if(tipoUsu==1){  //USUARIO CLIENTE
             try {
+                atendList.clear();
                 String string= "select * from Atendimento where id_cli=" +idUsu+ " and data between '" + dtIni + "' and '" + dtFin + "';";
                 Connection conexao = ConnectionFactory.createConnection();
                 PreparedStatement ps;
@@ -64,6 +65,7 @@ public class ControleRelatorio {
             }
         }else if(tipoUsu==2){ //USUARIO FUNCIONARIO
             try {
+                atendList.clear();
                 String string= "select * from Atendimento where id_func=" +idUsu+ " and data between '" + dtIni + "' and '" + dtFin + "';";
                 Connection conexao = ConnectionFactory.createConnection();
                 PreparedStatement ps;

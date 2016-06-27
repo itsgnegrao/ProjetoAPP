@@ -249,7 +249,7 @@ public class FrameAgendaDois extends javax.swing.JFrame {
         ControleAlterInsert insert;
         String total[] = Lista_servicos.getSelectedValue().split(" - ");
         String string = "Insert into Atendimento (id_atend, id_cli, data, horario, total) values(";
-        String string2 = "Insert into Servico_atendimento values(";
+        String string2 = "Insert into Servico_Atendimento values(";
         if(txtSenha.getText().equals(login.getSenha())){
             try {
                 string += (conAtend.getAtendimento().getId_atend()+1)+",";
@@ -264,9 +264,11 @@ public class FrameAgendaDois extends javax.swing.JFrame {
                 
                 insert = new ControleAlterInsert(string); 
                 insert = new ControleAlterInsert(string2);
+                JOptionPane.showMessageDialog(null, "Agendamento Concluído com Sucesso");
                 dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(FrameAgendaDois.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Tente Novamente!");
             }
         }
         else{

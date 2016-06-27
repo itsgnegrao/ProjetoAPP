@@ -90,6 +90,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         setPreferredSize(new java.awt.Dimension(647, 601));
 
         boxCargo.setEnabled(false);
+        boxCargo.setNextFocusableComponent(txtDia);
         boxCargo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 boxCargoMouseClicked(evt);
@@ -125,6 +126,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
 
         txtNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtNome.setEnabled(false);
+        txtNome.setNextFocusableComponent(txtCpf1);
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -140,6 +142,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         jLabel5.setText("Data Nasc");
 
         txtCpf4.setEnabled(false);
+        txtCpf4.setNextFocusableComponent(txtPis);
         txtCpf4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCpf4KeyPressed(evt);
@@ -168,6 +171,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         jLabel9.setText("CPF");
 
         txtAno.setEnabled(false);
+        txtAno.setNextFocusableComponent(txtUser);
         txtAno.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtAnoKeyPressed(evt);
@@ -178,6 +182,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         jLabel11.setText("Usuário");
 
         txtUser.setEnabled(false);
+        txtUser.setNextFocusableComponent(txtSenha);
         txtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUserActionPerformed(evt);
@@ -209,6 +214,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         jLabel14.setText("Cargo");
 
         txtPis.setEnabled(false);
+        txtPis.setNextFocusableComponent(boxCargo);
 
         txtCpf1.setEnabled(false);
         txtCpf1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -291,7 +297,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(37, 37, 37)
+                        .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
@@ -314,7 +320,7 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 52, Short.MAX_VALUE))
+                        .addGap(0, 44, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -645,20 +651,20 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         txtPis.setText("");
         txtSenha.setText("");
         txtUser.setText("");
-        txtBuscar.enable(false);
-        txtAno.enable(true);
-        txtCpf1.enable(true);
-        txtCpf2.enable(true);
-        txtCpf3.enable(true);
-        txtCpf4.enable(true);
-        txtDia.enable(true);
-        txtEstado.enable(true);
-        txtMes.enable(true);
-        txtNome.enable(true);
-        txtSenha.enable(true);
-        txtUser.enable(true);
-        txtPis.enable(true);
-        boxCargo.enable(true);
+        txtBuscar.setEnabled(false);
+        txtAno.setEnabled(true);
+        txtCpf1.setEnabled(true);
+        txtCpf2.setEnabled(true);
+        txtCpf3.setEnabled(true);
+        txtCpf4.setEnabled(true);
+        txtDia.setEnabled(true);
+        txtEstado.setEnabled(true);
+        txtMes.setEnabled(true);
+        txtNome.setEnabled(true);
+        txtSenha.setEnabled(true);
+        txtUser.setEnabled(true);
+        txtPis.setEnabled(true);
+        boxCargo.setEnabled(true);
         txtNome.grabFocus();
 
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -708,20 +714,20 @@ public class FrameCadFunc extends javax.swing.JInternalFrame {
         txtPis.setText("");
         txtSenha.setText("");
         txtUser.setText("");
-        txtBuscar.enable(true);
-        txtAno.enable(false);
-        txtCpf1.enable(false);
-        txtCpf2.enable(false);
-        txtCpf3.enable(false);
-        txtCpf4.enable(false);
-        txtDia.enable(false);
-        txtEstado.enable(false);
-        txtMes.enable(false);
-        txtNome.enable(false);
-        txtSenha.enable(false);
-        txtUser.enable(false);
-        txtPis.enable(false);
-        boxCargo.enable(false);
+        txtBuscar.setEnabled(true);
+        txtAno.setEnabled(false);
+        txtCpf1.setEnabled(false);
+        txtCpf2.setEnabled(false);
+        txtCpf3.setEnabled(false);
+        txtCpf4.setEnabled(false);
+        txtDia.setEnabled(false);
+        txtEstado.setEnabled(false);
+        txtMes.setEnabled(false);
+        txtNome.setEnabled(false);
+        txtSenha.setEnabled(false);
+        txtUser.setEnabled(false);
+        txtPis.setEnabled(false);
+        boxCargo.setEnabled(false);
     }
 
     private boolean verificaEdicao() {

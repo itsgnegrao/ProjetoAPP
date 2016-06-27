@@ -26,6 +26,7 @@ public class FrameAgenda extends javax.swing.JInternalFrame {
         login = login_frame_princ;
         initComponents();
         ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
+        btnConsultar.doClick();
     }
 
     /**
