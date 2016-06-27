@@ -97,6 +97,7 @@ public class ControleCadastroCli {
             ps.execute();
 
             conexao.close();
+            JOptionPane.showMessageDialog(null,"Cadastro realizado com sucesso!");
         } catch (SQLException ex) {
             Logger.getLogger(ControleCadastroCli.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("DEU NAO MLEKOTE");
